@@ -7,5 +7,7 @@
 
 public class SongSearch
 {
-
+	public static void main(String[] args) {
+		
+	}
 }
