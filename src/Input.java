@@ -21,6 +21,8 @@ public class Input
     private BST songBST;
     private HashTable artistHashTable;
     private HashTable songHashTable;
+    private String artistInformation;
+    private String songInformation;
 
     /**
      * Constructor of the class that reads the files and chooses what commands
@@ -41,12 +43,14 @@ public class Input
         {
             throw new IOException("No input file can be found");
         }
+        artistInformation = "";
+        songInformation = "";
         scanner = new Scanner(fileName);
         artistBST = new BST();
         songBST = new BST();
         artistHashTable = new HashTable();
         songHashTable = new HashTable();
-        
+
         this.readLine();
     }
 
@@ -69,31 +73,80 @@ public class Input
 
             // Removes leading and trailing white spaces and stores the string
             // called commandName
-            String commandName = currentLine.trim();
-            //String[] lineInformation = firstWord.split("\\s+");
-            //String commandName = lineInformation[0];
+            currentLine = currentLine.trim();
 
-            // Different cases for the possible commands
+            // Removes any white spaces in the middle, guaranteeing first
+            // element is commandName
+            String[] lineInformation = currentLine.split("\\s+");
+            String commandName = lineInformation[0];
+
+            // Different cases for the possible commands...
             if (commandName.equals("insert"))
             {
-                // Read length of the string until <SEP> and store that as artist
-                // Everything after that would be stored as the song name
+                String[] splitString = currentLine.split("insert|<SEP>");
+
+                String artistInformation = splitString[1];
+                artistInformation = artistInformation.trim();
+                String songInformation = splitString[2];
+                songInformation = songInformation.trim();
+
+                // Do something with the artist/song variable above
             }
             else if (commandName.equals("remove"))
             {
+                String[] splitString = currentLine.split("remove|artist|song");
 
+                if (lineInformation[1].equals("artist"))
+                {
+                    artistInformation = splitString[2].trim();
+                    // Do something with artistInformation variable above
+                }
+                else if (lineInformation[1].equals("song"))
+                {
+                    songInformation = splitString[2].trim();
+                    // Do something with songInformation variable above
+                }
             }
             else if (commandName.equals("print"))
             {
-
+                if (lineInformation[1].equals("artist"))
+                {
+                    // Do something
+                }
+                else if (lineInformation[1].equals("song"))
+                {
+                    // Do something
+                }
+                else if (lineInformation[1].equals("tree"))
+                {
+                    // Do something
+                }
             }
             else if (commandName.equals("list"))
             {
+                String[] splitString = currentLine.split("list|artist|song");
 
+                if (lineInformation[1].equals("artist"))
+                {
+                    artistInformation = splitString[2].trim();
+                    // Do something with artistInformation variable above
+                }
+                else if (lineInformation[1].equals("song"))
+                {
+                    songInformation = splitString[2].trim();
+                    // Do something with songInformation variable above
+                }
             }
             else if (commandName.equals("delete"))
             {
+                String[] splitString = currentLine.split("delete|<SEP>");
 
+                String artistInformation = splitString[1];
+                artistInformation = artistInformation.trim();
+                String songInformation = splitString[2];
+                songInformation = songInformation.trim();
+
+                // Do something with the artist/song variable above
             }
         }
         scanner.close();

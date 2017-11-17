@@ -1,23 +1,32 @@
-public class KVpair<K extends Comparable<K>, V extends Comparable<V>>
+/**
+ * 
+ * @author Nguyen Ha (nguyen) and Boyang Li (beyongl)
+ * @version 11.15.2017
+ */
+
+public class KVPair<K extends Comparable<K>, V extends Comparable<V>>
         implements ComparablePair<K, V>
 {
     private K key;
     private V value;
 
-    public KVpair(K k, V v)
+    public KVPair(K k, V v)
     {
         key = k;
         value = v;
     }
-    
+
     @Override
     public int compareTo(ComparablePair<K, V> kp)
     {
         int compareKey = getKey().compareTo(kp.getKey());
         int compareValue = getValue().compareTo(kp.getValue());
-        if(compareKey != 0) {
+        if (compareKey != 0)
+        {
             return compareKey;
-        }else {
+        }
+        else
+        {
             return compareValue;
         }
     }
