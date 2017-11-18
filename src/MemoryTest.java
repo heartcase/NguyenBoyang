@@ -3,7 +3,7 @@ import org.junit.Assert.*;
 import org.junit.Test;
 
 public class MemoryTest
-{z
+{
     @Test
     public void testRead()
     {

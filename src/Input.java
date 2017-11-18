@@ -23,6 +23,7 @@ public class Input
     private HashTable songHashTable;
     private String artistInformation;
     private String songInformation;
+    private String commandName;
     private Memory memory;
 
     /**
@@ -79,16 +80,16 @@ public class Input
             // Removes any white spaces in the middle, guaranteeing first
             // element is commandName
             String[] lineInformation = currentLine.split("\\s+");
-            String commandName = lineInformation[0];
+            commandName = lineInformation[0];
 
             // Different cases for the possible commands...
             if (commandName.equals("insert"))
             {
                 String[] splitString = currentLine.split("insert|<SEP>");
 
-                String artistInformation = splitString[1];
+                artistInformation = splitString[1];
                 artistInformation = artistInformation.trim();
-                String songInformation = splitString[2];
+                songInformation = splitString[2];
                 songInformation = songInformation.trim();
 
                 // Do something with the artist/song variable above
@@ -142,14 +143,28 @@ public class Input
             {
                 String[] splitString = currentLine.split("delete|<SEP>");
 
-                String artistInformation = splitString[1];
+                artistInformation = splitString[1];
                 artistInformation = artistInformation.trim();
-                String songInformation = splitString[2];
+                songInformation = splitString[2];
                 songInformation = songInformation.trim();
-
                 // Do something with the artist/song variable above
             }
         }
         scanner.close();
+    }
+    
+    public String getArtist()
+    {
+        return artistInformation;
+    }
+    
+    public String getSong()
+    {
+        return songInformation;
+    }
+    
+    public String getCommandName()
+    {
+        return commandName;
     }
 }

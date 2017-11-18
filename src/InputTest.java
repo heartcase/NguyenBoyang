@@ -13,7 +13,7 @@ import student.TestCase;
 public class InputTest extends TestCase
 {
     private Input myInput;
-    
+
     /**
      * Tests that the command beginning with "insert" is called properly and
      * returns correct information
