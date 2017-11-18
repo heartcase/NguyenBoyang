@@ -16,13 +16,13 @@ public class Input
 {
     private BufferedReader bufferedReader;
     private Scanner scanner;
-
     private BST artistBST;
     private BST songBST;
     private HashTable artistHashTable;
     private HashTable songHashTable;
     private String artistInformation;
     private String songInformation;
+    private String commandName;
 
     /**
      * Constructor of the class that reads the files and chooses what commands
@@ -43,8 +43,6 @@ public class Input
         {
             throw new IOException("No input file can be found");
         }
-        artistInformation = "";
-        songInformation = "";
         scanner = new Scanner(fileName);
         artistBST = new BST();
         songBST = new BST();
@@ -78,16 +76,16 @@ public class Input
             // Removes any white spaces in the middle, guaranteeing first
             // element is commandName
             String[] lineInformation = currentLine.split("\\s+");
-            String commandName = lineInformation[0];
+            commandName = lineInformation[0];
 
             // Different cases for the possible commands...
             if (commandName.equals("insert"))
             {
                 String[] splitString = currentLine.split("insert|<SEP>");
 
-                String artistInformation = splitString[1];
+                artistInformation = splitString[1];
                 artistInformation = artistInformation.trim();
-                String songInformation = splitString[2];
+                songInformation = splitString[2];
                 songInformation = songInformation.trim();
 
                 // Do something with the artist/song variable above
@@ -141,14 +139,44 @@ public class Input
             {
                 String[] splitString = currentLine.split("delete|<SEP>");
 
-                String artistInformation = splitString[1];
+                artistInformation = splitString[1];
                 artistInformation = artistInformation.trim();
-                String songInformation = splitString[2];
+                songInformation = splitString[2];
                 songInformation = songInformation.trim();
 
                 // Do something with the artist/song variable above
             }
         }
         scanner.close();
+    }
+
+    /**
+     * Returns the artist information
+     * 
+     * @return - artist information
+     */
+    public String getArtist()
+    {
+        return artistInformation;
+    }
+
+    /**
+     * Returns the song information
+     * 
+     * @return - song information
+     */
+    public String getSong()
+    {
+        return songInformation;
+    }
+
+    /**
+     * Returns the command name called
+     * 
+     * @return - the command name
+     */
+    public String getCommandName()
+    {
+        return commandName;
     }
 }

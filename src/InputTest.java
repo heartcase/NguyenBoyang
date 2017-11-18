@@ -1,10 +1,10 @@
 import java.io.IOException;
-
 import student.TestCase;
 
 /**
- * Class that reads in the given input file and calls the corresponding commands
- * in the BST and HashTable classes
+ * Test class to verify that all the methods in the Input class function
+ * correctly. Checks that the proper artist, song, and command name are all
+ * properly retrieved when called
  * 
  * @author Nguyen Ha (nguyen) and Boyang Li (beyongl)
  * @version 11.15.2017
@@ -15,23 +15,136 @@ public class InputTest extends TestCase
     private Input myInput;
     
     /**
-     * Tests that mainScanner in readLine() has no next line in a blank file
+     * Tests that the command beginning with "insert" is called properly and
+     * returns correct information
      * 
      * @throws IOException
      */
-    public void testReadLineNextLine() throws IOException
+    public void testInsert() throws IOException
     {
-        String fileName = "mySample.txt";
+        String fileName = "InsertSample.txt";
         myInput = new Input(fileName);
-        try
-        {
-            myInput.readLine();
-        }
-        catch (IllegalStateException e)
-        {
-            //
-        }
+
+        assertEquals("insert", myInput.getCommandName());
+        assertEquals("Thomas Rhett", myInput.getArtist());
+        assertEquals("Craving You", myInput.getSong());
     }
-    
-    
+
+    /**
+     * Tests that the command beginning with "remove artist" is called properly
+     * and returns correct information
+     * 
+     * @throws IOException
+     */
+    public void testRemoveArtist() throws IOException
+    {
+        String fileName = "RemoveArtistSample.txt";
+        myInput = new Input(fileName);
+
+        assertEquals("remove", myInput.getCommandName());
+        assertEquals("Lil Wayne", myInput.getArtist());
+    }
+
+    /**
+     * Tests that the command beginning with "remove artist" is called properly
+     * and returns correct information
+     * 
+     * @throws IOException
+     */
+    public void testRemoveSong() throws IOException
+    {
+        String fileName = "RemoveSongSample.txt";
+        myInput = new Input(fileName);
+
+        assertEquals("remove", myInput.getCommandName());
+        assertEquals("Congratulations", myInput.getSong());
+    }
+
+    /**
+     * Tests that the command beginning with "print artist" is called properly
+     * and returns correct information
+     * 
+     * @throws IOException
+     */
+    public void testPrintArtist() throws IOException
+    {
+        String fileName = "PrintArtistSample.txt";
+        myInput = new Input(fileName);
+
+        assertEquals("print", myInput.getCommandName());
+    }
+
+    /**
+     * Tests that the command beginning with "print song" is called properly and
+     * returns correct information
+     * 
+     * @throws IOException
+     */
+    public void testPrintSong() throws IOException
+    {
+        String fileName = "PrintSongSample.txt";
+        myInput = new Input(fileName);
+
+        assertEquals("print", myInput.getCommandName());
+    }
+
+    /**
+     * Tests that the command beginning with "list artist" is called properly
+     * and returns correct information
+     * 
+     * @throws IOException
+     */
+    public void testListArtist() throws IOException
+    {
+        String fileName = "ListArtistSample.txt";
+        myInput = new Input(fileName);
+
+        assertEquals("list", myInput.getCommandName());
+        assertEquals("Post Malone", myInput.getArtist());
+    }
+
+    /**
+     * Tests that the command beginning with "list song" is called properly and
+     * returns correct information
+     * 
+     * @throws IOException
+     */
+    public void testListSong() throws IOException
+    {
+        String fileName = "ListSongSample.txt";
+        myInput = new Input(fileName);
+
+        assertEquals("list", myInput.getCommandName());
+        assertEquals("You Belong With Me", myInput.getSong());
+    }
+
+    /**
+     * Tests that the command beginning with "delete" is called properly and
+     * returns correct information
+     * 
+     * @throws IOException
+     */
+    public void testDelete() throws IOException
+    {
+        String fileName = "DeleteSample.txt";
+        myInput = new Input(fileName);
+
+        assertEquals("delete", myInput.getCommandName());
+        assertEquals("Wale", myInput.getArtist());
+        assertEquals("MY PYT", myInput.getSong());
+    }
+
+    /**
+     * Tests that the command beginning with "print tree" is called properly and
+     * returns correct information
+     * 
+     * @throws IOException
+     */
+    public void testPrintTree() throws IOException
+    {
+        String fileName = "PrintTreeSample.txt";
+        myInput = new Input(fileName);
+
+        assertEquals("print", myInput.getCommandName());
+    }
 }
