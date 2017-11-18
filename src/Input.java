@@ -23,6 +23,7 @@ public class Input
     private HashTable songHashTable;
     private String artistInformation;
     private String songInformation;
+    private Memory memory;
 
     /**
      * Constructor of the class that reads the files and chooses what commands
@@ -50,8 +51,8 @@ public class Input
         songBST = new BST();
         artistHashTable = new HashTable();
         songHashTable = new HashTable();
-
         this.readLine();
+        
     }
 
     /**

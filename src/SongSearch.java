@@ -9,6 +9,8 @@ import java.io.IOException;
 
 public class SongSearch
 {
+    public static int hashSize;
+    public static int blockSize;
     /**
      * Main method that runs the entire program
      * 
@@ -20,8 +22,10 @@ public class SongSearch
     {
         // String fileName = "sampleInput.txt";
         // Input programRunner = new Input(fileName);
-
-        @SuppressWarnings("unused")
-        Input programRunner = new Input(args[0]);
+        // Usage java SongSearch {initial-hash-size} {block-size} {command-file}
+        hashSize = Integer.valueOf(args[0]);
+        blockSize = Integer.valueOf(args[1]);
+        @SuppressWarnings("unused")        
+        Input programRunner = new Input(args[2]);
     }
 }
