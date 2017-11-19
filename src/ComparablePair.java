@@ -5,6 +5,7 @@
  */
 
 public interface ComparablePair<K extends Comparable<K>, V extends Comparable<V>>
+        extends Comparable<ComparablePair<K, V>>
 {
     public int compareTo(ComparablePair<K, V> kp);
 
