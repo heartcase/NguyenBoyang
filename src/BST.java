@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 
  * @author Nguyen Ha (nguyen) and Boyang Li (beyongl)
@@ -11,6 +14,7 @@ public class BST<T extends Comparable<T>>
     public BST()
     {
         root = new BSTNode<>(null);
+        
     }
     
     public void insert(BSTNode<T> node, T value) {
@@ -21,8 +25,14 @@ public class BST<T extends Comparable<T>>
         // TODO
     }
     
-    public void search(BSTNode<T> node, T value) {
+    public BSTNode<T> search(BSTNode<T> node, T value) {
         // TODO        
+        return null;
     }
+    
+    public void rangeSearch(BSTNode<T> node, T value, List<BSTNode<T>> list) {
+        // TODO
+    }
+    
     
 }
