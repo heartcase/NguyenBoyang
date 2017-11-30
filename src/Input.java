@@ -92,8 +92,7 @@ public class Input
                 songInformation = splitString[2];
                 songInformation = songInformation.trim();
 
-                // Do something with the artist/song variable above
-                
+                // Do something with the artist/song variable above                          
             }
             else if (commandName.equals("remove"))
             {
