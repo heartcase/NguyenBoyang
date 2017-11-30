@@ -4,10 +4,10 @@ import org.junit.Test;
 
 public class MemoryTest
 {
+    
     @Test
     public void testRead()
     {
-
     }
 
     @Test

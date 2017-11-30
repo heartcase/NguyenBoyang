@@ -4,16 +4,18 @@
  * @version 11.15.2017
  */
 
-public class HashTable<T>
+public class HashTable
 {
-    private T[] hashArray;
+    private Handle[] hashArray;
+    private int size;
+
     /**
      * 
      * @param s
      * @param m
      * @return
      */
-    public static int hash(String s, int m)
+    public int hash(String s, int m)
     {
         int intLength = s.length() / 4;
         long sum = 0;
@@ -36,4 +38,79 @@ public class HashTable<T>
         }
         return (int) (Math.abs(sum) % m);
     }
+
+
+    /**
+     * 
+     * @param k
+     * @param v
+     * @param m
+     */
+    public int insert(int k, int v, Memory m)
+    {
+        String key = m.read(k);
+        int hashValue = hash(key, hashArray.length);
+        while(true) {
+            if(hashArray[hashValue] != null) {
+                Handle temp = hashArray[hashValue];
+                if(temp.equal(k, v)) {
+                    return 0;
+                }else {
+                    hashValue = quadraticProbing(key, hashValue);
+                }
+            }else {
+                size++;
+                // Not sure if comparison is inclusive
+                if(size > hashArray.length / 2) {
+                    Handle[] temp = new Handle[hashArray.length * 2];
+                    System.arraycopy(hashArray, 0, temp, 0, hashArray.length);
+                    hashArray = temp;
+                }
+                hashArray[hashValue] = new Handle(k, v);
+                return 1;
+            }
+        }
+        
+    }
+    /**
+     * 
+     * @param k
+     * @param v
+     * @param m
+     * @return
+     */
+    public int search(int k, int v, Memory m) {
+        String key = m.read(k);
+        for(int i = 0; i < hashArray.length; i++) {
+            int index = quadraticProbing(key, i);
+            if(hashArray[index].equal(k, v)) {
+                return index;
+            }
+        }
+        return -1;
+    }
+    /**
+     * 
+     * @param k
+     * @param v
+     * @param m
+     */
+    public void remove(int k, int v, Memory m) {
+        int index = search(k, v, m);
+        if(index != -1) {
+            hashArray[index] = null;
+        }
+    }
+    
+    /**
+     * 
+     * @param key
+     * @param k
+     * @return
+     */
+    public int quadraticProbing(String key, int k)
+    {
+        return (hash(key, hashArray.length) + k * k) % hashArray.length;
+    }
+
 }
