@@ -92,6 +92,22 @@ public class HashTable
     /**
      * 
      * @param k
+     * @param m
+     * @return
+     */
+    public int search(int k, Memory m) {
+        String key = m.read(k);
+        for(int i = 0; i < hashArray.length; i++) {
+            int index = quadraticProbing(key, i);
+            if(hashArray[index].equal(k)) {
+                return index;
+            }
+        }
+        return -1;
+    }
+    /**
+     * 
+     * @param k
      * @param v
      * @param m
      */

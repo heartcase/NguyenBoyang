@@ -20,4 +20,8 @@ public class Handle
     public boolean equal(int k, int v) {
         return k == key && v == value;
     }
+    
+    public boolean equal(int k) {
+        return k == key;
+    }
 }   
