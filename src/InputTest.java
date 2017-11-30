@@ -26,8 +26,8 @@ public class InputTest extends TestCase
         myInput = new Input(fileName);
 
         assertEquals("insert", myInput.getCommandName());
-        assertEquals("Thomas Rhett", myInput.getArtist());
-        assertEquals("Craving You", myInput.getSong());
+        assertEquals("Green Day", myInput.getArtist());
+        assertEquals("Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)", myInput.getSong());
     }
 
     /**
