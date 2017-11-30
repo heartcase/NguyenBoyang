@@ -1,5 +1,5 @@
 
-public class Handle
+public class Handle implements Comparable<Handle>
 {
     int key;
     int value;
@@ -23,5 +23,20 @@ public class Handle
     
     public boolean equal(int k) {
         return k == key;
+    }
+
+    @Override
+    public int compareTo(Handle h)
+    {
+        int compareKey = Integer.compare(key, h.key);
+        int compareValue = Integer.compare(value, h.value);
+        if (compareKey != 0)
+        {
+            return compareKey;
+        }
+        else
+        {
+            return compareValue;
+        }
     }
 }   
