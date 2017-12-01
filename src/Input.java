@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -154,6 +155,23 @@ public class Input
         scanner.close();
     }
     
+    private void removeArtist()
+    {
+        Iterator<Handle> iterator = artistBST.iterator();
+
+        while (iterator.hasNext())
+        {
+            Handle targetHandle = iterator.next();
+            int value = targetHandle.getValue();
+            int key = targetHandle.getKey();
+            if (memory.read(key).equals(artistInformation))
+            {
+                Handle temp = songBST.find(new Handle(value, key));
+                songBST.remove(temp);
+                artistBST.remove(targetHandle);           
+            }
+        }
+    }
     private void insert() {
         int artistAddress;
         int songAddress;
