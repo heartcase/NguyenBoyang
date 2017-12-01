@@ -17,8 +17,8 @@ public class Input
     private BufferedReader bufferedReader;
     private Scanner scanner;
 
-    private BST artistBST;
-    private BST songBST;
+    private BST<Handle> artistBST;
+    private BST<Handle> songBST;
     private HashTable artistHashTable;
     private HashTable songHashTable;
     private String artistInformation;
@@ -177,8 +177,12 @@ public class Input
         }       
         artistSongHashIndex = artistHashTable.search(artistAddress, songAddress, memory);
         if(artistSongHashIndex == -1) {
-            artistHashTable.insert(artistAddress, songAddress, memory);
-            songHashTable.insert(songAddress, artistAddress, memory);                   
+            Handle h1 = new Handle(artistAddress, songAddress);
+            Handle h2 = new Handle(songAddress, artistAddress);
+            artistHashTable.insert(h1, memory);
+            songHashTable.insert(h2, memory);
+            artistBST.insert(h1);
+            songBST.insert(h2);
             /** TODO  print*/
         }else {
             /** TODO  print*/

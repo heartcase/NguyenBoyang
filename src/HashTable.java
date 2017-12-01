@@ -39,6 +39,32 @@ public class HashTable
         return (int) (Math.abs(sum) % m);
     }
 
+    public int insert(Handle h, Memory m)
+    {
+        int k = h.getKey();
+        String key = m.read(k);
+        int hashValue = hash(key, hashArray.length);
+        while (true)
+        {
+            if (hashArray[hashValue] != null)
+            {
+                hashValue = quadraticProbing(key, hashValue);
+            }
+            else
+            {
+                size++;
+                if (size > hashArray.length / 2)
+                {
+                    Handle[] temp = new Handle[hashArray.length * 2];
+                    System.arraycopy(hashArray, 0, temp, 0, hashArray.length);
+                    hashArray = temp;
+                }
+                hashArray[hashValue] = h;
+                return 1;
+            }
+        }
+    }
+    
     /**
      * 
      * @param k
@@ -77,7 +103,6 @@ public class HashTable
                 return 1;
             }
         }
-
     }
 
     /**
