@@ -3,7 +3,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
+
+import com.sun.corba.se.spi.orbutil.fsm.State;
 
 /**
  * Class that reads in the given input file and calls the corresponding commands
@@ -154,21 +157,43 @@ public class Input
         }
         scanner.close();
     }
+    // string -> int
+    // songHashTable.getHandle(songHashTable.search(k, memory)).getKey();
+    private void rangeSearch(int k, BST<Handle> bst, List<Handle> list) {  
+        Iterator<Handle> iterator = bst.iterator();
+        int stage = 0;
+        while (iterator.hasNext()) {
+            Handle handle = iterator.next();
+            if(handle.getKey() == k) {
+                list.add(handle);
+                if(stage == 0) {
+                    stage++;
+                }
+            }else {
+                if(stage == 1) {
+                    return;
+                }
+            }
+        }
+    }
     
     private void removeArtist()
     {
+        // TODO Unfinished
         Iterator<Handle> iterator = artistBST.iterator();
 
         while (iterator.hasNext())
         {
             Handle targetHandle = iterator.next();
-            int value = targetHandle.getValue();
             int key = targetHandle.getKey();
+            int value = targetHandle.getValue();
             if (memory.read(key).equals(artistInformation))
             {
                 Handle temp = songBST.find(new Handle(value, key));
                 songBST.remove(temp);
-                artistBST.remove(targetHandle);           
+                artistBST.remove(targetHandle);
+                artistHashTable.remove(key, value, memory);
+                songHashTable.remove(value, key, memory);
             }
         }
     }

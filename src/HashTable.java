@@ -197,4 +197,7 @@ public class HashTable
         return (hash(key, hashArray.length) + k * k) % hashArray.length;
     }
 
+    public Handle getHandle(int index) {
+        return hashArray[index];
+    }
 }
