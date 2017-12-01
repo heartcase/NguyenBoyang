@@ -25,6 +25,7 @@ public class Input
     private String songInformation;
     private String commandName;
     private Memory memory;
+    private int memoryAddress;
 
     /**
      * Constructor of the class that reads the files and chooses what commands
@@ -52,6 +53,8 @@ public class Input
         songBST = new BST();
         artistHashTable = new HashTable();
         songHashTable = new HashTable();
+        memory = new Memory(SongSearch.blockSize);
+        memoryAddress = 0;
         this.readLine();
         
     }
@@ -86,13 +89,11 @@ public class Input
             if (commandName.equals("insert"))
             {
                 String[] splitString = currentLine.split("insert|<SEP>");
-
                 artistInformation = splitString[1];
                 artistInformation = artistInformation.trim();
                 songInformation = splitString[2];
                 songInformation = songInformation.trim();
-
-                // Do something with the artist/song variable above                          
+                insert();
             }
             else if (commandName.equals("remove"))
             {
@@ -151,6 +152,37 @@ public class Input
             }
         }
         scanner.close();
+    }
+    
+    private void insert() {
+        int artistAddress;
+        int songAddress;
+        int artistSongHashIndex;  
+        // Do something with the artist/song variable above
+        artistAddress = artistHashTable.search(artistInformation, memory);
+        if(artistAddress == -1) {
+            artistAddress = memoryAddress;
+            memoryAddress = memory.add(memoryAddress, artistInformation);
+            /** TODO  print*/
+        }else {
+            /** TODO  print*/
+        }        
+        songAddress = songHashTable.search(songInformation, memory);
+        if(songAddress == -1) {
+            songAddress = memoryAddress;
+            memoryAddress = memory.add(memoryAddress, songInformation);
+            /** TODO  print*/
+        }else {
+            /** TODO  print*/
+        }       
+        artistSongHashIndex = artistHashTable.search(artistAddress, songAddress, memory);
+        if(artistSongHashIndex == -1) {
+            artistHashTable.insert(artistAddress, songAddress, memory);
+            songHashTable.insert(songAddress, artistAddress, memory);                   
+            /** TODO  print*/
+        }else {
+            /** TODO  print*/
+        }
     }
     
     public String getArtist()
