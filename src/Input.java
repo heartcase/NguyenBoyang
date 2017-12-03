@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
@@ -106,12 +107,12 @@ public class Input
                 if (lineInformation[1].equals("artist"))
                 {
                     artistInformation = splitString[2].trim();
-                    // Do something with artistInformation variable above
+                    removeArtist();
                 }
                 else if (lineInformation[1].equals("song"))
                 {
                     songInformation = splitString[2].trim();
-                    // Do something with songInformation variable above
+                    removeSong();
                 }
             }
             else if (commandName.equals("print"))
@@ -153,6 +154,7 @@ public class Input
                 songInformation = splitString[2];
                 songInformation = songInformation.trim();
                 // Do something with the artist/song variable above
+                delete();
             }
         }
         scanner.close();
@@ -177,26 +179,78 @@ public class Input
         }
     }
     
+    private boolean checkLastItem(int k, BST<Handle> bst) {
+        List<Handle> list = new ArrayList<>();
+        rangeSearch(k, bst, list);
+        if(list.size() <= 1) {
+            return true;
+        }
+        return false;
+    }
+    
+    private void delete() {
+        int k = artistHashTable.search(artistInformation, memory);
+        int v = songHashTable.search(songInformation, memory);
+        Handle temp1 = new Handle(k, v);
+        Handle temp2 = new Handle(v, k);
+        temp1 = artistBST.find(temp1);
+        temp2 = songBST.find(temp2);
+        artistBST.remove(temp1);
+        songBST.remove(temp2);
+        artistHashTable.remove(k, v, memory);
+        songHashTable.remove(v, k, memory);
+        if(checkLastItem(v, songBST)) {
+            memory.delete(v);
+        }
+        if(checkLastItem(v, artistBST)) {
+            memory.delete(v);
+        }
+    }
+    
     private void removeArtist()
     {
         // TODO Unfinished
-        Iterator<Handle> iterator = artistBST.iterator();
-
-        while (iterator.hasNext())
+        List<Handle> list = new ArrayList<>();
+        int k = artistHashTable.search(artistInformation, memory);
+        rangeSearch(k, artistBST, list);
+        for (Handle handle: list)
         {
-            Handle targetHandle = iterator.next();
-            int key = targetHandle.getKey();
-            int value = targetHandle.getValue();
-            if (memory.read(key).equals(artistInformation))
-            {
-                Handle temp = songBST.find(new Handle(value, key));
-                songBST.remove(temp);
-                artistBST.remove(targetHandle);
-                artistHashTable.remove(key, value, memory);
-                songHashTable.remove(value, key, memory);
+            int v = handle.getValue();
+            if(checkLastItem(v, songBST)) {
+                memory.delete(v);
             }
+            artistBST.remove(handle);
+            Handle temp = new Handle(v, k);
+            temp = songBST.find(temp);
+            songBST.remove(temp);
+            artistHashTable.remove(k, v, memory);
+            songHashTable.remove(v, k, memory);
         }
+        memory.delete(k);
     }
+    
+    private void removeSong()
+    {
+        // TODO Unfinished
+        List<Handle> list = new ArrayList<>();
+        int k = songHashTable.search(songInformation, memory);
+        rangeSearch(k, songBST, list);
+        for (Handle handle: list)
+        {
+            int v = handle.getValue();
+            if(checkLastItem(v, artistBST)) {
+                memory.delete(v);
+            }
+            songBST.remove(handle);
+            Handle temp = new Handle(v, k);
+            temp = artistBST.find(temp);
+            artistBST.remove(temp);
+            songHashTable.remove(k, v, memory);
+            artistHashTable.remove(v, k, memory);
+        }
+        memory.delete(k);
+    }
+    
     private void insert() {
         int artistAddress;
         int songAddress;
