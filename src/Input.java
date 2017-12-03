@@ -233,11 +233,6 @@ public class Input
         for (Handle handle : list)
         {
             int v = handle.getValue();
-            if (checkLastItem(v, songBST))
-            {
-                memory.delete(v);
-
-            }
             artistBST.remove(handle);
             Handle temp = new Handle(v, k);
             temp = songBST.find(temp);
@@ -245,8 +240,15 @@ public class Input
             artistHashTable.remove(k, v, memory);
             songHashTable.remove(v, k, memory);
             printDeletePair(artistInformation, songInformation);
+            if (checkLastItem(v, songBST))
+            {
+                String name = memory.read(v);
+                memory.delete(v);
+                printDeletePair(artistInformation, name);
+            }
         }
         memory.delete(k);
+        printRemoveFromMemory(artistInformation, 0);
     }
 
     private void removeSong()
@@ -262,10 +264,6 @@ public class Input
         for (Handle handle : list)
         {
             int v = handle.getValue();
-            if (checkLastItem(v, artistBST))
-            {
-                memory.delete(v);
-            }
             songBST.remove(handle);
             Handle temp = new Handle(v, k);
             temp = artistBST.find(temp);
@@ -273,8 +271,15 @@ public class Input
             songHashTable.remove(k, v, memory);
             artistHashTable.remove(v, k, memory);
             printDeletePair(artistInformation, songInformation);
+            if (checkLastItem(v, artistBST))
+            {
+                String name = memory.read(v);
+                memory.delete(v);
+                printDeletePair(songInformation, name);
+            }
         }
         memory.delete(k);
+        printRemoveFromMemory(songInformation, 1);
     }
 
     private void printNotExists(String name, int index)
