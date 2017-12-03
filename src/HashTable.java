@@ -11,6 +11,14 @@ public class HashTable
 
     /**
      * 
+     */
+    public HashTable()
+    {
+        hashArray = new Handle[SongSearch.hashSize];
+        size = 0;
+    }
+    /**
+     * 
      * @param s
      * @param m
      * @return
@@ -44,16 +52,20 @@ public class HashTable
         int k = h.getKey();
         String key = m.read(k);
         int hashValue = hash(key, hashArray.length);
+        System.out.println("The k is " + k);
+        System.out.println("The key is " + key);
+        System.out.println("HashArray length is " + hashArray.length);
         while (true)
         {
             if (hashArray[hashValue] != null)
             {
+                System.out.println("Hash value is " + hashValue);
                 hashValue = quadraticProbing(key, hashValue);
             }
             else
             {
                 size++;
-                if (size > hashArray.length / 2)
+                if (size >= hashArray.length / 2)
                 {
                     Handle[] temp = new Handle[hashArray.length * 2];
                     System.arraycopy(hashArray, 0, temp, 0, hashArray.length);

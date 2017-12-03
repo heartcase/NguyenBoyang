@@ -37,8 +37,7 @@ public class Memory
     {
 
         byte[] record = ('0' + String.format("%02X", content.length())
-                + content).getBytes();
-
+                + content).getBytes();        
         while (address + record.length >= memArray.length)
         {
             byte[] temp = new byte[memArray.length + SongSearch.blockSize];
@@ -47,7 +46,7 @@ public class Memory
         }
         record[0] = 1;
         System.arraycopy(record, 0, memArray, address, record.length);
-        System.out.println("Memory :" + new String(memArray));
+        //System.out.println("Memory :" + new String(memArray));
         return address + record.length;
     }
 

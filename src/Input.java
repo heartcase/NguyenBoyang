@@ -7,8 +7,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-import com.sun.corba.se.spi.orbutil.fsm.State;
-
 /**
  * Class that reads in the given input file and calls the corresponding commands
  * in the BST and HashTable classes
@@ -370,7 +368,7 @@ public class Input
             songAddress = memoryAddress;
             memoryAddress = memory.add(memoryAddress, songInformation);
             String string = String.format("|%s| is added to the Song database.",
-                    songAddress);
+                    songInformation);
             System.out.println(string);
         }
         else
@@ -386,10 +384,14 @@ public class Input
         {
             Handle h1 = new Handle(artistAddress, songAddress);
             Handle h2 = new Handle(songAddress, artistAddress);
+            System.out.println("The artistAddress is " + artistAddress);
+            System.out.println("The songAddress is " + songAddress);
+
             artistHashTable.insert(h1, memory);
             songHashTable.insert(h2, memory);
             artistBST.insert(h1);
             songBST.insert(h2);
+
             String string = String.format(
                     "The KVPair (|%s|,|%s|),(%d,%d) is added to the tree.",
                     artistInformation, songInformation, artistAddress,
