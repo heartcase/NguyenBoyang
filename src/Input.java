@@ -71,7 +71,6 @@ public class Input
      */
     public void readLine() throws IOException
     {
-
         while (scanner.hasNextLine())
         {
             // Reads a line of text
