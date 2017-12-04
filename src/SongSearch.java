@@ -19,15 +19,12 @@ public class SongSearch
      * @throws IOException
      */
     public static void main(String[] args) throws IOException
-    {
-        hashSize = 1024;
-        blockSize = 1024;
+    {  
+        hashSize = Integer.valueOf(args[0]);
+        blockSize = Integer.valueOf(args[1]);
         String fileName = "P4_Input1_Sample.txt";
-        Input programRunner = new Input(fileName);     
-        //Usage java SongSearch {initial-hash-size} {block-size} {command-file}
-//        hashSize = Integer.valueOf(args[0]);
-//        blockSize = Integer.valueOf(args[1]);
-//        @SuppressWarnings("unused")        
-//        Input programRunner = new Input(args[2]);
+        Input programRunner = new Input(fileName, blockSize, hashSize);
+        programRunner.readLine();
+
     }
 }

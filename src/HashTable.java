@@ -12,9 +12,9 @@ public class HashTable
     /**
      * 
      */
-    public HashTable()
+    public HashTable(int hashSize)
     {
-        hashArray = new Handle[SongSearch.hashSize];
+        hashArray = new Handle[hashSize];
         size = 0;
     }
 
@@ -58,8 +58,6 @@ public class HashTable
             hashValue = quadraticProbing(key, i, hashArray.length);
             if (hashArray[hashValue] == null)
             {
-                hashArray[hashValue] = h;
-                size++;
                 if (size >= hashArray.length / 2)
                 {
                     Handle[] temp = new Handle[hashArray.length * 2];
@@ -71,6 +69,10 @@ public class HashTable
                         }
                     }
                     hashArray = temp;
+                    insert(h, m);
+                }else {
+                    hashArray[hashValue] = h;
+                    size++;
                 }
                 return;
             }
@@ -82,7 +84,7 @@ public class HashTable
         int k = h.getKey();
         int hashValue;
         String key = m.read(k);
-        for (int i = 0; i < hashArray.length; i++)
+        for (int i = 0; i < array.length; i++)
         {
             hashValue = quadraticProbing(key, i, array.length);
             if (array[hashValue] == null)
@@ -186,5 +188,9 @@ public class HashTable
             return new Handle(-1, -1);
         }
         return hashArray[index];
+    }
+    
+    public Handle[] getHashArray() {
+        return hashArray;
     }
 }

@@ -1,3 +1,6 @@
+print song
+print artist
+print tree
 remove artist Blind Lemon Jefferson
 list artist Blind Lemon Jefferson
 insert Blind Lemon Jefferson<SEP>Long Lonesome Blues

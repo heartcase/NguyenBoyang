@@ -41,7 +41,8 @@ public class Input
      *            - name of the file to be read
      * @throws IOException
      */
-    public Input(String fileName) throws IOException
+    public Input(String fileName, int blockSize, int hashSize)
+            throws IOException
     {
         try
         {
@@ -57,12 +58,11 @@ public class Input
         scanner = new Scanner(fileName);
         artistBST = new BST<>();
         songBST = new BST<>();
-        artistHashTable = new HashTable();
-        songHashTable = new HashTable();
-        memory = new Memory(SongSearch.blockSize);
+        artistHashTable = new HashTable(hashSize);
+        songHashTable = new HashTable(hashSize);
+        memory = new Memory(blockSize);
         memoryAddress = 0;
-        this.readLine();
-
+        // this.readLine();
     }
 
     /**
@@ -105,8 +105,6 @@ public class Input
             }
             else if (commandName.equals("remove"))
             {
-                String[] splitString = currentLine.split("remove|artist|song");
-
                 if (lineInformation[1].equals("artist"))
                 {
                     String pattern = "remove\\s+artist(.+)";
@@ -131,10 +129,12 @@ public class Input
                 if (lineInformation[1].equals("artist"))
                 {
                     // Do something
+                    printArtist();
                 }
                 else if (lineInformation[1].equals("song"))
                 {
                     // Do something
+                    printSong();
                 }
                 else if (lineInformation[1].equals("tree"))
                 {
@@ -143,8 +143,6 @@ public class Input
             }
             else if (commandName.equals("list"))
             {
-                String[] splitString = currentLine.split("list|artist|song");
-
                 if (lineInformation[1].equals("artist"))
                 {
                     String pattern = "list\\s+artist(.+)";
@@ -187,10 +185,6 @@ public class Input
         while (iterator.hasNext())
         {
             Handle handle = iterator.next();
-            /*
-             * if(k == 200) { System.out.println(handle.getKey() + ", " +
-             * handle.getValue()); }
-             */
             if (handle.getKey() == k)
             {
                 list.add(handle);
@@ -201,6 +195,10 @@ public class Input
             }
             else
             {
+                if (stage == 1)
+                {
+                    return;
+                }
             }
         }
     }
@@ -216,9 +214,60 @@ public class Input
         return false;
     }
 
+    private boolean containString(List<String> list, String str)
+    {
+        for (String s : list)
+        {
+            if (s.equals(str))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private void printArtist()
     {
+        List<String> list = new ArrayList<>();
+        Handle[] array = artistHashTable.getHashArray();
+        for (int i = 0; i < array.length; i++)
+        {
+            if(array[i] == null) {
+                continue;
+            }
+            int k = array[i].getKey();
+            String key = memory.read(k);
+            if (!containString(list, key))
+            {
+                String string = String.format("|%s| %d", key, i);
+                System.out.println(string);
+                list.add(key);
+            }
+        }
+        String string = String.format("total artists: %d", list.size());
+        System.out.println(string);
+    }
 
+    private void printSong()
+    {
+        List<String> list = new ArrayList<>();
+        Handle[] array = songHashTable.getHashArray();
+        for (int i = 0; i < array.length; i++)
+        {
+            if(array[i] == null) {
+                continue;
+            }
+            int k = array[i].getKey();
+            String key = memory.read(k);
+            if (!containString(list, key))
+            {
+                String string = String.format("|%s| %d", key, i);
+                System.out.println(string);
+                list.add(key);
+            }
+        }
+        String string = String.format("total songs: %d", list.size());
+        System.out.println(string);
     }
 
     private void delete()

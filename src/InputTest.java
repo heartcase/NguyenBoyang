@@ -23,8 +23,8 @@ public class InputTest extends TestCase
     public void testInsert() throws IOException
     {
         String fileName = "InsertSample.txt";
-        myInput = new Input(fileName);
-
+        myInput = new Input(fileName, 1024, 1024);
+        myInput.readLine();
         assertEquals("insert", myInput.getCommandName());
         assertEquals("Green Day", myInput.getArtist());
         assertEquals("Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)", myInput.getSong());
@@ -39,8 +39,8 @@ public class InputTest extends TestCase
     public void testRemoveArtist() throws IOException
     {
         String fileName = "RemoveArtistSample.txt";
-        myInput = new Input(fileName);
-
+        myInput = new Input(fileName, 1024, 1024);
+        myInput.readLine();
         assertEquals("remove", myInput.getCommandName());
         assertEquals("Lil Wayne", myInput.getArtist());
     }
@@ -54,8 +54,8 @@ public class InputTest extends TestCase
     public void testRemoveSong() throws IOException
     {
         String fileName = "RemoveSongSample.txt";
-        myInput = new Input(fileName);
-
+        myInput = new Input(fileName, 1024, 1024);
+        myInput.readLine();
         assertEquals("remove", myInput.getCommandName());
         assertEquals("Congratulations", myInput.getSong());
     }
@@ -69,8 +69,8 @@ public class InputTest extends TestCase
     public void testPrintArtist() throws IOException
     {
         String fileName = "PrintArtistSample.txt";
-        myInput = new Input(fileName);
-
+        myInput = new Input(fileName, 1024, 1024);
+        myInput.readLine();
         assertEquals("print", myInput.getCommandName());
     }
 
@@ -83,8 +83,8 @@ public class InputTest extends TestCase
     public void testPrintSong() throws IOException
     {
         String fileName = "PrintSongSample.txt";
-        myInput = new Input(fileName);
-
+        myInput = new Input(fileName, 1024, 1024);
+        myInput.readLine();
         assertEquals("print", myInput.getCommandName());
     }
 
@@ -97,8 +97,8 @@ public class InputTest extends TestCase
     public void testListArtist() throws IOException
     {
         String fileName = "ListArtistSample.txt";
-        myInput = new Input(fileName);
-
+        myInput = new Input(fileName, 1024, 1024);
+        myInput.readLine();
         assertEquals("list", myInput.getCommandName());
         assertEquals("Post Malone", myInput.getArtist());
     }
@@ -112,8 +112,8 @@ public class InputTest extends TestCase
     public void testListSong() throws IOException
     {
         String fileName = "ListSongSample.txt";
-        myInput = new Input(fileName);
-
+        myInput = new Input(fileName, 1024, 1024);
+        myInput.readLine();
         assertEquals("list", myInput.getCommandName());
         assertEquals("You Belong With Me", myInput.getSong());
     }
@@ -127,8 +127,8 @@ public class InputTest extends TestCase
     public void testDelete() throws IOException
     {
         String fileName = "DeleteSample.txt";
-        myInput = new Input(fileName);
-
+        myInput = new Input(fileName, 1024, 1024);
+        myInput.readLine();
         assertEquals("delete", myInput.getCommandName());
         assertEquals("Wale", myInput.getArtist());
         assertEquals("MY PYT", myInput.getSong());
@@ -143,8 +143,8 @@ public class InputTest extends TestCase
     public void testPrintTree() throws IOException
     {
         String fileName = "PrintTreeSample.txt";
-        myInput = new Input(fileName);
-
+        myInput = new Input(fileName, 1024, 1024);
+        myInput.readLine();
         assertEquals("print", myInput.getCommandName());
     }
 }
