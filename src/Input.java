@@ -551,18 +551,33 @@ public class Input
         while (iterator.hasNext())
         {
             Handle handle = iterator.next();
-            String string = String.format("%" + 1 + "s(%d,%d)", " ",
-                    handle.getKey(), handle.getValue());
-            System.out.println(string);
+            int indentation = artistBST.getDepthFromHandle(handle) * 2;
+            if(indentation != 0) {
+                String string = String.format("%" + indentation + "s(%d,%d)", " ",
+                        handle.getKey(), handle.getValue());
+                System.out.println(string);
+            }else {
+                String string = String.format("(%d,%d)",
+                        handle.getKey(), handle.getValue());
+                System.out.println(string);
+            }
+            
         }
         System.out.println("Printing song tree:");
         iterator = songBST.iterator();
         while (iterator.hasNext())
         {
             Handle handle = iterator.next();
-            String string = String.format("%" + 1 + "s(%d,%d)", " ",
-                    handle.getKey(), handle.getValue());
-            System.out.println(string);
+            int indentation = songBST.getDepthFromHandle(handle) * 2;
+            if(indentation != 0) {
+                String string = String.format("%" + indentation + "s(%d,%d)", " ",
+                        handle.getKey(), handle.getValue());
+                System.out.println(string);
+            }else {
+                String string = String.format("(%d,%d)",
+                        handle.getKey(), handle.getValue());
+                System.out.println(string);
+            }
         }
     }
 

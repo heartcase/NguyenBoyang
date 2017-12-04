@@ -22,7 +22,7 @@ public class SongSearch
     {  
         hashSize = Integer.valueOf(args[0]);
         blockSize = Integer.valueOf(args[1]);
-        String fileName = "P4_Input1_Sample.txt";
+        String fileName = args[2];
         Input programRunner = new Input(fileName, blockSize, hashSize);
         programRunner.readLine();
 
