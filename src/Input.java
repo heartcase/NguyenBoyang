@@ -137,7 +137,7 @@ public class Input
                 }
                 else if (lineInformation[1].equals("tree"))
                 {
-                    // Do something
+                    printTree();
                 }
             }
             else if (commandName.equals("list"))
@@ -231,7 +231,8 @@ public class Input
         Handle[] array = artistHashTable.getHashArray();
         for (int i = 0; i < array.length; i++)
         {
-            if(array[i] == null) {
+            if (array[i] == null)
+            {
                 continue;
             }
             int k = array[i].getKey();
@@ -253,7 +254,8 @@ public class Input
         Handle[] array = songHashTable.getHashArray();
         for (int i = 0; i < array.length; i++)
         {
-            if(array[i] == null) {
+            if (array[i] == null)
+            {
                 continue;
             }
             int k = array[i].getKey();
@@ -538,6 +540,28 @@ public class Input
                     "The KVPair (|%s|,|%s|),(%d,%d) duplicates a record already in the tree.",
                     songInformation, artistInformation, songAddress,
                     artistAddress);
+            System.out.println(string);
+        }
+    }
+
+    private void printTree()
+    {
+        System.out.println("Printing artist tree:");
+        Iterator<Handle> iterator = artistBST.iterator();
+        while (iterator.hasNext())
+        {
+            Handle handle = iterator.next();
+            String string = String.format("%" + 1 + "s(%d,%d)", " ",
+                    handle.getKey(), handle.getValue());
+            System.out.println(string);
+        }
+        System.out.println("Printing song tree:");
+        iterator = songBST.iterator();
+        while (iterator.hasNext())
+        {
+            Handle handle = iterator.next();
+            String string = String.format("%" + 1 + "s(%d,%d)", " ",
+                    handle.getKey(), handle.getValue());
             System.out.println(string);
         }
     }
