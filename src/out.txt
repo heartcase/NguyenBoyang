@@ -14,7 +14,7 @@ The KVPair (|Blind Lemon Jefferson|,|Long Lonesome Blues|),(0,24) duplicates a r
 The KVPair (|Long Lonesome Blues|,|Blind Lemon Jefferson|),(24,0) duplicates a record already in the tree.
 |Bukka White| does not exist in the artist database.
 |Bukka White's first song| does not exist in the song database.
-|Long Lonesome Blues| 36
+|Long Lonesome Blues| 35
 total songs: 1
 The KVPair (|Blind Lemon Jefferson|,|Long Lonesome Blues|) is deleted from the tree.
 The KVPair (|Long Lonesome Blues|,|Blind Lemon Jefferson|) is deleted from the tree.
@@ -115,12 +115,12 @@ The KVPair (|Bukka White|,|Bukka White's fourth song|) is deleted from the tree.
 The KVPair (|Bukka White's fourth song|,|Bukka White|) is deleted from the tree.
 |Bukka White| is deleted from the Artist database.
 |Bukka White's fourth song| is deleted from the Song database.
-|Another Bukka White| 58
-|Johnny Winter| 96
+|Another Bukka White| 57
+|Johnny Winter| 95
 total artists: 2
-|Bukka White's third song| 17
-|Bukka White's first song| 70
-|Bukka White's second song| 99
+|Bukka White's third song| 16
+|Bukka White's first song| 69
+|Bukka White's second song| 98
 total songs: 3
 The KVPair (|Bukka White's first song|,|Another Bukka White|) is deleted from the tree.
 The KVPair (|Another Bukka White|,|Bukka White's first song|) is deleted from the tree.
@@ -128,10 +128,10 @@ The KVPair (|Bukka White's first song|,|Johnny Winter|) is deleted from the tree
 The KVPair (|Johnny Winter|,|Bukka White's first song|) is deleted from the tree.
 |Bukka White's first song| is deleted from the Song database.
 |Johnny Winter| is deleted from the Artist database.
-|Another Bukka White| 59
+|Another Bukka White| 58
 total artists: 1
-|Bukka White's third song| 17
-|Bukka White's second song| 99
+|Bukka White's third song| 16
+|Bukka White's second song| 98
 total songs: 2
 |Johnny Winter| is added to the Artist database.
 |Johnny Winter's first song| is added to the Song database.
@@ -140,11 +140,11 @@ The KVPair (|Johnny Winter's first song|,|Johnny Winter|),(309,293) is added to 
 The KVPair (|Another Bukka White|,|Bukka White's second song|) is deleted from the tree.
 The KVPair (|Bukka White's second song|,|Another Bukka White|) is deleted from the tree.
 |Bukka White's second song| is deleted from the song database.
-|Another Bukka White| 62
-|Johnny Winter| 96
+|Another Bukka White| 61
+|Johnny Winter| 95
 total artists: 2
-|Bukka White's third song| 17
-|Johnny Winter's first song| 60
+|Bukka White's third song| 16
+|Johnny Winter's first song| 59
 total songs: 2
 |Another Johnny Winter| is added to the Artist database.
 |Johnny Winter's first song| duplicates a record already in the Song database.
@@ -328,18 +328,18 @@ The KVPair (|Sporco Ma Distinto|,|Ennio Morricone|),(819,801) is added to the tr
 |Well Oh Well| is added to the Song database.
 The KVPair (|Tiny Bradshaw|,|Well Oh Well|),(840,856) is added to the tree.
 The KVPair (|Well Oh Well|,|Tiny Bradshaw|),(856,840) is added to the tree.
-|Johnny Winter| 0
-|Tiny Bradshaw| 1
-|Cheo Feliciano| 27
-|Rita Chiarelli| 32
-|Happy Mondays| 43
-|Another Johnny Winter| 49
-|Kings Of Leon| 57
-|Another Bukka White| 62
-|Tim Wilson| 67
-|Thomas Dolby| 74
-|Bruce Rowland| 87
-|Ennio Morricone| 90
+|Tiny Bradshaw| 0
+|Johnny Winter| 4
+|Cheo Feliciano| 26
+|Rita Chiarelli| 31
+|Happy Mondays| 42
+|Another Johnny Winter| 48
+|Kings Of Leon| 56
+|Another Bukka White| 61
+|Tim Wilson| 66
+|Thomas Dolby| 73
+|Bruce Rowland| 86
+|Ennio Morricone| 89
 total artists: 12
 The KVPair (|Bruce Rowland|,|Mountain Theme|) is deleted from the tree.
 The KVPair (|Mountain Theme|,|Bruce Rowland|) is deleted from the tree.
@@ -354,21 +354,21 @@ The KVPair (|She Blinded Me With Science|,|Thomas Dolby|) is deleted from the tr
 |Sarah Yellin'| is added to the Song database.
 The KVPair (|3 Doors Down|,|Sarah Yellin'|),(871,886) is added to the tree.
 The KVPair (|Sarah Yellin'|,|3 Doors Down|),(886,871) is added to the tree.
-|Wrote For Luck (12 - Remastered version)| 1
-|Bukka White's third song| 17
-|Sarah Yellin'| 23
-|Johnny Winter's second song| 24
-|Well Oh Well| 31
-|Johnny Winter's fifth song| 32
-|Juguete| 40
-|Doggin' Around| 49
-|Johnny Winter's first song| 60
-|Johnny Winter's third song| 62
-|I Think My Wife Is Running Around On Me (Taco Hell)| 66
-|Be Careful With A Fool| 74
-|Sporco Ma Distinto| 75
-|Wicker Chair| 93
-|Johnny Winter's fourth song| 97
+|Wrote For Luck (12 - Remastered version)| 0
+|Bukka White's third song| 16
+|Sarah Yellin'| 22
+|Johnny Winter's second song| 23
+|Well Oh Well| 30
+|Johnny Winter's fifth song| 31
+|Juguete| 39
+|Doggin' Around| 48
+|Johnny Winter's first song| 59
+|Johnny Winter's third song| 61
+|I Think My Wife Is Running Around On Me (Taco Hell)| 65
+|Be Careful With A Fool| 73
+|Sporco Ma Distinto| 74
+|Wicker Chair| 92
+|Johnny Winter's fourth song| 96
 total songs: 15
 |Akon| is added to the Artist database.
 |Over The Edge| is added to the Song database.
@@ -556,51 +556,51 @@ The KVPair (|L7|,|Baggage|) is deleted from the tree.
 |Baggage| is deleted from the Song database.
 |L7| is deleted from the Artist database.
 |L7| does not exist in the artist database.
-|Tiny Bradshaw| 0
-|John Cale| 1
-|Jesus Jones| 5
-|DJ Quik| 10
-|Johnny Winter| 12
-|Cheo Feliciano| 27
-|Aeoliah| 28
-|Green Day| 31
-|Rita Chiarelli| 32
-|Loop Guru| 42
-|Happy Mondays| 43
-|Y&T| 46
-|Carl Smith| 56
-|Chris Clark| 57
-|No Address| 62
-|Charlie Peacock| 63
-|Barenaked Ladies| 65
-|Tim Wilson| 67
-|Faithless| 82
-|Dons| 85
-|Buddy Miles| 88
-|Esperanza Spalding / Leo Genovese| 92
-|themselves| 109
-|Akon| 114
-|Chelsea| 119
-|Paula Santoro| 120
-|Sylver| 121
-|The Ruby Suns| 122
-|Gary Moore| 130
-|8Ball & MJG| 131
-|Dream Warriors| 134
-|Hot Chip| 140
-|3 Doors Down| 143
-|Michael Gettel| 147
-|Gerard Lenorman| 148
-|Another Johnny Winter| 149
-|Kings Of Leon| 157
-|Another Bukka White| 159
-|Novaspace| 160
-|Open Hand| 164
-|Funeral For A Friend| 169
-|Liam O'Flynn| 177
-|Ennio Morricone| 190
-|Kyle Riabko| 198
-|Dave Eggar| 199
+|John Cale| 0
+|Johnny Winter| 4
+|DJ Quik| 9
+|Cheo Feliciano| 26
+|Aeoliah| 27
+|Green Day| 30
+|Rita Chiarelli| 31
+|Loop Guru| 41
+|Happy Mondays| 42
+|Y&T| 45
+|Carl Smith| 55
+|Chris Clark| 56
+|No Address| 61
+|Charlie Peacock| 62
+|Barenaked Ladies| 64
+|Tim Wilson| 66
+|Faithless| 81
+|Dons| 84
+|Buddy Miles| 87
+|Esperanza Spalding / Leo Genovese| 91
+|themselves| 108
+|Akon| 113
+|Chelsea| 118
+|Paula Santoro| 119
+|Sylver| 120
+|The Ruby Suns| 121
+|Gary Moore| 129
+|8Ball & MJG| 130
+|Dream Warriors| 133
+|Hot Chip| 139
+|3 Doors Down| 142
+|Michael Gettel| 146
+|Gerard Lenorman| 147
+|Another Johnny Winter| 148
+|Kings Of Leon| 156
+|Another Bukka White| 158
+|Novaspace| 159
+|Open Hand| 163
+|Funeral For A Friend| 168
+|Liam O'Flynn| 176
+|Ennio Morricone| 189
+|Jesus Jones| 196
+|Kyle Riabko| 197
+|Dave Eggar| 198
+|Tiny Bradshaw| 199
 total artists: 45
 |Bruce Rowland| is added to the Artist database.
 |Mountain Theme| is added to the Song database.
@@ -731,93 +731,93 @@ The KVPair (|American Lovebite|,|Dons|) is deleted from the tree.
 |Dons| does not exist in the artist database.
 |Dons| does not exist in the artist database.
 |Dons| does not exist in the artist database.
-|Tiny Bradshaw| 0
-|John Cale| 1
-|All Time Low| 6
-|DJ Quik| 10
-|Johnny Winter| 12
-|Cheo Feliciano| 27
-|Aeoliah| 28
-|Green Day| 31
-|Rita Chiarelli| 32
-|Happy Mondays| 43
-|Y&T| 46
-|Chris Clark| 57
-|No Address| 62
-|Charlie Peacock| 63
-|Barenaked Ladies| 65
-|Tim Wilson| 67
-|Faithless| 82
-|Audio Adrenaline| 87
-|Buddy Miles| 88
-|Esperanza Spalding / Leo Genovese| 92
-|themselves| 109
-|Chelsea| 119
-|Paula Santoro| 120
-|The Ruby Suns| 122
-|Gary Moore| 130
-|8Ball & MJG| 131
-|Dream Warriors| 134
-|Hot Chip| 140
-|3 Doors Down| 143
-|Michael Gettel| 147
-|Gerard Lenorman| 148
-|Another Johnny Winter| 149
-|Kings Of Leon| 157
-|Another Bukka White| 159
-|Novaspace| 160
-|Open Hand| 164
-|Funeral For A Friend| 169
-|Thomas Dolby| 174
-|Liam O'Flynn| 177
-|Ennio Morricone| 190
-|Dave Eggar| 199
+|John Cale| 0
+|Johnny Winter| 4
+|All Time Low| 5
+|DJ Quik| 9
+|Cheo Feliciano| 26
+|Aeoliah| 27
+|Green Day| 30
+|Rita Chiarelli| 31
+|Happy Mondays| 42
+|Y&T| 45
+|Chris Clark| 56
+|No Address| 61
+|Charlie Peacock| 62
+|Barenaked Ladies| 64
+|Tim Wilson| 66
+|Faithless| 81
+|Audio Adrenaline| 86
+|Buddy Miles| 87
+|Esperanza Spalding / Leo Genovese| 91
+|themselves| 108
+|Chelsea| 118
+|Paula Santoro| 119
+|The Ruby Suns| 121
+|Gary Moore| 129
+|8Ball & MJG| 130
+|Dream Warriors| 133
+|Hot Chip| 139
+|3 Doors Down| 142
+|Michael Gettel| 146
+|Gerard Lenorman| 147
+|Another Johnny Winter| 148
+|Kings Of Leon| 156
+|Another Bukka White| 158
+|Novaspace| 159
+|Open Hand| 163
+|Funeral For A Friend| 168
+|Thomas Dolby| 173
+|Liam O'Flynn| 176
+|Ennio Morricone| 189
+|Dave Eggar| 198
+|Tiny Bradshaw| 199
 total artists: 41
-|Your Revolution Is A Joke| 0
-|For Your Passion My Love| 7
-|Function Of The Sun| 10
-|Sarah Yellin'| 23
-|What Are We Here For| 24
-|Decide| 25
-|Movement 4 [from Kiss] (Album Version)| 26
-|Well Oh Well| 31
-|Johnny Winter's fifth song| 32
-|She Blinded Me With Science| 34
-|Dancing With Tears In My Eyes 2004 (Nova Mix (Club Version))| 35
-|Juguete| 40
-|If You Should Walk Away| 41
-|Deep Blue| 42
-|This Is Where It Ends (Album Version)| 44
-|11th Street| 47
-|Johnny Winter's first song| 60
-|I Think My Wife Is Running Around On Me (Taco Hell)| 62
-|My God (Audio Adrenaline Album Version)| 64
-|The Girl From Ipanema (Garota De Ipanema)| 68
-|Pimpin' Don't Fail Me Now [Featuring Jazze Pha and Juvenile] (Explicit Album Version)| 69
-|Be Careful With A Fool| 74
-|Soldats Ne Tirez Pas| 84
-|Six| 85
-|Sound Clash (featuring Beenie Man) - FattaSly Extended Mix| 90
-|Wicker Chair| 93
-|Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)| 94
-|No| 95
-|Romeo's Exile| 100
-|Wrote For Luck (12 - Remastered version)| 101
-|Down in the Lowlands| 102
-|Shameless| 109
-|Bukka White's third song| 116
-|Safe Passage| 119
-|Johnny Winter's second song| 124
-|If That's True| 146
-|Doggin' Around| 149
-|Black Tiger| 157
-|Johnny Winter's third song| 162
-|Oversleeping| 164
-|Sporco Ma Distinto| 175
-|Born and Raised In Compton| 181
-|Pretty Girl (Amended Version)| 192
-|Don't Keep Me Wondering| 194
-|Johnny Winter's fourth song| 197
+|For Your Passion My Love| 6
+|Function Of The Sun| 9
+|Sarah Yellin'| 22
+|What Are We Here For| 23
+|Decide| 24
+|Movement 4 [from Kiss] (Album Version)| 25
+|Well Oh Well| 30
+|Johnny Winter's fifth song| 31
+|She Blinded Me With Science| 33
+|Dancing With Tears In My Eyes 2004 (Nova Mix (Club Version))| 34
+|Juguete| 39
+|If You Should Walk Away| 40
+|Deep Blue| 41
+|This Is Where It Ends (Album Version)| 43
+|11th Street| 46
+|Johnny Winter's first song| 59
+|I Think My Wife Is Running Around On Me (Taco Hell)| 61
+|My God (Audio Adrenaline Album Version)| 63
+|The Girl From Ipanema (Garota De Ipanema)| 67
+|Pimpin' Don't Fail Me Now [Featuring Jazze Pha and Juvenile] (Explicit Album Version)| 68
+|Be Careful With A Fool| 73
+|Soldats Ne Tirez Pas| 83
+|Six| 84
+|Sound Clash (featuring Beenie Man) - FattaSly Extended Mix| 89
+|Wicker Chair| 92
+|Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)| 93
+|No| 94
+|Romeo's Exile| 99
+|Wrote For Luck (12 - Remastered version)| 100
+|Down in the Lowlands| 101
+|Shameless| 108
+|Bukka White's third song| 115
+|Safe Passage| 118
+|Johnny Winter's second song| 123
+|If That's True| 145
+|Doggin' Around| 148
+|Black Tiger| 156
+|Johnny Winter's third song| 161
+|Oversleeping| 163
+|Sporco Ma Distinto| 174
+|Born and Raised In Compton| 180
+|Pretty Girl (Amended Version)| 191
+|Don't Keep Me Wondering| 193
+|Johnny Winter's fourth song| 196
+|Your Revolution Is A Joke| 199
 total songs: 45
 |Silverstein| is added to the Artist database.
 |Always And Never (Album Version)| is added to the Song database.
@@ -915,101 +915,101 @@ The KVPair (|The Girl From Ipanema (Garota De Ipanema)|,|Paula Santoro|) is dele
 The KVPair (|Paula Santoro|,|The Girl From Ipanema (Garota De Ipanema)|) is deleted from the tree.
 |The Girl From Ipanema (Garota De Ipanema)| is deleted from the Song database.
 |Paula Santoro| is deleted from the Artist database.
-|Tiny Bradshaw| 0
-|John Cale| 1
-|All Time Low| 6
-|DJ Quik| 10
-|Johnny Winter| 12
-|Cheo Feliciano| 27
-|Aeoliah| 28
-|Green Day| 31
-|Rita Chiarelli| 32
-|Happy Mondays| 43
-|Y&T| 46
-|David Arkenstone| 56
-|Chris Clark| 57
-|Mr. Lif| 58
-|No Address| 62
-|Charlie Peacock| 63
-|Barenaked Ladies| 65
-|Silverstein| 66
-|Tim Wilson| 67
-|Faithless| 82
-|Audio Adrenaline| 87
-|Buddy Miles| 88
-|Esperanza Spalding / Leo Genovese| 92
-|themselves| 109
-|Chelsea| 119
-|Sylver| 121
-|The Ruby Suns| 122
-|Gary Moore| 130
-|8Ball & MJG| 131
-|Dream Warriors| 134
-|Hot Chip| 140
-|3 Doors Down| 143
-|Michael Gettel| 147
-|Gerard Lenorman| 148
-|Another Johnny Winter| 149
-|Kings Of Leon| 157
-|Another Bukka White| 159
-|Novaspace| 160
-|Open Hand| 164
-|Funeral For A Friend| 169
-|Thomas Dolby| 174
-|Liam O'Flynn| 177
-|Ennio Morricone| 190
-|Kyle Riabko| 198
-|Dave Eggar| 199
+|John Cale| 0
+|Johnny Winter| 4
+|All Time Low| 5
+|DJ Quik| 9
+|Cheo Feliciano| 26
+|Aeoliah| 27
+|Green Day| 30
+|Rita Chiarelli| 31
+|Happy Mondays| 42
+|Y&T| 45
+|David Arkenstone| 55
+|Chris Clark| 56
+|Mr. Lif| 57
+|No Address| 61
+|Charlie Peacock| 62
+|Barenaked Ladies| 64
+|Silverstein| 65
+|Tim Wilson| 66
+|Faithless| 81
+|Audio Adrenaline| 86
+|Buddy Miles| 87
+|Esperanza Spalding / Leo Genovese| 91
+|themselves| 108
+|Chelsea| 118
+|Sylver| 120
+|The Ruby Suns| 121
+|Gary Moore| 129
+|8Ball & MJG| 130
+|Dream Warriors| 133
+|Hot Chip| 139
+|3 Doors Down| 142
+|Michael Gettel| 146
+|Gerard Lenorman| 147
+|Another Johnny Winter| 148
+|Kings Of Leon| 156
+|Another Bukka White| 158
+|Novaspace| 159
+|Open Hand| 163
+|Funeral For A Friend| 168
+|Thomas Dolby| 173
+|Liam O'Flynn| 176
+|Ennio Morricone| 189
+|Kyle Riabko| 197
+|Dave Eggar| 198
+|Tiny Bradshaw| 199
 total artists: 45
-|Your Revolution Is A Joke| 0
-|For Your Passion My Love| 7
-|Function Of The Sun| 10
-|Doesn't Get Much Better| 11
-|Sarah Yellin'| 23
-|What Are We Here For| 24
-|Decide| 25
-|Movement 4 [from Kiss] (Album Version)| 26
-|Well Oh Well| 31
-|Johnny Winter's fifth song| 32
-|She Blinded Me With Science| 34
-|Dancing With Tears In My Eyes 2004 (Nova Mix (Club Version))| 35
-|Juguete| 40
-|If You Should Walk Away| 41
-|Deep Blue| 42
-|This Is Where It Ends (Album Version)| 44
-|11th Street| 47
-|Always And Never (Album Version)| 56
-|Johnny Winter's first song| 60
-|I Think My Wife Is Running Around On Me (Taco Hell)| 62
-|My God (Audio Adrenaline Album Version)| 64
-|Pimpin' Don't Fail Me Now [Featuring Jazze Pha and Juvenile] (Explicit Album Version)| 69
-|Be Careful With A Fool| 74
-|Soldats Ne Tirez Pas| 84
-|Six| 85
-|Sound Clash (featuring Beenie Man) - FattaSly Extended Mix| 90
-|Wicker Chair| 93
-|Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)| 94
-|No| 95
-|Romeo's Exile| 100
-|Wrote For Luck (12 - Remastered version)| 101
-|Down in the Lowlands| 102
-|Shameless| 109
-|Bukka White's third song| 116
-|Safe Passage| 119
-|For You| 120
-|Johnny Winter's second song| 124
-|The Forgotten Lands| 134
-|If That's True| 146
-|Doggin' Around| 149
-|Sympathy| 150
-|Black Tiger| 157
-|Johnny Winter's third song| 162
-|Oversleeping| 164
-|Sporco Ma Distinto| 175
-|Born and Raised In Compton| 181
-|Pretty Girl (Amended Version)| 192
-|Don't Keep Me Wondering| 194
-|Johnny Winter's fourth song| 197
+|For Your Passion My Love| 6
+|Function Of The Sun| 9
+|Doesn't Get Much Better| 10
+|Sarah Yellin'| 22
+|What Are We Here For| 23
+|Decide| 24
+|Movement 4 [from Kiss] (Album Version)| 25
+|Well Oh Well| 30
+|Johnny Winter's fifth song| 31
+|She Blinded Me With Science| 33
+|Dancing With Tears In My Eyes 2004 (Nova Mix (Club Version))| 34
+|Juguete| 39
+|If You Should Walk Away| 40
+|Deep Blue| 41
+|This Is Where It Ends (Album Version)| 43
+|11th Street| 46
+|Always And Never (Album Version)| 55
+|Johnny Winter's first song| 59
+|I Think My Wife Is Running Around On Me (Taco Hell)| 61
+|My God (Audio Adrenaline Album Version)| 63
+|Pimpin' Don't Fail Me Now [Featuring Jazze Pha and Juvenile] (Explicit Album Version)| 68
+|Be Careful With A Fool| 73
+|Soldats Ne Tirez Pas| 83
+|Six| 84
+|Sound Clash (featuring Beenie Man) - FattaSly Extended Mix| 89
+|Wicker Chair| 92
+|Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)| 93
+|No| 94
+|Romeo's Exile| 99
+|Wrote For Luck (12 - Remastered version)| 100
+|Down in the Lowlands| 101
+|Shameless| 108
+|Bukka White's third song| 115
+|Safe Passage| 118
+|For You| 119
+|Johnny Winter's second song| 123
+|The Forgotten Lands| 133
+|If That's True| 145
+|Doggin' Around| 148
+|Sympathy| 149
+|Black Tiger| 156
+|Johnny Winter's third song| 161
+|Oversleeping| 163
+|Sporco Ma Distinto| 174
+|Born and Raised In Compton| 180
+|Pretty Girl (Amended Version)| 191
+|Don't Keep Me Wondering| 193
+|Johnny Winter's fourth song| 196
+|Your Revolution Is A Joke| 199
 total songs: 49
 |Funeral For A Friend| duplicates a record already in the Artist database.
 |Your Revolution Is A Joke| duplicates a record already in the Song database.
@@ -1135,7 +1135,6 @@ The KVPair (|Jean Corti|,|C'Etait Bien|) is deleted from the tree.
 The KVPair (|C'Etait Bien|,|Jean Corti|) is deleted from the tree.
 |Jean Corti| is deleted from the Artist database.
 |C'Etait Bien| is deleted from the Song database.
-|Jean Corti| does not exist in the artist database.
 |Richard Galliano| does not exist in the artist database.
 The KVPair (|Movement 4 [from Kiss] (Album Version)|,|John Cale|) is deleted from the tree.
 The KVPair (|John Cale|,|Movement 4 [from Kiss] (Album Version)|) is deleted from the tree.
@@ -2113,544 +2112,546 @@ The KVPair (|Crayon Sharpener|,|themselves|) is deleted from the tree.
 |themselves| is deleted from the Artist database.
 |Crayon Sharpener| is deleted from the Song database.
 |Crayon Sharpener| does not exist in the song database.
-|Your Revolution Is A Joke| 0
-|Murder One| 1
-|Immonumental| 6
-|Too Much Stuff| 8
-|Jump In My Bed| 13
-|Dancing With Tears In My Eyes 2004 (Nova Mix (Club Version))| 31
-|Lookin' For Me Somewhere| 32
-|Summer Dying Fast| 38
-|If You Should Walk Away| 40
-|Deep Blue| 42
-|This Is Where It Ends (Album Version)| 44
-|Escape From The Underrealm| 47
-|Cerilene| 48
-|Pretty Woman (LP Version)| 49
-|Freak| 50
-|Big Business| 51
-|On Misty Pathways| 52
-|Attic Room| 53
-|Party Time| 55
-|Johnny Winter's first song| 60
-|So ist das nun mal| 62
-|Getaway| 63
-|Consume (LP Version)| 64
-|Into Battle| 66
-|Undertow| 72
-|They Have a Name| 73
-|Chime (edit)| 77
-|Big Girl Blues| 79
-|Volumatic Spacer Device| 81
-|Six| 84
-|Bliv Du Till Gran (If You Became A Spruce)| 88
-|Trapdoor| 89
-|Manila| 90
-|Oh It's You| 93
-|It's All In My Mind| 96
-|Woo Hoo| 97
-|Down in the Lowlands| 102
-|The Ride (Album)| 105
-|Give Your Heart a Home| 106
-|Sweetest Goodbye| 108
-|Boom-Shack-A-Lack (12 Mmix / Bonus Tra)| 109
-|Hard Times| 110
-|When Morning Comes To Town| 113
-|Listen| 114
-|Shed So Many Tears| 115
-|Can't Do Me No Good| 117
-|Honey Fingers| 131
-|The Forgotten Lands| 134
-|These Words| 140
-|Can't Happen Here| 141
-|Sympathy| 149
-|Up All Night (Acoustic Live Album Version)| 154
-|Waheera| 157
-|We've Only Just Begun (LP Version)| 158
-|Scientas| 162
-|Al Final| 171
-|Anfang Vom Ende| 173
-|Valerie (LP Version)| 176
-|If I Know You| 182
-|The Painter| 185
-|Sound Clash| 186
-|Pretty Girl (Amended Version)| 192
-|Erick Sermon| 195
-|Happy Safari| 200
-|Harboring An Apparition| 201
-|Tainted Love feat. Tatz| 202
-|Be My Lover| 210
-|Wake Up! Wake Up! (Wake Up! Wake Up! Album Version)| 212
-|No Sympathy For Fools| 219
-|Ghetto| 220
-|Indian Love Call| 221
-|What Are We Here For| 224
-|Burn 'Em Down (LP Version)| 225
-|Year 3_000 Blues (2002 Digital Remaster)| 233
-|Commercial Reign| 239
-|Juguete| 240
-|De Onda| 243
-|11th Street| 247
-|I'm Real| 252
-|The One I Got| 257
-|Down South Blues| 261
-|Nonfiction| 263
-|Damien| 266
-|The Unidentified Flying Object| 272
-|Be Careful With A Fool| 274
-|LEAVE!| 275
-|Beauty And The Beast| 278
-|A Dustland Fairytale| 280
-|River Is Waiting| 281
-|So Not Over You (Motivo-Pop Lectro Mix)| 282
-|A Devil's Ransom (Album Version)| 283
-|Reborn (Explicit)| 284
-|Everyday| 287
-|Changed My Life| 289
-|Spoonful| 290
-|Wicker Chair| 293
-|Let's Make Love (Album Version)| 299
-|With Tears In My Eyes| 300
-|No Unexpected Guests| 303
-|Feelings| 304
-|Kite Live from Sydney| 306
-|Quiet Time| 307
-|Patience| 310
-|Bukka White's third song| 316
-|Redwing| 317
-|Got To Give It Up| 318
-|For You| 320
-|Plastic People| 321
-|Be| 323
-|Johnny Winter's second song| 324
-|Career Suicide (CD)| 326
-|How Ya Like Me Now| 327
-|Gold Flames Of Angels| 329
-|No More Doggin'| 331
-|Ich bleib so wie ich bin| 334
-|The Majesty Of Rock| 339
-|Show a Sign of Life| 341
-|Doggin' Around| 349
-|Pottajenkka| 350
-|Something Girls| 353
-|Baggage| 356
-|Risen From Within| 359
-|Away In A Manger| 369
-|22 Going On 23| 372
-|Born and Raised In Compton| 381
-|Bigbigkiss| 383
-|Sea_ Subsurface| 392
-|Cop It| 397
-|Prove Something (explicit album version)| 405
-|Printemps| 408
-|Doesn't Get Much Better| 411
-|I'm On Your Tail| 412
-|I Love You More Than You'll Ever Know (LP Version)| 421
-|Decide| 425
-|Si Es Que Te Vas| 428
-|Inherent Scars| 430
-|Well Oh Well| 431
-|Johnny Winter's fifth song| 432
-|Yiri Yiri Bon| 433
-|Gotta Cut Out| 434
-|Always And Never (Album Version)| 435
-|Song Sung Blue| 436
-|Bleeds In Blue (Album Version)| 440
-|Better Days (Album Version)| 442
-|Tonight| 444
-|Good Enough| 445
-|The Dark Road| 446
-|The Lie| 449
-|Love Can Run Faster| 450
-|Salvation| 451
-|Send Me An Angel| 452
-|Chela| 453
-|Women| 454
-|Frankie And Johnny| 459
-|I Think My Wife Is Running Around On Me (Taco Hell)| 462
-|Talk To Your Daughter (Album Version)| 463
-|Breakin' Dishes| 470
-|Short On Ideas / One Last Cigarette| 472
-|God You Are My God| 478
-|King Of Rock| 479
-|Danny's All-Star Joint (LP Version)| 480
-|The Czar: Usurper/Escape/Martyr/Spiral (Album Version)| 481
-|Two Track Dub (Dub / Instrumental Reggae Music)| 484
-|Certain Things We Do| 485
-|Sound Clash (featuring Beenie Man) - FattaSly Extended Mix| 490
-|Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)| 493
-|No| 495
-|Five Long Years| 496
-|I Am Your Mother Too| 497
-|Harmony Of The Forest| 498
-|Riot In Cell Block #9| 499
-|Ride Wit Me| 500
-|Wrote For Luck (12 - Remastered version)| 501
-|House Of Wolves (Album Version)| 502
-|Sweet Lover Hangover| 505
-|Mistadobalina| 506
-|Walking The Back Streets And Crying| 517
-|Safe Passage| 519
-|Antes (Salsa Version)| 530
-|Ye That Tempteth_ Ye That Bequeth| 534
-|Come Alive| 538
-|Last Good Time In Town| 547
-|From The Ritz To The Rubble| 548
-|The Race| 551
-|Not Buried Deep Enough| 552
-|Any Wich Way (Freedom Must Come)| 557
-|Mama Kin| 558
-|Angel| 559
-|Sporable| 565
-|Contact 00| 566
-|Voodoo Punnany (Album Version)| 567
-|Living The Dream| 569
-|Sporco Ma Distinto| 575
-|Come Around (LP Version)| 576
-|Crazy Circles| 578
-|Die Meisten| 582
-|Gallows (Album Version)| 584
-|After Hours| 585
-|Reminisce For A While (Sung With Raul Malo)| 600
-|Same Game| 601
-|Comme Toi (Live)| 603
-|I Versus I| 604
-|Come Dance With Me| 605
-|For Your Passion My Love| 607
-|Macarena| 608
-|Function Of The Sun| 610
-|Get It Together| 616
-|Busted| 617
-|I'm Not A Loser| 620
-|Loko| 621
-|De rien| 622
-|Sarah Yellin'| 623
-|Journey's End| 624
-|She Blinded Me With Science| 625
-|Why_ Now Baby?| 626
-|Maria De Santiago| 627
-|To Sir With Love| 628
-|American Lovebite| 629
-|Tic| 630
-|Like Dylan In The Movies| 631
-|Common sense| 632
-|Please Send Me Someone To Love| 633
-|The Letter That Johnny Walker Read| 634
-|Caribou Lou| 635
-|Rescue Me| 637
-|Misty Bog| 638
-|No One Hears You| 642
-|2.000 Kilometros| 643
-|Party In The Stomach (LP Version)| 659
-|My God (Audio Adrenaline Album Version)| 660
-|Makin' Believe| 663
-|Pimpin' Don't Fail Me Now [Featuring Jazze Pha and Juvenile] (Explicit Album Version)| 669
-|Make That Money (Scrooge's Song) (Album Version)| 670
-|Dying Batteries| 681
-|13 jours en France| 682
-|Soldats Ne Tirez Pas| 684
-|Shameless| 685
-|Leather Prowler| 689
-|Down On Me| 690
-|Let Me Show You The Way (Out)| 695
-|Main Street Eyes| 696
-|My Prerogative| 701
-|Every Other Way| 702
-|Red Socks Pugie| 704
-|Cry| 708
-|Black and Blue| 711
-|Idnnitkhtr| 712
-|The Joes Mobilize| 717
-|Micael| 723
-|Around And Around| 724
-|Soc Mediterrani| 726
-|Moss Garden (1999 Digital Remaster)| 728
-|Heavy Like Sunday| 731
-|Everything Man (Album Version)| 732
-|A Brief History of Shitty Comedy| 735
-|It's All In How You Look At It| 736
-|Same Old Thing| 738
-|Sensations| 739
-|You Never Cry Like A Lover (LP Version)| 740
-|Old Friends| 741
-|Nothing In Rambling| 747
-|Freedom| 748
-|Ammonite| 752
-|I Like Young Girls| 753
-|Black Tiger| 757
-|8th Wonder| 758
-|Time / Confusion| 759
-|Heaven's In New York| 761
-|Johnny Winter's third song| 762
-|All On Our Own| 765
-|Finding My Way| 766
-|Q Loop| 769
-|La Route Est Belle| 776
-|Ma Rainey's Black Bottom| 777
-|Everyday I Have The Blues| 778
-|Good Friend| 781
-|My Babe| 783
-|Ripped Pants| 793
-|Don't Keep Me Wondering| 794
-|Johnny Winter's fourth song| 797
-|No Good Without You| 798
-total songs: 281
-|Bert Kaempfert| 2
-|Leigh Jones| 3
-|Young-Holt Unlimited| 4
-|Asleep At The Wheel| 5
-|TAKARU| 7
-|White Willow| 9
-|Jeremy Spencer| 13
-|Fat Joe| 17
-|Leona Naess| 19
-|Cheo Feliciano| 27
-|Otis Spann| 30
-|Rita Chiarelli| 32
-|Bone Thugs-N-Harmony| 36
-|The Gone Jackals| 39
-|Mikey Dread| 44
-|Behemoth| 48
-|Rainbow| 53
-|Chris Clark| 56
-|Mr. Lif| 58
-|Maroon 5| 61
-|Silverstein| 62
-|Natalie Cole| 63
-|Aerosmith| 65
-|Cradle Of Filth| 66
-|Lost Boyz| 71
-|Arthur Brown| 73
-|Jean-Jacques Goldman| 77
-|Bersuit Vergarabat| 80
-|Chase & Status| 81
-|The Sugarhill Gang| 84
-|U2| 86
-|Rance Allen Group| 91
-|Wyclef Jean| 98
-|Bad Azz| 100
-|Home Town Hero| 105
-|Joe Rogan| 107
-|Guns N' Roses| 110
-|Danny Barnes| 112
-|Jimmy McCracklin| 114
-|Britney Spears| 118
-|Chelsea| 119
-|Sylver| 121
-|The Ruby Suns| 122
-|Foals| 123
-|Manjul| 131
-|Shy FX & T Power| 137
-|Simon & Garfunkel| 138
-|Hot Chip| 140
-|Kitty Wells| 145
-|Obie Bermudez| 151
-|Enslavement Of Beauty| 153
-|Atreyu| 155
-|Bad Religion| 156
-|Mouth Of The Architect| 161
-|Funeral For A Friend| 169
-|Delirious| 170
-|David Summers| 173
-|Astarte| 180
-|Freddie King| 182
-|Robert Palmer| 184
-|Swami| 189
-|Elakelaiset| 190
-|Andreas Dorau| 192
-|Erick Sermon| 195
-|Dave Eggar| 198
-|Lightnin' Hopkins| 203
-|Rickie Lee Jones| 208
-|Juana Molina| 216
-|Mithotyn| 221
-|Everyday Sunday| 227
-|Los Del Rio| 228
-|Simply Red| 229
-|Regina Belle| 230
-|The Rolling Stones| 232
-|The Presets| 234
-|Nightwish| 235
-|Lara & Reyes| 242
-|Kelly Clarkson| 245
-|KRS-One| 251
-|Ricardo Lemvo| 256
-|Inspiral Carpets| 259
-|No Address| 262
-|Les Ogres De Barback| 273
-|D:Fuse| 280
-|Tech N9ne| 282
-|Liars| 288
-|Adam Ant| 290
-|Sick Of It All| 297
-|Jah Cure| 302
-|Bury Your Dead| 310
-|Rihanna| 321
-|Jennifer Lopez featuring Ja Rule| 322
-|T-Bone| 323
-|Less Than Jake| 326
-|Sleepy John Estes| 331
-|Human Disease| 335
-|Chroma Key| 342
-|Michael Gettel| 347
-|Another Johnny Winter| 349
-|Pyranja| 351
-|Stanley Clarke & George Duke| 356
-|Unwritten Law| 357
-|Novaspace| 359
-|Kool Moe Dee| 364
-|MIMS| 366
-|Stephen Pearcy| 367
-|Albert Collins| 369
-|Aisha Duo| 370
-|Donny Hathaway| 371
-|Beastie Boys| 377
-|Bikini Machine| 384
-|Oztara| 386
-|Cinder| 393
-|Casiotone For The Painfully Alone| 394
-|The Plimsouls| 395
-|Zeromancer| 397
-|Kyle Riabko| 399
-|Tiny Bradshaw| 400
-|Kassav'| 401
-|Lightnin' Slim| 402
-|Percy Mayfield| 403
-|Arctic Monkeys| 404
-|Spongebob Squarepants| 405
-|All Time Low| 406
-|Spinal Tap| 407
-|DJ Quik| 410
-|Toni Braxton| 413
-|Kitaro| 414
-|Eko Fresh feat. Ado| 415
-|One Block Radius| 417
-|Del Tha Funkee Homosapien| 418
-|Robben Ford| 423
-|Bad Company| 424
-|Aeoliah| 427
-|Big Jay Oakerson| 430
-|Green Day| 431
-|The Black Crowes| 433
-|Jim Breuer| 434
-|Plump DJs| 436
-|Evanescence| 441
-|Sister Hazel| 442
-|Y&T| 443
-|The Killers| 453
-|David Arkenstone| 456
-|Slim Whitman| 457
-|The Paul Butterfield Blues Band| 460
-|Commander Cody And His Lost Planet Airmen| 461
-|Charlie Peacock| 463
-|Irma Thomas| 471
-|Descendents| 472
-|Don Francisco| 477
-|Faithless| 482
-|Agnostic Front| 483
-|Dons| 485
-|Buddy Miles| 488
-|BT feat. JES| 489
-|Janis Joplin| 494
-|Dilated Peoples| 501
-|Alice Cooper| 502
-|Wesley Tuttle| 503
-|Symphony in Peril| 504
-|Shamen| 505
-|Belle and Sebastian| 507
-|Talib Kweli| 508
-|Winifred Phillips| 509
-|Phil Collins| 510
-|Baby Bash / Grimm| 511
-|45 Grave| 519
-|The Birds| 522
-|Memphis Minnie| 524
-|8Ball & MJG| 530
-|Love Jones| 531
-|Dream Warriors| 534
-|The Token| 536
-|My Chemical Romance| 537
-|Dave Brockie Experience| 539
-|Drowning Pool| 543
-|Thomas Dolby| 549
-|DMX| 550
-|Four Tet| 551
-|Samy Deluxe| 553
-|Hem| 554
-|Kings Of Leon| 557
-|Faith Hill & Tim McGraw| 558
-|Helmet| 559
-|L7| 561
-|Tilman Sillescu| 562
-|Open Hand| 564
-|Groupa| 568
-|Jackson United| 569
-|Super Cat| 570
-|Mastodon| 573
-|James Taylor Quartet| 578
-|FFH| 583
-|Teenage Fanclub| 584
-|Iggy Pop| 586
-|NG3| 591
-|Butthole Surfers| 593
-|Flowin Immo et Les Freaqz| 595
-|Johnny Winter| 596
-|Phantom Planet| 602
-|High Strung_ The| 606
-|Junior Reid| 607
-|David Bowie| 608
-|Primordial| 609
-|Alan Silvestri| 618
-|Seguridad Social| 621
-|Helen Love| 622
-|Lady Saw| 625
-|Basic Channel| 627
-|Ten Years After| 629
-|The Chap| 632
-|Gene Autry| 634
-|Jessica Simpson| 635
-|Rooney| 636
-|KALIMBA| 637
-|Happy Mondays| 643
-|BoDeans| 644
-|Winston McAnuff_ The Bazbaz Orchestra| 645
-|V V Brown| 647
-|Ma Rainey| 648
-|Patton Oswalt| 651
-|Sonora Carruseles| 653
-|James Horner| 656
-|John Frizzell| 657
-|Seventh Star| 661
-|RUN-DMC| 663
-|Barenaked Ladies| 665
-|Tim Wilson| 667
-|Love and Rockets| 668
-|Natasha Bedingfield| 672
-|Paul Carrack| 675
-|Richard Galliano| 676
-|Audio Adrenaline| 687
-|Jonny Lang| 690
-|Carlos Vives| 700
-|Neil Diamond| 701
-|Orbital| 708
-|Torcuato Mariano| 723
-|Francis Lai| 726
-|Perrey And Kingsley| 729
-|Gary Moore| 730
-|Martin Denny| 732
-|3 Doors Down| 743
-|Gerard Lenorman| 748
-|Keb' Mo'| 749
-|Little Milton| 752
-|Red Stick Ramblers| 753
-|Another Bukka White| 758
-|Faith Hill| 763
-|Fontella Bass| 767
-|The Field Mice| 770
-|Arturo Sandoval| 779
-|Eagles| 780
-|The Cliks| 788
-|Ennio Morricone| 790
-|Ensiferum| 793
-|Bravehearts| 794
-total artists: 258
+|Murder One| 0
+|Immonumental| 5
+|Too Much Stuff| 7
+|Jump In My Bed| 12
+|Dancing With Tears In My Eyes 2004 (Nova Mix (Club Version))| 30
+|Lookin' For Me Somewhere| 31
+|Summer Dying Fast| 37
+|If You Should Walk Away| 39
+|Deep Blue| 41
+|This Is Where It Ends (Album Version)| 43
+|Escape From The Underrealm| 46
+|Cerilene| 47
+|Pretty Woman (LP Version)| 48
+|Freak| 49
+|Big Business| 50
+|On Misty Pathways| 51
+|Attic Room| 52
+|Party Time| 54
+|Johnny Winter's first song| 59
+|So ist das nun mal| 61
+|Getaway| 62
+|Consume (LP Version)| 63
+|Into Battle| 65
+|Undertow| 71
+|They Have a Name| 72
+|Chime (edit)| 76
+|Big Girl Blues| 78
+|Volumatic Spacer Device| 80
+|Six| 83
+|Bliv Du Till Gran (If You Became A Spruce)| 87
+|Trapdoor| 88
+|Manila| 89
+|Oh It's You| 92
+|It's All In My Mind| 95
+|Woo Hoo| 96
+|Down in the Lowlands| 101
+|The Ride (Album)| 104
+|Give Your Heart a Home| 105
+|Sweetest Goodbye| 107
+|Boom-Shack-A-Lack (12 Mmix / Bonus Tra)| 108
+|Hard Times| 109
+|When Morning Comes To Town| 112
+|Listen| 113
+|Shed So Many Tears| 114
+|Can't Do Me No Good| 116
+|Honey Fingers| 130
+|The Forgotten Lands| 133
+|These Words| 139
+|Can't Happen Here| 140
+|Sympathy| 148
+|Up All Night (Acoustic Live Album Version)| 153
+|Waheera| 156
+|We've Only Just Begun (LP Version)| 157
+|Scientas| 161
+|Al Final| 170
+|Anfang Vom Ende| 172
+|Valerie (LP Version)| 175
+|If I Know You| 181
+|The Painter| 184
+|Sound Clash| 185
+|Pretty Girl (Amended Version)| 191
+|Erick Sermon| 194
+|C'Etait Bien| 198
+|Happy Safari| 199
+|Harboring An Apparition| 200
+|Tainted Love feat. Tatz| 201
+|Be My Lover| 209
+|Wake Up! Wake Up! (Wake Up! Wake Up! Album Version)| 211
+|No Sympathy For Fools| 218
+|Ghetto| 219
+|Indian Love Call| 220
+|What Are We Here For| 223
+|Burn 'Em Down (LP Version)| 224
+|Year 3_000 Blues (2002 Digital Remaster)| 232
+|Commercial Reign| 238
+|Juguete| 239
+|De Onda| 242
+|11th Street| 246
+|I'm Real| 251
+|The One I Got| 256
+|Down South Blues| 260
+|Nonfiction| 262
+|Damien| 265
+|The Unidentified Flying Object| 271
+|Be Careful With A Fool| 273
+|LEAVE!| 274
+|Beauty And The Beast| 277
+|A Dustland Fairytale| 279
+|River Is Waiting| 280
+|So Not Over You (Motivo-Pop Lectro Mix)| 281
+|A Devil's Ransom (Album Version)| 282
+|Reborn (Explicit)| 283
+|Everyday| 286
+|Changed My Life| 288
+|Spoonful| 289
+|Wicker Chair| 292
+|Let's Make Love (Album Version)| 298
+|With Tears In My Eyes| 299
+|No Unexpected Guests| 302
+|Feelings| 303
+|Kite Live from Sydney| 305
+|Quiet Time| 306
+|Patience| 309
+|Bukka White's third song| 315
+|Redwing| 316
+|Got To Give It Up| 317
+|For You| 319
+|Plastic People| 320
+|Be| 322
+|Johnny Winter's second song| 323
+|Career Suicide (CD)| 325
+|How Ya Like Me Now| 326
+|Gold Flames Of Angels| 328
+|No More Doggin'| 330
+|Ich bleib so wie ich bin| 333
+|The Majesty Of Rock| 338
+|Show a Sign of Life| 340
+|Doggin' Around| 348
+|Pottajenkka| 349
+|Something Girls| 352
+|Baggage| 355
+|Risen From Within| 358
+|Away In A Manger| 368
+|22 Going On 23| 371
+|Born and Raised In Compton| 380
+|Bigbigkiss| 382
+|Sea_ Subsurface| 391
+|Cop It| 396
+|Prove Something (explicit album version)| 404
+|Printemps| 407
+|Doesn't Get Much Better| 410
+|I'm On Your Tail| 411
+|I Love You More Than You'll Ever Know (LP Version)| 420
+|Decide| 424
+|Si Es Que Te Vas| 427
+|Inherent Scars| 429
+|Well Oh Well| 430
+|Johnny Winter's fifth song| 431
+|Yiri Yiri Bon| 432
+|Gotta Cut Out| 433
+|Always And Never (Album Version)| 434
+|Song Sung Blue| 435
+|Bleeds In Blue (Album Version)| 439
+|Better Days (Album Version)| 441
+|Tonight| 443
+|Good Enough| 444
+|The Dark Road| 445
+|The Lie| 448
+|Love Can Run Faster| 449
+|Salvation| 450
+|Send Me An Angel| 451
+|Chela| 452
+|Women| 453
+|Frankie And Johnny| 458
+|I Think My Wife Is Running Around On Me (Taco Hell)| 461
+|Talk To Your Daughter (Album Version)| 462
+|Breakin' Dishes| 469
+|Short On Ideas / One Last Cigarette| 471
+|God You Are My God| 477
+|King Of Rock| 478
+|Danny's All-Star Joint (LP Version)| 479
+|The Czar: Usurper/Escape/Martyr/Spiral (Album Version)| 480
+|Two Track Dub (Dub / Instrumental Reggae Music)| 483
+|Certain Things We Do| 484
+|Sound Clash (featuring Beenie Man) - FattaSly Extended Mix| 489
+|Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)| 492
+|No| 494
+|Five Long Years| 495
+|I Am Your Mother Too| 496
+|Harmony Of The Forest| 497
+|Riot In Cell Block #9| 498
+|Ride Wit Me| 499
+|Wrote For Luck (12 - Remastered version)| 500
+|House Of Wolves (Album Version)| 501
+|Sweet Lover Hangover| 504
+|Mistadobalina| 505
+|Walking The Back Streets And Crying| 516
+|Safe Passage| 518
+|Antes (Salsa Version)| 529
+|Ye That Tempteth_ Ye That Bequeth| 533
+|Come Alive| 537
+|Last Good Time In Town| 546
+|The Race| 550
+|Not Buried Deep Enough| 551
+|From The Ritz To The Rubble| 555
+|Any Wich Way (Freedom Must Come)| 556
+|Mama Kin| 557
+|Angel| 558
+|Sporable| 564
+|Contact 00| 565
+|Voodoo Punnany (Album Version)| 566
+|Living The Dream| 568
+|Sporco Ma Distinto| 574
+|Come Around (LP Version)| 575
+|Crazy Circles| 577
+|Die Meisten| 581
+|Gallows (Album Version)| 583
+|After Hours| 584
+|Reminisce For A While (Sung With Raul Malo)| 599
+|Same Game| 600
+|Comme Toi (Live)| 602
+|I Versus I| 603
+|Come Dance With Me| 604
+|For Your Passion My Love| 606
+|Macarena| 607
+|Function Of The Sun| 609
+|Get It Together| 615
+|Busted| 616
+|I'm Not A Loser| 619
+|Loko| 620
+|De rien| 621
+|Sarah Yellin'| 622
+|Journey's End| 623
+|She Blinded Me With Science| 624
+|Why_ Now Baby?| 625
+|Maria De Santiago| 626
+|To Sir With Love| 627
+|American Lovebite| 628
+|Tic| 629
+|Like Dylan In The Movies| 630
+|Common sense| 631
+|Please Send Me Someone To Love| 632
+|The Letter That Johnny Walker Read| 633
+|Caribou Lou| 634
+|Rescue Me| 636
+|Misty Bog| 637
+|No One Hears You| 641
+|2.000 Kilometros| 642
+|Party In The Stomach (LP Version)| 658
+|My God (Audio Adrenaline Album Version)| 659
+|Makin' Believe| 662
+|Pimpin' Don't Fail Me Now [Featuring Jazze Pha and Juvenile] (Explicit Album Version)| 668
+|Make That Money (Scrooge's Song) (Album Version)| 669
+|Dying Batteries| 680
+|13 jours en France| 681
+|Soldats Ne Tirez Pas| 683
+|Shameless| 684
+|Leather Prowler| 688
+|Down On Me| 689
+|Let Me Show You The Way (Out)| 694
+|Main Street Eyes| 695
+|My Prerogative| 700
+|Every Other Way| 701
+|Red Socks Pugie| 703
+|Cry| 707
+|Black and Blue| 710
+|Idnnitkhtr| 711
+|The Joes Mobilize| 716
+|Micael| 722
+|Around And Around| 723
+|Soc Mediterrani| 725
+|Moss Garden (1999 Digital Remaster)| 727
+|Heavy Like Sunday| 730
+|Everything Man (Album Version)| 731
+|A Brief History of Shitty Comedy| 734
+|It's All In How You Look At It| 735
+|Same Old Thing| 737
+|Sensations| 738
+|You Never Cry Like A Lover (LP Version)| 739
+|Old Friends| 740
+|Nothing In Rambling| 746
+|Freedom| 747
+|Ammonite| 751
+|I Like Young Girls| 752
+|Black Tiger| 756
+|8th Wonder| 757
+|Time / Confusion| 758
+|Heaven's In New York| 760
+|Johnny Winter's third song| 761
+|All On Our Own| 764
+|Finding My Way| 765
+|Q Loop| 768
+|La Route Est Belle| 775
+|Ma Rainey's Black Bottom| 776
+|Everyday I Have The Blues| 777
+|Good Friend| 780
+|My Babe| 782
+|Ripped Pants| 792
+|Don't Keep Me Wondering| 793
+|Johnny Winter's fourth song| 796
+|No Good Without You| 797
+|Your Revolution Is A Joke| 799
+total songs: 282
+|Bert Kaempfert| 1
+|Leigh Jones| 2
+|Young-Holt Unlimited| 3
+|Asleep At The Wheel| 4
+|TAKARU| 6
+|White Willow| 8
+|Jeremy Spencer| 12
+|Fat Joe| 16
+|Leona Naess| 18
+|Cheo Feliciano| 26
+|Otis Spann| 29
+|Rita Chiarelli| 31
+|Bone Thugs-N-Harmony| 35
+|The Gone Jackals| 38
+|Mikey Dread| 43
+|Behemoth| 47
+|Rainbow| 52
+|Chris Clark| 55
+|Mr. Lif| 57
+|Maroon 5| 60
+|Silverstein| 61
+|Natalie Cole| 62
+|Aerosmith| 64
+|Cradle Of Filth| 65
+|Lost Boyz| 70
+|Arthur Brown| 72
+|Jean-Jacques Goldman| 76
+|Bersuit Vergarabat| 79
+|Chase & Status| 80
+|The Sugarhill Gang| 83
+|U2| 85
+|Rance Allen Group| 90
+|Wyclef Jean| 97
+|Bad Azz| 99
+|Home Town Hero| 104
+|Joe Rogan| 106
+|Guns N' Roses| 109
+|Danny Barnes| 111
+|Jimmy McCracklin| 113
+|Britney Spears| 117
+|Chelsea| 118
+|Sylver| 120
+|The Ruby Suns| 121
+|Foals| 122
+|Manjul| 130
+|Shy FX & T Power| 136
+|Simon & Garfunkel| 137
+|Hot Chip| 139
+|Kitty Wells| 144
+|Obie Bermudez| 150
+|Enslavement Of Beauty| 152
+|Atreyu| 154
+|Bad Religion| 155
+|Mouth Of The Architect| 160
+|Funeral For A Friend| 168
+|Delirious| 169
+|David Summers| 172
+|Astarte| 179
+|Freddie King| 181
+|Robert Palmer| 183
+|Swami| 188
+|Elakelaiset| 189
+|Andreas Dorau| 191
+|Erick Sermon| 194
+|Dave Eggar| 197
+|Lightnin' Hopkins| 202
+|Rickie Lee Jones| 207
+|Juana Molina| 215
+|Mithotyn| 220
+|Everyday Sunday| 226
+|Los Del Rio| 227
+|Simply Red| 228
+|Regina Belle| 229
+|The Rolling Stones| 231
+|The Presets| 233
+|Nightwish| 234
+|Lara & Reyes| 241
+|Kelly Clarkson| 244
+|KRS-One| 250
+|Ricardo Lemvo| 255
+|Inspiral Carpets| 258
+|No Address| 261
+|Les Ogres De Barback| 272
+|D:Fuse| 279
+|Tech N9ne| 281
+|Liars| 287
+|Adam Ant| 289
+|Sick Of It All| 296
+|Jah Cure| 301
+|Bury Your Dead| 309
+|Rihanna| 320
+|Jennifer Lopez featuring Ja Rule| 321
+|T-Bone| 322
+|Less Than Jake| 325
+|Sleepy John Estes| 330
+|Human Disease| 334
+|Chroma Key| 341
+|Michael Gettel| 346
+|Another Johnny Winter| 348
+|Pyranja| 350
+|Stanley Clarke & George Duke| 355
+|Unwritten Law| 356
+|Novaspace| 358
+|Kool Moe Dee| 363
+|MIMS| 365
+|Stephen Pearcy| 366
+|Albert Collins| 368
+|Aisha Duo| 369
+|Donny Hathaway| 370
+|Beastie Boys| 376
+|Jean Corti| 382
+|Bikini Machine| 383
+|Oztara| 385
+|Cinder| 392
+|Casiotone For The Painfully Alone| 393
+|The Plimsouls| 394
+|Zeromancer| 396
+|Kyle Riabko| 398
+|Tiny Bradshaw| 399
+|Kassav'| 400
+|Lightnin' Slim| 401
+|Percy Mayfield| 402
+|Arctic Monkeys| 403
+|Spongebob Squarepants| 404
+|All Time Low| 405
+|Spinal Tap| 406
+|DJ Quik| 409
+|Toni Braxton| 412
+|Kitaro| 413
+|Eko Fresh feat. Ado| 414
+|One Block Radius| 416
+|Del Tha Funkee Homosapien| 417
+|Robben Ford| 422
+|Bad Company| 423
+|Aeoliah| 426
+|Big Jay Oakerson| 429
+|Green Day| 430
+|The Black Crowes| 432
+|Jim Breuer| 433
+|Plump DJs| 435
+|Evanescence| 440
+|Sister Hazel| 441
+|Y&T| 442
+|The Killers| 452
+|David Arkenstone| 455
+|Slim Whitman| 456
+|The Paul Butterfield Blues Band| 459
+|Commander Cody And His Lost Planet Airmen| 460
+|Charlie Peacock| 462
+|Irma Thomas| 470
+|Descendents| 471
+|Don Francisco| 476
+|Faithless| 481
+|Agnostic Front| 482
+|Dons| 484
+|Buddy Miles| 487
+|BT feat. JES| 488
+|Janis Joplin| 493
+|Dilated Peoples| 500
+|Alice Cooper| 501
+|Wesley Tuttle| 502
+|Symphony in Peril| 503
+|Shamen| 504
+|Belle and Sebastian| 506
+|Talib Kweli| 507
+|Winifred Phillips| 508
+|Phil Collins| 509
+|Baby Bash / Grimm| 510
+|45 Grave| 518
+|The Birds| 521
+|Memphis Minnie| 523
+|8Ball & MJG| 529
+|Love Jones| 530
+|Dream Warriors| 533
+|The Token| 535
+|My Chemical Romance| 536
+|Dave Brockie Experience| 538
+|Drowning Pool| 542
+|Thomas Dolby| 548
+|DMX| 549
+|Four Tet| 550
+|Samy Deluxe| 552
+|Hem| 553
+|Kings Of Leon| 556
+|Faith Hill & Tim McGraw| 557
+|Helmet| 558
+|L7| 560
+|Tilman Sillescu| 561
+|Open Hand| 563
+|Groupa| 567
+|Jackson United| 568
+|Super Cat| 569
+|Mastodon| 572
+|James Taylor Quartet| 577
+|FFH| 582
+|Teenage Fanclub| 583
+|Iggy Pop| 585
+|NG3| 590
+|Butthole Surfers| 592
+|Flowin Immo et Les Freaqz| 594
+|Johnny Winter| 595
+|Phantom Planet| 601
+|High Strung_ The| 605
+|Junior Reid| 606
+|David Bowie| 607
+|Primordial| 608
+|Alan Silvestri| 617
+|Seguridad Social| 620
+|Helen Love| 621
+|Lady Saw| 624
+|Basic Channel| 626
+|Ten Years After| 628
+|The Chap| 631
+|Gene Autry| 633
+|Jessica Simpson| 634
+|Rooney| 635
+|KALIMBA| 636
+|Happy Mondays| 642
+|BoDeans| 643
+|Winston McAnuff_ The Bazbaz Orchestra| 644
+|V V Brown| 646
+|Ma Rainey| 647
+|Patton Oswalt| 650
+|Sonora Carruseles| 652
+|James Horner| 655
+|John Frizzell| 656
+|Seventh Star| 660
+|RUN-DMC| 662
+|Barenaked Ladies| 664
+|Tim Wilson| 666
+|Love and Rockets| 667
+|Natasha Bedingfield| 671
+|Paul Carrack| 674
+|Richard Galliano| 675
+|Audio Adrenaline| 686
+|Jonny Lang| 689
+|Carlos Vives| 699
+|Neil Diamond| 700
+|Orbital| 707
+|Torcuato Mariano| 722
+|Francis Lai| 725
+|Perrey And Kingsley| 728
+|Gary Moore| 729
+|Martin Denny| 731
+|3 Doors Down| 742
+|Gerard Lenorman| 747
+|Keb' Mo'| 748
+|Little Milton| 751
+|Red Stick Ramblers| 752
+|Another Bukka White| 757
+|Faith Hill| 762
+|Fontella Bass| 766
+|The Field Mice| 769
+|Arturo Sandoval| 778
+|Eagles| 779
+|Ennio Morricone| 789
+|Ensiferum| 792
+|Bravehearts| 793
+|The Cliks| 794
+total artists: 259

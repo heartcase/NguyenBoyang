@@ -73,8 +73,8 @@ public class HashTable
                 }else {
                     hashArray[hashValue] = h;
                     size++;
+                    break;
                 }
-                return;
             }
         }
     }
@@ -164,10 +164,7 @@ public class HashTable
     public void remove(int k, int v, Memory m)
     {
         int index = search(k, v, m);
-        if (index != -1)
-        {
-            hashArray[index] = null;
-        }
+        hashArray[index] = null;
     }
 
     /**
