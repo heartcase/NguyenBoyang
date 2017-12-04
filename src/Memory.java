@@ -3,9 +3,11 @@ import java.util.Arrays;
 public class Memory
 {
     private byte[] memArray;
+    private int size;
     
-    public Memory(int size)
+    public Memory(int s)
     {
+        size = s;
         memArray = new byte[size];
     }
     
@@ -40,7 +42,7 @@ public class Memory
                 + content).getBytes();        
         while (address + record.length >= memArray.length)
         {
-            byte[] temp = new byte[memArray.length + SongSearch.blockSize];
+            byte[] temp = new byte[memArray.length + size];
             System.arraycopy(memArray, 0, temp, 0, memArray.length);
             memArray = temp;
         }
