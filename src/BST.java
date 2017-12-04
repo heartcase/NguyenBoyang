@@ -5,8 +5,8 @@ import java.util.Stack;
  * Class that has the implementations for a binary search tree and allows us to
  * traverse through the tree by utilization of an iterator.
  * 
- * @version 09.07.2017
- * 
+ * @author Nguyen Ha (nguyen) and Boyang Li (beyongl)
+ * @version 11.15.2017
  * @param <T>
  */
 public class BST<T extends Comparable<? super T>> implements Iterable<T>
@@ -29,7 +29,6 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
     {
         return new BSTIterator<T>();
     }
-
 
     @SuppressWarnings("hiding")
     public class BSTIterator<T> implements Iterator<T>
@@ -86,9 +85,6 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
             BinaryNode node = stack.pop();
             pushLeft(node.right);
             return (T) node.getElement();
-            // BinaryNode node = stack.pop();
-            // pushLeft(node.right);
-            // return (T) node.getElement();
         }
     }
 
@@ -159,7 +155,7 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
          * Sets the left node equal to node
          * 
          * @param node
-         *            comment
+         *            - BinaryNode
          */
         public void setLeft(BinaryNode node)
         {
@@ -190,28 +186,15 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
 
     /**
      * This initializes an empty BST. This is the constructor for the BST.
-     * 
-     * Pre: none
-     * 
-     * Post: (in the new tree)
-     * 
-     * root == null
      */
     public BST()
     {
         size = 0;
         root = null;
-        // Output output = new Output();
-        // String rectangleName = new String();
-        // rectangle = new Rectangle(rectangleName, x, y, w, h);
     }
 
     /**
      * This checks if and only if the tree has no nodes
-     * 
-     * Pre: none
-     * 
-     * Post: the binary tree is unchanged
      * 
      * @return true returns true if the the BST is empty
      */
@@ -272,7 +255,7 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
             return rootNode.element;
         }
     }
-    
+
     /**
      * Insert element b into BST, unless it is already stored. Returns true if
      * insertion is performed and false otherwise
@@ -492,10 +475,8 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
         }
         return (equals(aNode.left, bNode.left)
                 && equals(aNode.right, bNode.right));
-
     }
 
-    
     /**
      * This method returns the level of the tree. Returns the number of levels
      * in the tree. An empty tree has 0 levels
@@ -518,7 +499,6 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
         }
     }
 
-    
     /**
      * This is the helper method for levels.
      * 
@@ -545,5 +525,13 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
         {
             return heightLeft + 1;
         }
+    }
+    
+    public int getDepthFromHandle(T handle)
+    {
+        int counter = 0;
+        while ((find(handle)))
+        return size;
+        
     }
 }

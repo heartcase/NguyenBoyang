@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import junit.framework.TestCase;
 
 /**
@@ -9,7 +10,6 @@ import junit.framework.TestCase;
  * @version 11.15.2017
  */
 
-
 public class BSTTest extends TestCase
 {
     /**
@@ -18,8 +18,7 @@ public class BSTTest extends TestCase
     private BST<Handle> tree;
 
     /**
-     * Constructor for the class that creates the tree object that holds
-     * Handles
+     * Constructor for the class that creates the tree object that holds Handles
      */
     public void setUp()
     {
@@ -66,6 +65,7 @@ public class BSTTest extends TestCase
 
         // Creates another tree with identical nodes
         BST<Handle> tree2 = new BST<Handle>();
+        BST<Handle> nullTree = null;
 
         // Inserts Handles into another tree
         tree2.insert(middle);
@@ -74,6 +74,7 @@ public class BSTTest extends TestCase
 
         // Check to see if the two trees are equal and contain the same nodes
         assertEquals(true, tree.equals(tree2));
+        assertEquals(false, tree.equals(nullTree));
     }
 
     /**
@@ -111,8 +112,8 @@ public class BSTTest extends TestCase
     }
 
     /**
-     * Tests the insert method by seeing if the Handle nodes are in the
-     * correct position in the tree
+     * Tests the insert method by seeing if the Handle nodes are in the correct
+     * position in the tree
      */
     public void testInsert()
     {
@@ -120,6 +121,7 @@ public class BSTTest extends TestCase
         Handle middle = new Handle(1, 1);
         Handle left = new Handle(0, 0);
         Handle right = new Handle(2, 2);
+        Handle nullHandle = null;
 
         // Inserts Handles into the tree
         tree.insert(middle);
@@ -130,6 +132,7 @@ public class BSTTest extends TestCase
         assertEquals(middle, tree.root.element);
         assertEquals(left, tree.root.left.element);
         assertEquals(right, tree.root.right.element);
+        assertEquals(false, tree.insert(nullHandle));
     }
 
     /**
@@ -159,7 +162,7 @@ public class BSTTest extends TestCase
     public void testIsEmpty()
     {
         // Creates Handle
-        Handle firstHandle = new Handle(0,0);
+        Handle firstHandle = new Handle(0, 0);
 
         // Inserts them into the tree
         tree.insert(firstHandle);
@@ -172,6 +175,10 @@ public class BSTTest extends TestCase
 
         // Now the tree should be empty
         assertEquals(true, tree.isEmpty());
+
+        // Case for an empty tree, which has nothing inserted
+        BST<Handle> tree2 = new BST<Handle>();
+        assertEquals(true, tree2.isEmpty());
     }
 
     /**
@@ -200,12 +207,16 @@ public class BSTTest extends TestCase
 
         // Checks to see if the levels has been updated
         assertEquals(3, tree.levels());
+
+        // Case for an empty tree, which has nothing inserted
+        BST<Handle> tree2 = new BST<Handle>();
+        assertEquals(0, tree2.levels());
     }
 
     /**
      * Tests the remove method by inserting Handles into the tree and then
-     * removing them. Ensures that the Handles are being removed and cannot
-     * be found in the tree.
+     * removing them. Ensures that the Handles are being removed and cannot be
+     * found in the tree.
      */
     public void testRemove()
     {
@@ -217,6 +228,8 @@ public class BSTTest extends TestCase
         Handle e = new Handle(4, 4);
         Handle f = new Handle(5, 5);
         Handle g = new Handle(6, 6);
+        Handle neverInserted = new Handle(9, 9);
+        Handle nullHandle = null;
 
         // Inserts them into the tree
         tree.insert(d);
@@ -266,5 +279,29 @@ public class BSTTest extends TestCase
         assertEquals(tree.root.left.element, c);
         assertEquals(tree.root.right.element, g);
         assertEquals(tree.root.right.left.element, e);
+        assertEquals(false, tree.remove(nullHandle));
+        assertEquals(false, tree.remove(neverInserted));
+
+        // Case for an empty tree, which has nothing inserted
+        BST<Handle> tree2 = new BST<Handle>();
+        tree2.insert(a);
+        assertEquals(true, tree2.remove(a));
+        assertEquals(null, tree2.root);
+    }
+
+    /**
+     * Tests that the iterator is created properly and the method inside of it
+     * works
+     */
+    public void testIterator()
+    {
+        Handle handle1 = new Handle(1, 1);
+        tree.insert(handle1);
+
+        Iterator<Handle> iterator = tree.iterator();
+
+        assertEquals(true, iterator.hasNext());
+        assertEquals(handle1, iterator.next());
+        assertEquals(false, iterator.hasNext());
     }
 }
