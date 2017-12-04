@@ -61,4 +61,8 @@ public class Memory
     {
         memArray[address] = 0;
     }
+    
+    public boolean isActived(int address) {
+        return memArray[address] != 0;
+    }
 }

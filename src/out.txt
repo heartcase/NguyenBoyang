@@ -26,8 +26,8 @@ The KVPair (|Bukka White|,|Mississippi Boweavil Blues|) was not found in the dat
 The KVPair (|Mississippi Boweavil Blues|,|Bukka White|) was not found in the database.
 The KVPair (|Charley Patton|,|Mississippi Boweavil Blues|) is deleted from the tree.
 The KVPair (|Mississippi Boweavil Blues|,|Charley Patton|) is deleted from the tree.
-|Charley Patton| is deleted from the artist database.
-|Mississippi Boweavil Blues| is deleted from the song database.
+|Charley Patton| is deleted from the Artist database.
+|Mississippi Boweavil Blues| is deleted from the Song database.
 |Sleepy John Estes| is added to the Artist database.
 |Street Car Blues| is added to the Song database.
 The KVPair (|Sleepy John Estes|,|Street Car Blues|),(133,153) is added to the tree.
@@ -82,14 +82,14 @@ The KVPair (|Bukka White|,|Bukka White's third song|) is deleted from the tree.
 The KVPair (|Bukka White's third song|,|Bukka White|) is deleted from the tree.
 The KVPair (|Bukka White|,|Bukka White's fourth song|) is deleted from the tree.
 The KVPair (|Bukka White's fourth song|,|Bukka White|) is deleted from the tree.
-|Bukka White| is deleted from the artist database.
-|Bukka White's fourth song| is deleted from the song database.
-|Bukka White's first song| is deleted from the song database.
+|Bukka White| is deleted from the Artist database.
+|Bukka White's fourth song| is deleted from the Song database.
 The KVPair (|Bukka White's first song|,|Another Bukka White|) is deleted from the tree.
 The KVPair (|Another Bukka White|,|Bukka White's first song|) is deleted from the tree.
 The KVPair (|Bukka White's first song|,|Johnny Winter|) is deleted from the tree.
 The KVPair (|Johnny Winter|,|Bukka White's first song|) is deleted from the tree.
-|Johnny Winter| is deleted from the artist database.
+|Bukka White's first song| is deleted from the Song database.
+|Johnny Winter| is deleted from the Artist database.
 |Johnny Winter| is added to the Artist database.
 |Johnny Winter's first song| is added to the Song database.
 The KVPair (|Johnny Winter|,|Johnny Winter's first song|),(293,309) is added to the tree.
@@ -193,12 +193,12 @@ The KVPair (|Tiny Bradshaw|,|Well Oh Well|),(840,856) is added to the tree.
 The KVPair (|Well Oh Well|,|Tiny Bradshaw|),(856,840) is added to the tree.
 The KVPair (|Bruce Rowland|,|Mountain Theme|) is deleted from the tree.
 The KVPair (|Mountain Theme|,|Bruce Rowland|) is deleted from the tree.
-|Bruce Rowland| is deleted from the artist database.
-|Mountain Theme| is deleted from the song database.
+|Bruce Rowland| is deleted from the Artist database.
+|Mountain Theme| is deleted from the Song database.
 The KVPair (|Thomas Dolby|,|She Blinded Me With Science|) is deleted from the tree.
 The KVPair (|She Blinded Me With Science|,|Thomas Dolby|) is deleted from the tree.
-|Thomas Dolby| is deleted from the artist database.
-|She Blinded Me With Science| is deleted from the song database.
+|Thomas Dolby| is deleted from the Artist database.
+|She Blinded Me With Science| is deleted from the Song database.
 |Mountain Theme| does not exist in the song database.
 |3 Doors Down| is added to the Artist database.
 |Sarah Yellin'| is added to the Song database.
@@ -258,8 +258,8 @@ The KVPair (|Mr. Lif|,|For You|),(1326,1336) is added to the tree.
 The KVPair (|For You|,|Mr. Lif|),(1336,1326) is added to the tree.
 The KVPair (|All Time Low|,|Shameless|) is deleted from the tree.
 The KVPair (|Shameless|,|All Time Low|) is deleted from the tree.
-|All Time Low| is deleted from the artist database.
-|Shameless| is deleted from the song database.
+|All Time Low| is deleted from the Artist database.
+|Shameless| is deleted from the Song database.
 |Aeoliah| is added to the Artist database.
 |For Your Passion My Love| is added to the Song database.
 The KVPair (|Aeoliah|,|For Your Passion My Love|),(1346,1356) is added to the tree.
@@ -276,14 +276,14 @@ The KVPair (|What Are We Here For|,|Gary Moore|),(1436,1423) is added to the tre
 |Six| is added to the Song database.
 The KVPair (|Faithless|,|Six|),(1459,1471) is added to the tree.
 The KVPair (|Six|,|Faithless|),(1471,1459) is added to the tree.
-|For You| is deleted from the song database.
 The KVPair (|For You|,|Mr. Lif|) is deleted from the tree.
 The KVPair (|Mr. Lif|,|For You|) is deleted from the tree.
-|Mr. Lif| is deleted from the artist database.
-|My God (Audio Adrenaline Album Version)| is deleted from the song database.
+|For You| is deleted from the Song database.
+|Mr. Lif| is deleted from the Artist database.
 The KVPair (|My God (Audio Adrenaline Album Version)|,|Audio Adrenaline|) is deleted from the tree.
 The KVPair (|Audio Adrenaline|,|My God (Audio Adrenaline Album Version)|) is deleted from the tree.
-|Audio Adrenaline| is deleted from the artist database.
+|My God (Audio Adrenaline Album Version)| is deleted from the Song database.
+|Audio Adrenaline| is deleted from the Artist database.
 |Y&T| is added to the Artist database.
 |Black Tiger| is added to the Song database.
 The KVPair (|Y&T|,|Black Tiger|),(1477,1483) is added to the tree.
@@ -343,8 +343,8 @@ The KVPair (|Tilman Sillescu|,|Escape From The Underrealm|),(2068,2086) is added
 The KVPair (|Escape From The Underrealm|,|Tilman Sillescu|),(2086,2068) is added to the tree.
 The KVPair (|Tilman Sillescu|,|Escape From The Underrealm|) is deleted from the tree.
 The KVPair (|Escape From The Underrealm|,|Tilman Sillescu|) is deleted from the tree.
-|Tilman Sillescu| is deleted from the artist database.
-|Escape From The Underrealm| is deleted from the song database.
+|Tilman Sillescu| is deleted from the Artist database.
+|Escape From The Underrealm| is deleted from the Song database.
 |Novaspace| is added to the Artist database.
 |Dancing With Tears In My Eyes 2004 (Nova Mix (Club Version))| is added to the Song database.
 The KVPair (|Novaspace|,|Dancing With Tears In My Eyes 2004 (Nova Mix (Club Version))|),(2115,2127) is added to the tree.
@@ -381,14 +381,14 @@ The KVPair (|C'Etait Bien|,|Jean Corti|),(2444,2431) is added to the tree.
 |Baggage| is added to the Song database.
 The KVPair (|L7|,|Baggage|),(2459,2464) is added to the tree.
 The KVPair (|Baggage|,|L7|),(2464,2459) is added to the tree.
-|C'Etait Bien| is deleted from the song database.
 The KVPair (|C'Etait Bien|,|Jean Corti|) is deleted from the tree.
 The KVPair (|Jean Corti|,|C'Etait Bien|) is deleted from the tree.
-|Jean Corti| is deleted from the artist database.
-|Baggage| is deleted from the song database.
+|C'Etait Bien| is deleted from the Song database.
+|Jean Corti| is deleted from the Artist database.
 The KVPair (|Baggage|,|L7|) is deleted from the tree.
 The KVPair (|L7|,|Baggage|) is deleted from the tree.
-|L7| is deleted from the artist database.
+|Baggage| is deleted from the Song database.
+|L7| is deleted from the Artist database.
 |L7| does not exist in the artist database.
 |Bruce Rowland| is added to the Artist database.
 |Mountain Theme| is added to the Song database.
@@ -400,8 +400,8 @@ The KVPair (|Thomas Dolby|,|She Blinded Me With Science|),(2507,2522) is added t
 The KVPair (|She Blinded Me With Science|,|Thomas Dolby|),(2522,2507) is added to the tree.
 The KVPair (|Bruce Rowland|,|Mountain Theme|) is deleted from the tree.
 The KVPair (|Mountain Theme|,|Bruce Rowland|) is deleted from the tree.
-|Bruce Rowland| is deleted from the artist database.
-|Mountain Theme| is deleted from the song database.
+|Bruce Rowland| is deleted from the Artist database.
+|Mountain Theme| is deleted from the Song database.
 |Mountain Theme| does not exist in the song database.
 |Cheo Feliciano| duplicates a record already in the Artist database.
 |Juguete| duplicates a record already in the Song database.
@@ -444,10 +444,10 @@ The KVPair (|Sarah Yellin'|,|3 Doors Down|),(886,871) duplicates a record alread
 The KVPair (|Akon|,|Over The Edge|),(902,909) duplicates a record already in the tree.
 The KVPair (|Over The Edge|,|Akon|),(909,902) duplicates a record already in the tree.
 |akkkk| does not exist in the artist database.
-|Over The Edge| is deleted from the song database.
 The KVPair (|Over The Edge|,|Akon|) is deleted from the tree.
 The KVPair (|Akon|,|Over The Edge|) is deleted from the tree.
-|Akon| is deleted from the artist database.
+|Over The Edge| is deleted from the Song database.
+|Akon| is deleted from the Artist database.
 |Gerard Lenorman| duplicates a record already in the Artist database.
 |Soldats Ne Tirez Pas| duplicates a record already in the Song database.
 The KVPair (|Gerard Lenorman|,|Soldats Ne Tirez Pas|),(925,943) duplicates a record already in the tree.
@@ -494,28 +494,28 @@ The KVPair (|Chelsea|,|Decide|),(1307,1317) duplicates a record already in the t
 The KVPair (|Decide|,|Chelsea|),(1317,1307) duplicates a record already in the tree.
 The KVPair (|Kyle Riabko|,|Doesn't Get Much Better|) is deleted from the tree.
 The KVPair (|Doesn't Get Much Better|,|Kyle Riabko|) is deleted from the tree.
-|Kyle Riabko| is deleted from the artist database.
-|Doesn't Get Much Better| is deleted from the song database.
+|Kyle Riabko| is deleted from the Artist database.
+|Doesn't Get Much Better| is deleted from the Song database.
 The KVPair (|Carl Smith|,|Hey Joe|) is deleted from the tree.
 The KVPair (|Hey Joe|,|Carl Smith|) is deleted from the tree.
-|Carl Smith| is deleted from the artist database.
-|Hey Joe| is deleted from the song database.
+|Carl Smith| is deleted from the Artist database.
+|Hey Joe| is deleted from the Song database.
 The KVPair (|Jesus Jones|,|All The Answers|) is deleted from the tree.
 The KVPair (|All The Answers|,|Jesus Jones|) is deleted from the tree.
-|Jesus Jones| is deleted from the artist database.
-|All The Answers| is deleted from the song database.
+|Jesus Jones| is deleted from the Artist database.
+|All The Answers| is deleted from the Song database.
 The KVPair (|Loop Guru|,|The Mystery Epoch|) is deleted from the tree.
 The KVPair (|The Mystery Epoch|,|Loop Guru|) is deleted from the tree.
-|Loop Guru| is deleted from the artist database.
-|The Mystery Epoch| is deleted from the song database.
+|Loop Guru| is deleted from the Artist database.
+|The Mystery Epoch| is deleted from the Song database.
 The KVPair (|Sylver|,|Sympathy|) is deleted from the tree.
 The KVPair (|Sympathy|,|Sylver|) is deleted from the tree.
-|Sylver| is deleted from the artist database.
-|Sympathy| is deleted from the song database.
+|Sylver| is deleted from the Artist database.
+|Sympathy| is deleted from the Song database.
 The KVPair (|Dons|,|American Lovebite|) is deleted from the tree.
 The KVPair (|American Lovebite|,|Dons|) is deleted from the tree.
-|Dons| is deleted from the artist database.
-|American Lovebite| is deleted from the song database.
+|Dons| is deleted from the Artist database.
+|American Lovebite| is deleted from the Song database.
 |Dons| does not exist in the artist database.
 |Dons| does not exist in the artist database.
 |Dons| does not exist in the artist database.
@@ -591,30 +591,30 @@ The KVPair (|The Girl From Ipanema (Garota De Ipanema)|,|Paula Santoro|),(1853,1
 |Sympathy| is added to the Song database.
 The KVPair (|Sylver|,|Sympathy|),(2922,2931) is added to the tree.
 The KVPair (|Sympathy|,|Sylver|),(2931,2922) is added to the tree.
-|Kill the Poor| is deleted from the song database.
 The KVPair (|Kill the Poor|,|Dead Kennedys|) is deleted from the tree.
 The KVPair (|Dead Kennedys|,|Kill the Poor|) is deleted from the tree.
-|Dead Kennedys| is deleted from the artist database.
-|The Never-Ending Why| is deleted from the song database.
+|Kill the Poor| is deleted from the Song database.
+|Dead Kennedys| is deleted from the Artist database.
 The KVPair (|The Never-Ending Why|,|Placebo|) is deleted from the tree.
 The KVPair (|Placebo|,|The Never-Ending Why|) is deleted from the tree.
-|Placebo| is deleted from the artist database.
-|Over The Hill| is deleted from the song database.
+|The Never-Ending Why| is deleted from the Song database.
+|Placebo| is deleted from the Artist database.
 The KVPair (|Over The Hill|,|R.L. Burnside|) is deleted from the tree.
 The KVPair (|R.L. Burnside|,|Over The Hill|) is deleted from the tree.
-|R.L. Burnside| is deleted from the artist database.
-|Drop Sacrifice| is deleted from the song database.
+|Over The Hill| is deleted from the Song database.
+|R.L. Burnside| is deleted from the Artist database.
 The KVPair (|Drop Sacrifice|,|Liquid Stranger|) is deleted from the tree.
 The KVPair (|Liquid Stranger|,|Drop Sacrifice|) is deleted from the tree.
-|Liquid Stranger| is deleted from the artist database.
+|Drop Sacrifice| is deleted from the Song database.
+|Liquid Stranger| is deleted from the Artist database.
 |Sylver| does not exist in the song database.
 |Drop Sacrifice| does not exist in the song database.
 |Drop Sacrifice| does not exist in the song database.
 |Drop Sacrifice| does not exist in the song database.
-|The Girl From Ipanema (Garota De Ipanema)| is deleted from the song database.
 The KVPair (|The Girl From Ipanema (Garota De Ipanema)|,|Paula Santoro|) is deleted from the tree.
 The KVPair (|Paula Santoro|,|The Girl From Ipanema (Garota De Ipanema)|) is deleted from the tree.
-|Paula Santoro| is deleted from the artist database.
+|The Girl From Ipanema (Garota De Ipanema)| is deleted from the Song database.
+|Paula Santoro| is deleted from the Artist database.
 |Funeral For A Friend| duplicates a record already in the Artist database.
 |Your Revolution Is A Joke| duplicates a record already in the Song database.
 The KVPair (|Funeral For A Friend|,|Your Revolution Is A Joke|),(1917,1940) duplicates a record already in the tree.
@@ -737,18 +737,18 @@ The KVPair (|L7|,|Baggage|),(3554,3559) is added to the tree.
 The KVPair (|Baggage|,|L7|),(3559,3554) is added to the tree.
 The KVPair (|Jean Corti|,|C'Etait Bien|) is deleted from the tree.
 The KVPair (|C'Etait Bien|,|Jean Corti|) is deleted from the tree.
-|Jean Corti| is deleted from the artist database.
-|C'Etait Bien| is deleted from the song database.
+|Jean Corti| is deleted from the Artist database.
+|C'Etait Bien| is deleted from the Song database.
 |Jean Corti| does not exist in the artist database.
 |Richard Galliano| does not exist in the artist database.
-|Movement 4 [from Kiss] (Album Version)| is deleted from the song database.
 The KVPair (|Movement 4 [from Kiss] (Album Version)|,|John Cale|) is deleted from the tree.
 The KVPair (|John Cale|,|Movement 4 [from Kiss] (Album Version)|) is deleted from the tree.
-|John Cale| is deleted from the artist database.
-|If That's True| is deleted from the song database.
+|Movement 4 [from Kiss] (Album Version)| is deleted from the Song database.
+|John Cale| is deleted from the Artist database.
 The KVPair (|If That's True|,|Esperanza Spalding / Leo Genovese|) is deleted from the tree.
 The KVPair (|Esperanza Spalding / Leo Genovese|,|If That's True|) is deleted from the tree.
-|Esperanza Spalding / Leo Genovese| is deleted from the artist database.
+|If That's True| is deleted from the Song database.
+|Esperanza Spalding / Leo Genovese| is deleted from the Artist database.
 |Richard Galliano| is added to the Artist database.
 |Honey Fingers| is added to the Song database.
 The KVPair (|Richard Galliano|,|Honey Fingers|),(3569,3588) is added to the tree.
@@ -764,10 +764,10 @@ The KVPair (|Sporable|,|Winifred Phillips|),(3663,3643) is added to the tree.
 |kkkkk| does not exist in the song database.
 |kkkkk| does not exist in the song database.
 |kkkkk| does not exist in the song database.
-|Strange Way To Save The World| is deleted from the song database.
 The KVPair (|Strange Way To Save The World|,|4Him|) is deleted from the tree.
 The KVPair (|4Him|,|Strange Way To Save The World|) is deleted from the tree.
-|4Him| is deleted from the artist database.
+|Strange Way To Save The World| is deleted from the Song database.
+|4Him| is deleted from the Artist database.
 |Otis Spann| is added to the Artist database.
 |Can't Do Me No Good| is added to the Song database.
 The KVPair (|Otis Spann|,|Can't Do Me No Good|),(3674,3687) is added to the tree.
@@ -798,33 +798,33 @@ The KVPair (|Alexandre Desplat|,|Hidden Documents|),(3887,3907) is added to the 
 The KVPair (|Hidden Documents|,|Alexandre Desplat|),(3907,3887) is added to the tree.
 The KVPair (|Love Jones|,|Matter Of Fact|) is deleted from the tree.
 The KVPair (|Matter Of Fact|,|Love Jones|) is deleted from the tree.
-|Love Jones| is deleted from the artist database.
-|Matter Of Fact| is deleted from the song database.
+|Love Jones| is deleted from the Artist database.
+|Matter Of Fact| is deleted from the Song database.
 The KVPair (|The Motors|,|Dancing The Night Away|) is deleted from the tree.
 The KVPair (|Dancing The Night Away|,|The Motors|) is deleted from the tree.
-|The Motors| is deleted from the artist database.
-|Dancing The Night Away| is deleted from the song database.
-|Hidden Documents| is deleted from the song database.
+|The Motors| is deleted from the Artist database.
+|Dancing The Night Away| is deleted from the Song database.
 The KVPair (|Hidden Documents|,|Alexandre Desplat|) is deleted from the tree.
 The KVPair (|Alexandre Desplat|,|Hidden Documents|) is deleted from the tree.
-|Alexandre Desplat| is deleted from the artist database.
+|Hidden Documents| is deleted from the Song database.
+|Alexandre Desplat| is deleted from the Artist database.
 |Dancing The Night Away| does not exist in the song database.
 The KVPair (|Sergio Mendes / Black Eyed Peas|,|Mas Que Nada|) is deleted from the tree.
 The KVPair (|Mas Que Nada|,|Sergio Mendes / Black Eyed Peas|) is deleted from the tree.
-|Sergio Mendes / Black Eyed Peas| is deleted from the artist database.
-|Mas Que Nada| is deleted from the song database.
+|Sergio Mendes / Black Eyed Peas| is deleted from the Artist database.
+|Mas Que Nada| is deleted from the Song database.
 The KVPair (|Dokken|,|Disease|) is deleted from the tree.
 The KVPair (|Disease|,|Dokken|) is deleted from the tree.
-|Dokken| is deleted from the artist database.
-|Disease| is deleted from the song database.
+|Dokken| is deleted from the Artist database.
+|Disease| is deleted from the Song database.
 The KVPair (|Liam O'Flynn|,|Romeo's Exile|) is deleted from the tree.
 The KVPair (|Romeo's Exile|,|Liam O'Flynn|) is deleted from the tree.
-|Liam O'Flynn| is deleted from the artist database.
-|Romeo's Exile| is deleted from the song database.
+|Liam O'Flynn| is deleted from the Artist database.
+|Romeo's Exile| is deleted from the Song database.
 The KVPair (|Teenage Fanclub|,|The World'll Be OK|) is deleted from the tree.
 The KVPair (|The World'll Be OK|,|Teenage Fanclub|) is deleted from the tree.
-|Teenage Fanclub| is deleted from the artist database.
-|The World'll Be OK| is deleted from the song database.
+|Teenage Fanclub| is deleted from the Artist database.
+|The World'll Be OK| is deleted from the Song database.
 |Groupa| is added to the Artist database.
 |Bliv Du Till Gran (If You Became A Spruce)| is added to the Song database.
 The KVPair (|Groupa|,|Bliv Du Till Gran (If You Became A Spruce)|),(3926,3935) is added to the tree.
@@ -1703,17 +1703,17 @@ The KVPair (|Martin Denny|,|Manila|),(11453,11468) is added to the tree.
 The KVPair (|Manila|,|Martin Denny|),(11468,11453) is added to the tree.
 The KVPair (|99 Posse|,|Salario Garantito (Versione Strumentale)|) is deleted from the tree.
 The KVPair (|Salario Garantito (Versione Strumentale)|,|99 Posse|) is deleted from the tree.
-|99 Posse| is deleted from the artist database.
-|Salario Garantito (Versione Strumentale)| is deleted from the song database.
-|A True| is deleted from the song database.
+|99 Posse| is deleted from the Artist database.
+|Salario Garantito (Versione Strumentale)| is deleted from the Song database.
 The KVPair (|A True|,|Sugar Minott|) is deleted from the tree.
 The KVPair (|Sugar Minott|,|A True|) is deleted from the tree.
-|Sugar Minott| is deleted from the artist database.
+|A True| is deleted from the Song database.
+|Sugar Minott| is deleted from the Artist database.
 The KVPair (|themselves|,|Oversleeping|) is deleted from the tree.
 The KVPair (|Oversleeping|,|themselves|) is deleted from the tree.
+|Oversleeping| is deleted from the Song database.
 The KVPair (|themselves|,|Crayon Sharpener|) is deleted from the tree.
 The KVPair (|Crayon Sharpener|,|themselves|) is deleted from the tree.
-|themselves| is deleted from the artist database.
-|Oversleeping| is deleted from the song database.
-|Crayon Sharpener| is deleted from the song database.
+|themselves| is deleted from the Artist database.
+|Crayon Sharpener| is deleted from the Song database.
 |Crayon Sharpener| does not exist in the song database.
