@@ -11,6 +11,7 @@ import java.util.Stack;
  */
 public class BST<T extends Comparable<? super T>> implements Iterable<T>
 {
+    private int myDepth = 0;
     /**
      * BinaryNode root element
      */
@@ -244,10 +245,12 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
 
         if (compResult < 0)
         {
+            myDepth++;
             return (find(rootNode.left, entry));
         }
         else if (compResult > 0)
         {
+            myDepth++;
             return (find(rootNode.right, entry));
         }
         else
@@ -526,12 +529,11 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
             return heightLeft + 1;
         }
     }
-    
-    public int getDepthFromHandle(T handle)
+
+    public int getDepthFromHandle(T handle1)
     {
-        int counter = 0;
-        while ((find(handle)))
-        return size;
-        
+        myDepth = 0;
+        find(handle1);
+        return myDepth;
     }
 }

@@ -304,4 +304,20 @@ public class BSTTest extends TestCase
         assertEquals(handle1, iterator.next());
         assertEquals(false, iterator.hasNext());
     }
+    
+    public void testGetDepthFromHandle()
+    {
+     // Creates three Handles
+        Handle middle = new Handle(1, 1);
+        Handle left = new Handle(0, 0);
+        Handle right = new Handle(2, 2);
+
+        // Inserts them into the tree
+        tree.insert(middle);
+        tree.insert(left);
+        tree.insert(right);
+        
+        assertEquals(1, tree.getDepthFromHandle(left));
+        assertEquals(1, tree.getDepthFromHandle(right));
+    }
 }
