@@ -9,8 +9,8 @@ import java.io.IOException;
 
 public class SongSearch
 {
-    public static int hashSize;
-    public static int blockSize;
+    private static int hashSize;
+    private static int blockSize;
     /**
      * Main method that runs the entire program
      * 
