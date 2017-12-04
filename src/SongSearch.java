@@ -20,7 +20,7 @@ public class SongSearch
      */
     public static void main(String[] args) throws IOException
     {
-        hashSize = 32;
+        hashSize = 1024;
         blockSize = 1024;
         String fileName = "P4_Input1_Sample.txt";
         Input programRunner = new Input(fileName);     

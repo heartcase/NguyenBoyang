@@ -17,6 +17,7 @@ public class HashTable
         hashArray = new Handle[SongSearch.hashSize];
         size = 0;
     }
+
     /**
      * 
      * @param s
@@ -47,70 +48,47 @@ public class HashTable
         return (int) (Math.abs(sum) % m);
     }
 
-    public int insert(Handle h, Memory m)
+    public void insert(Handle h, Memory m)
     {
         int k = h.getKey();
         String key = m.read(k);
-        int i = 0;
         int hashValue;
-        while (true)
+        for (int i = 0; i < hashArray.length; i++)
         {
-            hashValue = quadraticProbing(key, i);
-            if (hashArray[hashValue] != null)
+            hashValue = quadraticProbing(key, i, hashArray.length);
+            if (hashArray[hashValue] == null)
             {
-                i++;
-            }
-            else
-            {
+                hashArray[hashValue] = h;
                 size++;
                 if (size >= hashArray.length / 2)
                 {
                     Handle[] temp = new Handle[hashArray.length * 2];
-                    System.arraycopy(hashArray, 0, temp, 0, hashArray.length);
+                    for (int j = 0; j < hashArray.length; j++)
+                    {
+                        if (hashArray[j] != null)
+                        {
+                            insert(hashArray[j], m, temp);
+                        }
+                    }
                     hashArray = temp;
                 }
-                hashArray[hashValue] = h;
-                return 1;
+                return;
             }
         }
     }
-    
-    /**
-     * 
-     * @param k
-     * @param v
-     * @param m
-     */
-    public int insert(int k, int v, Memory m)
+
+    public void insert(Handle h, Memory m, Handle[] array)
     {
+        int k = h.getKey();
+        int hashValue;
         String key = m.read(k);
-        int hashValue = hash(key, hashArray.length);
-        while (true)
+        for (int i = 0; i < hashArray.length; i++)
         {
-            if (hashArray[hashValue] != null)
+            hashValue = quadraticProbing(key, i, array.length);
+            if (array[hashValue] == null)
             {
-                Handle temp = hashArray[hashValue];
-                if (temp.equal(k, v))
-                {
-                    return 0;
-                }
-                else
-                {
-                    hashValue = quadraticProbing(key, hashValue);
-                }
-            }
-            else
-            {
-                size++;
-                // Not sure if comparison is inclusive
-                if (size >= hashArray.length / 2)
-                {
-                    Handle[] temp = new Handle[hashArray.length * 2];
-                    System.arraycopy(hashArray, 0, temp, 0, hashArray.length);
-                    hashArray = temp;
-                }
-                hashArray[hashValue] = new Handle(k, v);
-                return 1;
+                array[hashValue] = h;
+                return;
             }
         }
     }
@@ -127,7 +105,7 @@ public class HashTable
         String key = m.read(k);
         for (int i = 0; i < hashArray.length; i++)
         {
-            int index = quadraticProbing(key, i);
+            int index = quadraticProbing(key, i, hashArray.length);
             if (hashArray[index] == null)
             {
                 continue;
@@ -140,35 +118,11 @@ public class HashTable
         return -1;
     }
 
-    /**
-     * 
-     * @param k
-     * @param m
-     * @return
-     */
-    public int search(int k, Memory m)
-    {
-        String key = m.read(k);
-        for (int i = 0; i < hashArray.length; i++)
-        {
-            int index = quadraticProbing(key, i);
-            if (hashArray[index] == null)
-            {
-                continue;
-            }
-            if (hashArray[index].equal(k))
-            {
-                return index;
-            }
-        }
-        return -1;
-    }
-
     public int search(String key, Memory m)
     {
         for (int i = 0; i < hashArray.length; i++)
         {
-            int index = quadraticProbing(key, i);
+            int index = quadraticProbing(key, i, hashArray.length);
             if (hashArray[index] == null)
             {
                 continue;
@@ -185,20 +139,20 @@ public class HashTable
     {
         for (int i = 0; i < hashArray.length; i++)
         {
-            int index = quadraticProbing(key, i);
+            int index = quadraticProbing(key, i, hashArray.length);
             if (hashArray[index] == null)
             {
                 continue;
             }
-            if (m.read(hashArray[index].getKey()).equals(key) &&
-                    m.read(hashArray[index].getValue()).equals(value))
+            if (m.read(hashArray[index].getKey()).equals(key)
+                    && m.read(hashArray[index].getValue()).equals(value))
             {
                 return index;
             }
         }
         return -1;
-    }    
-    
+    }
+
     /**
      * 
      * @param k
@@ -220,13 +174,15 @@ public class HashTable
      * @param k
      * @return
      */
-    public int quadraticProbing(String key, int k)
+    public int quadraticProbing(String key, int k, int length)
     {
-        return (hash(key, hashArray.length) + k * k) % hashArray.length;
+        return (hash(key, length) + k * k) % length;
     }
 
-    public Handle getHandle(int index) {
-        if(index == -1) {
+    public Handle getHandle(int index)
+    {
+        if (index == -1)
+        {
             return new Handle(-1, -1);
         }
         return hashArray[index];
