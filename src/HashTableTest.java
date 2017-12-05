@@ -10,39 +10,66 @@ public class HashTableTest
     {
         HashTable hashTable = new HashTable(1024);
         assertEquals(hashTable.getClass(), HashTable.class);
+        assertEquals(hashTable.getHashArray().length, 1024);
     }
 
     @Test
     public void testInsert()
     {
-        Memory memory = new Memory(1024);
         HashTable hashTable = new HashTable(4);
-        assertEquals(hashTable.getHashArray().length, 0);
-        hashTable.insert(3, memory);
+        Memory memory = new Memory(1024);
+        int j = 0;
+        int i = memory.add(j, "Hello World");
+        hashTable.insert(0, memory);
+        j = i;
+        i = memory.add(j, "CS 3114" + i);
+        hashTable.insert(j, memory);
+        j = i;
+        i = memory.add(j, "CS 3114" + i);
+        hashTable.insert(j, memory);
+        j = i;
+        i = memory.add(j, "CS 3114" + i);
+        hashTable.insert(j, memory);
+        j = i;
+        i = memory.add(j, "CS 3114" + i);
+        hashTable.insert(j, memory);
+        j = i;
+        i = memory.add(j, "CS 3114" + i);
+        hashTable.insert(j, memory);
+        j = i;
+        i = memory.add(j, "CS 3114" + i);
+        hashTable.insert(j, memory);
+        i = memory.add(i, "CS 3114" + i);
+
+        assertEquals(hashTable.getSize(), 7);
     }
 
     @Test
     public void testSearch()
     {
-        fail("Not yet implemented");
+        Memory memory = new Memory(1024);
+        memory.add(0, "Hello World");
+        HashTable hashTable = new HashTable(4);
+        hashTable.insert(0, memory);
+        assertEquals(
+                hashTable.getHandle((hashTable.search("Hello World", memory)))
+                        .getIndex(),
+                0);
+        assertEquals(hashTable.getHandle((hashTable.search("BAD WORD", memory)))
+                .getIndex(), -1);
+
     }
 
     @Test
     public void testRemove()
     {
-        fail("Not yet implemented");
+        Memory memory = new Memory(1024);
+        memory.add(0, "Hello World");
+        HashTable hashTable = new HashTable(4);
+        hashTable.insert(0, memory);
+        assertEquals(hashTable.getSize(), 1);
+        hashTable.remove("Hello World>", memory);
+        hashTable.remove("Hello World", memory);
+        assertEquals(hashTable.getSize(), 0);
     }
-
-    @Test
-    public void testGetHandle()
-    {
-        fail("Not yet implemented");
-    }
-
-    @Test
-    public void testGetHashArray()
-    {
-        fail("Not yet implemented");
-    }
-
 }

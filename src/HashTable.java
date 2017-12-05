@@ -15,6 +15,14 @@ public class HashTable
     private int size;
 
     /**
+     * @return the size
+     */
+    protected int getSize()
+    {
+        return size;
+    }
+
+    /**
      * Create a new Hashtable instance take initial hash size
      * 
      * @param hashSize
@@ -107,7 +115,10 @@ public class HashTable
     public int remove(String key, Memory m)
     {
         int index = search(key, m);
-        hashArray[index] = null;
+        if (index != -1)
+        {
+            hashArray[index] = null;
+        }
         return index;
     }
 
