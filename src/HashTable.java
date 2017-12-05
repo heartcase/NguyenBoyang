@@ -37,7 +37,7 @@ public class HashTable
      */
     public int insert(int k, Memory m)
     {
-        int hashValue;
+        int hashValue = 0;
         String key = m.read(k);
         for (int i = 0; i < hashArray.length; i++)
         {
@@ -62,11 +62,11 @@ public class HashTable
                     }
                     hashArray = temp;
                 }
-                return hashValue;
+                break;
             }
         }
         // This line should never be executed
-        return -1;
+        return hashValue;
     }
 
     /**

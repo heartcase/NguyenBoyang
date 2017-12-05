@@ -12,6 +12,8 @@ public class SongSearchTest
     {
         SongSearch.main(new String[]
         { "100", "1024", "P4_Input1_Sample" });
+        SongSearch songSearch = new SongSearch();
+        assertEquals(songSearch.getClass(), SongSearch.class);
     }
 
 }

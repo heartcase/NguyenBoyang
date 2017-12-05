@@ -8,13 +8,17 @@ public class HandleTest
     @Test
     public void testHandle()
     {
-        fail("Not yet implemented");
+        Handle handle = new Handle(0);
+        assertEquals(handle.getClass(), Handle.class);
     }
 
     @Test
     public void testGetIndex()
     {
-        fail("Not yet implemented");
+        for(int i = 0; i < 10000; i++) {
+            Handle handle = new Handle(i);
+            assertEquals(handle.getIndex(), i);
+        }
     }
 
 }
