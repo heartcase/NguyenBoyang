@@ -1,6 +1,8 @@
 import static org.junit.Assert.*;
 import java.io.IOException;
 
+import org.junit.Test;
+
 /**
  * Test class to ensure that all the methods in the Input class work as expected
  * and functionality meets the requirements
@@ -15,6 +17,7 @@ public class InputTest
     /**
      * Test the Input Class constructor
      */
+    @Test
     public void testInput()
     {
         Memory m = new Memory(1024);
@@ -31,6 +34,7 @@ public class InputTest
      * 
      * @throws IOException
      */
+    @Test
     public void testReadLine() throws IOException
     {
         Memory m = new Memory(1024);
@@ -47,6 +51,7 @@ public class InputTest
      * Tests that the specified artist is removed from the appropriate BST and
      * corresponding marks are made in the memory
      */
+    @Test
     public void testRemoveArtist()
     {
         Memory m = new Memory(1024);
@@ -74,6 +79,7 @@ public class InputTest
      * Tests that the specified song is removed from the appropriate BST and
      * corresponding marks are made in the memory
      */
+    @Test
     public void testRemoveSong()
     {
         Memory m = new Memory(1024);
@@ -100,6 +106,7 @@ public class InputTest
      * Tests that there is a complete listing of the artists contained in the
      * database
      */
+    @Test
     public void testPrintArtist()
     {
         Memory m = new Memory(1024);
@@ -117,6 +124,7 @@ public class InputTest
      * Tests that there is a complete listing of the songs contained in the
      * database
      */
+    @Test
     public void testPrintSong()
     {
         Memory m = new Memory(1024);
@@ -133,6 +141,7 @@ public class InputTest
     /**
      * Tests that an in-order traversal of the BST tree is printed
      */
+    @Test
     public void testPrintTree()
     {
         Memory m = new Memory(1024);
@@ -151,6 +160,7 @@ public class InputTest
      * Tests that all songs recorded by the artist with a specified name is
      * listed
      */
+    @Test
     public void testListArtist()
     {
         Memory m = new Memory(1024);
@@ -168,6 +178,7 @@ public class InputTest
     /**
      * Tests that all artists who have recorded the specified song is listed
      */
+    @Test
     public void testListSong()
     {
         Memory m = new Memory(1024);
@@ -186,6 +197,7 @@ public class InputTest
      * Tests that a specific record for a particular song by a particular artist
      * is removed from the BST
      */
+    @Test
     public void testDelete()
     {
         Memory m = new Memory(1024);
@@ -204,6 +216,7 @@ public class InputTest
      * Tests that a artist/song is inserted into the appropriate artist/song
      * hashTable
      */
+    @Test
     public void testInsert()
     {
         Memory m = new Memory(1024);

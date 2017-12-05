@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 
+import org.junit.Test;
+
 /**
  * Test class to ensure that all the methods in the KVPair class work as
  * expected and functionality meets the requirements
@@ -16,6 +18,7 @@ public class KVPairTest
     /**
      * Set up method to create the initial KVPair object
      */
+    @Test
     public void setUp()
     {
         kvPair = new KVPair<>(1, 2);
@@ -24,6 +27,7 @@ public class KVPairTest
     /**
      * Checks to see if the correct key is returned
      */
+    @Test
     public void testGetKey()
     {
         assertEquals(1, kvPair.getKey().intValue());
@@ -32,6 +36,7 @@ public class KVPairTest
     /**
      * Checks to see if the correct value is returned
      */
+    @Test
     public void testGetValue()
     {
         assertEquals(2, kvPair.getValue().intValue());
@@ -40,6 +45,7 @@ public class KVPairTest
     /**
      * Compares two KVPair objects and see if they are equal or not
      */
+    @Test
     public void testKVPair()
     {
         KVPair<Integer, Integer> identicalKVPair = new KVPair<>(1, 2);

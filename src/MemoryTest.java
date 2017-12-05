@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 
+import org.junit.Test;
+
 /**
  * Test class to ensure that all the methods in the Memory class work as
  * expected and functionality meets the requirements
@@ -13,6 +15,7 @@ public class MemoryTest
     /**
      * Test to make sure the Memory object is created properly
      */
+    @Test
     public void testMemory()
     {
         Memory memory = new Memory(1024);
@@ -23,6 +26,7 @@ public class MemoryTest
      * Checks to see if the record information is read at the proper given
      * address
      */
+    @Test
     public void testRead()
     {
         Memory memory = new Memory(16);
@@ -36,6 +40,7 @@ public class MemoryTest
      * Checks to see if a new record is added to the memory at the proper given
      * address
      */
+    @Test
     public void testAdd()
     {
         int i = 0;
@@ -50,6 +55,7 @@ public class MemoryTest
      * Checks to see if the proper record is removed from memory and that the
      * flag byte is deactivated as appropriate
      */
+    @Test
     public void testDelete()
     {
         int i = 0;
@@ -64,6 +70,7 @@ public class MemoryTest
     /**
      * Checks to see that a particular address is active/inactive
      */
+    @Test
     public void testIsActived()
     {
         int i = 0;
