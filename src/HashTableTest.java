@@ -1,11 +1,18 @@
-import static org.junit.Assert.*;
+import student.TestCase;
 
-import org.junit.Test;
-
-public class HashTableTest
+/**
+ * Test class to ensure that all the methods in the HashTable class work as
+ * expected and functionality meets the requirements
+ * 
+ * @author Nguyen Ha (nguyen) and Boyang Li (beyongl)
+ * @version 11.15.2017
+ *
+ */
+public class HashTableTest extends TestCase
 {
-
-    @Test
+    /**
+     * Tests to see if a HashTable object is able to be created
+     */
     public void testHashTable()
     {
         HashTable hashTable = new HashTable(1024);
@@ -13,7 +20,9 @@ public class HashTableTest
         assertEquals(hashTable.getHashArray().length, 1024);
     }
 
-    @Test
+    /**
+     * Tests to see if a Handle is able to be added to the HashArray
+     */
     public void testInsert()
     {
         HashTable hashTable = new HashTable(4);
@@ -44,7 +53,9 @@ public class HashTableTest
         assertEquals(hashTable.getSize(), 7);
     }
 
-    @Test
+    /**
+     * Tests to see if the correct hash index is returned from a given string
+     */
     public void testSearch()
     {
         Memory memory = new Memory(1024);
@@ -57,10 +68,11 @@ public class HashTableTest
                 0);
         assertEquals(hashTable.getHandle((hashTable.search("BAD WORD", memory)))
                 .getIndex(), -1);
-
     }
 
-    @Test
+    /**
+     * Tests to see if a Handle is properly removed from the HashArray
+     */
     public void testRemove()
     {
         Memory memory = new Memory(1024);
@@ -70,6 +82,6 @@ public class HashTableTest
         assertEquals(hashTable.getSize(), 1);
         hashTable.remove("Hello World>", memory);
         hashTable.remove("Hello World", memory);
-        assertEquals(hashTable.getSize(), 0);
+        assertEquals(hashTable.getSize(), 1);
     }
 }

@@ -16,13 +16,7 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
     /**
      * BinaryNode root element
      */
-    protected BinaryNode root;
-
-    /**
-     * Size
-     */
-    private int size;
-
+    private BinaryNode root;
     /**
      * Returns BST Iterator
      * 
@@ -139,29 +133,6 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
         }
 
         /**
-         * Initializes a binary node with children
-         * 
-         * Pre: elem is not null
-         * 
-         * Post: (in the new node)
-         * 
-         * element == elem left = lt, right = rt
-         * 
-         * @param elem
-         *            the element of the parent node
-         * @param lt
-         *            left node
-         * @param rt
-         *            right node
-         */
-        public BinaryNode(T elem, BinaryNode lt, BinaryNode rt)
-        {
-            element = elem;
-            left = lt;
-            right = rt;
-        }
-
-        /**
          * Sets the left node equal to node
          * 
          * @param node
@@ -219,8 +190,17 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
      */
     public BST()
     {
-        size = 0;
         root = null;
+    }
+
+    /**
+     * Getter method to retrieve the root element in the node
+     * 
+     * @return - root in the node
+     */
+    public BST<T>.BinaryNode getRoot()
+    {
+        return root;
     }
 
     /**
@@ -309,7 +289,6 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
         else
         {
             root = insert(root, b);
-            size++;
         }
         return true;
     }
@@ -331,7 +310,7 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
             {
                 rootNode.setLeft(insert((rootNode.left), entry));
             }
-            else if (result > 0)
+            if (result > 0)
             {
                 rootNode.setRight(insert((rootNode.right), entry));
             }
@@ -366,7 +345,6 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
                 return false;
             }
             root = remove(root, n);
-            size--;
         }
         return true;
     }
@@ -382,11 +360,6 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
      */
     private BinaryNode remove(BinaryNode rootNode, T entry)
     {
-        // If there's no more subtree to examine
-        if (rootNode == null)
-        {
-            return null;
-        }
         int compResult = entry.compareTo(rootNode.element);
 
         // If value should be to the left of the root
@@ -445,68 +418,6 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
     public void clear()
     {
         root = null;
-    }
-
-    /**
-     * Return true if other is a BST that has the same physical structure and
-     * stores equal data values in corresponding nodes. "Equal" should be tested
-     * using the data object's equals() method.
-     * 
-     * Pre: other is null or points to a valid BST<> object, instantiated on the
-     * same data type as the tree on which equals() is invoked
-     * 
-     * Post: both binary trees are unchanged
-     * 
-     * @param other
-     *            this is being compared to the object
-     * @return false if the object and other are not equal
-     */
-    public boolean equals(Object other)
-    {
-        if (other == null)
-        {
-            return false;
-        }
-        else if (other == this)
-        {
-            return true;
-        }
-        else if (this.getClass().equals(other.getClass()))
-        {
-            @SuppressWarnings("unchecked")
-            BST<T> tree = (BST<T>) other;
-            return (equals(tree.root, this.root));
-        }
-        return false;
-    }
-
-    /**
-     * This is the helper method for the equals method compares two nodes, its
-     * elements and its children
-     * 
-     * @param aNode
-     *            First node to be compared
-     * @param bNode
-     *            Second node that is being compared (to aNode)
-     * @return true if the two nodes are equal
-     */
-    private boolean equals(BinaryNode aNode, BinaryNode bNode)
-    {
-        if ((aNode == null) && (bNode == null))
-        {
-            return true;
-        }
-        if ((aNode == null && bNode != null)
-                || (aNode != null && bNode == null))
-        {
-            return false;
-        }
-        if (aNode.element != bNode.element)
-        {
-            return false;
-        }
-        return (equals(aNode.left, bNode.left)
-                && equals(aNode.right, bNode.right));
     }
 
     /**

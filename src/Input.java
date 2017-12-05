@@ -24,6 +24,19 @@ public class Input
     private HashTable artistHashTable;
     private HashTable songHashTable;
 
+    /**
+     * 
+     * @param m
+     *            - Memory object
+     * @param b1
+     *            - the artistBST
+     * @param b2
+     *            - the songBST
+     * @param h1
+     *            - the artistHashTable
+     * @param h2
+     *            - the songHashTable
+     */
     public Input(Memory m, BST<KVPair<Integer, Integer>> b1,
             BST<KVPair<Integer, Integer>> b2, HashTable h1, HashTable h2)
     {
@@ -35,6 +48,13 @@ public class Input
         songHashTable = h2;
     }
 
+    /**
+     * Method to read the file and parse the information appropriately
+     * 
+     * @param filename
+     *            - name of the file to be read and parsed
+     * @throws IOException
+     */
     public void readLine(String filename) throws IOException
     {
         BufferedReader bufferedReader = new BufferedReader(
@@ -129,6 +149,13 @@ public class Input
         bufferedReader.close();
     }
 
+    /**
+     * Removes the specified artist from the appropriate hashTable and BST. Also
+     * makes the appropriate marks in the memory as needed.
+     * 
+     * @param artist
+     *            - name of the artist
+     */
     protected void removeArtist(String artist)
     {
         List<KVPair<Integer, Integer>> list = new ArrayList<>();
@@ -165,6 +192,13 @@ public class Input
         }
     }
 
+    /**
+     * Removes the specified song from the appropriate hashTable and BST. Also
+     * makes the appropriate marks in the memory as needed.
+     * 
+     * @param song
+     *            - name of the song
+     */
     protected void removeSong(String song)
     {
         List<KVPair<Integer, Integer>> list = new ArrayList<>();
@@ -202,6 +236,9 @@ public class Input
 
     }
 
+    /**
+     * Prints a complete listing of the artists contained in the database
+     */
     protected void printArtist()
     {
         List<String> list = new ArrayList<>();
@@ -223,6 +260,9 @@ public class Input
 
     }
 
+    /**
+     * Prints a complete listing of the songs contained in the database
+     */
     protected void printSong()
     {
         List<String> list = new ArrayList<>();
@@ -243,6 +283,9 @@ public class Input
         System.out.println(string);
     }
 
+    /**
+     * Prints out an in-order traversal of the BST
+     */
     protected void printTree()
     {
         System.out.println("Printing artist tree:");
@@ -287,11 +330,16 @@ public class Input
 
     }
 
+    /**
+     * Lists all the songs by the specified artist
+     * 
+     * @param artist
+     *            - the artist to look up
+     */
     protected void listArtist(String artist)
     {
         int k = artistHashTable
-                .getHandle(artistHashTable.search(artist, memory))
-                .getIndex();
+                .getHandle(artistHashTable.search(artist, memory)).getIndex();
         List<KVPair<Integer, Integer>> list = new ArrayList<>();
         rangeSearch(k, artistBST, list);
         if (list.size() == 0)
@@ -306,10 +354,15 @@ public class Input
 
     }
 
+    /**
+     * Lists all the artists who have recorded the specified song
+     * 
+     * @param song
+     *            - the song to look up
+     */
     protected void listSong(String song)
     {
-        int k = songHashTable
-                .getHandle(songHashTable.search(song, memory))
+        int k = songHashTable.getHandle(songHashTable.search(song, memory))
                 .getIndex();
         List<KVPair<Integer, Integer>> list = new ArrayList<>();
         rangeSearch(k, songBST, list);
@@ -322,9 +375,17 @@ public class Input
             String string = String.format("|%s|", memory.read(h.getValue()));
             System.out.println(string);
         }
-
     }
 
+    /**
+     * Deletes the specific record for a particular song by a particular artist.
+     * Removes records from the BST and reverts the insert.
+     * 
+     * @param artist
+     *            - name of artist
+     * @param song
+     *            - name of song
+     */
     protected void delete(String artist, String song)
     {
         int k = artistHashTable
@@ -377,9 +438,16 @@ public class Input
             songHashTable.remove(name, memory);
             printRemoveFromMemory(name, 1);
         }
-
     }
 
+    /**
+     * Adds the artist/song into the respective hashTable and memory
+     * 
+     * @param artist
+     *            - name of artist
+     * @param song
+     *            - name of song
+     */
     protected void insert(String artist, String song)
     {
         int artistAddress;
@@ -458,6 +526,16 @@ public class Input
         }
     }
 
+    /**
+     * Range search
+     * 
+     * @param k
+     *            - index to start at
+     * @param bst
+     *            - the BST to be inspected
+     * @param list
+     *            - the list containing the KVPairs
+     */
     private void rangeSearch(int k, BST<KVPair<Integer, Integer>> bst,
             List<KVPair<Integer, Integer>> list)
     {

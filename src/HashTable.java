@@ -78,7 +78,7 @@ public class HashTable
     }
 
     /**
-     * return the hash index of the given string
+     * Return the hash index of the given string
      * 
      * @param key
      *            the given string
@@ -104,7 +104,7 @@ public class HashTable
     }
 
     /**
-     * remove the handle from the array
+     * Remove the handle from the array
      * 
      * @param key
      *            the key string
@@ -123,10 +123,10 @@ public class HashTable
     }
 
     /**
-     * get the handle object from the array
+     * Get the handle object from the array
      * 
-     * @param the
-     *            hash array index
+     * @param index
+     *            - hash array index
      * @return - return the handle object or a NULL handle with index -1
      */
     public Handle getHandle(int index)
@@ -139,7 +139,7 @@ public class HashTable
     }
 
     /**
-     * get the hash array
+     * Get the hash array
      * 
      * @return - return the hash array
      */
@@ -175,9 +175,8 @@ public class HashTable
         }
     }
 
-    // tools
     /**
-     * hash function
+     * Hash function
      * 
      * @param s
      *            string
@@ -210,7 +209,7 @@ public class HashTable
     }
 
     /**
-     * quadratic probing function
+     * Quadratic probing function
      * 
      * @param key
      *            string

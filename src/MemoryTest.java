@@ -1,18 +1,28 @@
 import static org.junit.Assert.*;
 
-import org.junit.Test;
-
+/**
+ * Test class to ensure that all the methods in the Memory class work as
+ * expected and functionality meets the requirements
+ * 
+ * @author Nguyen Ha (nguyen) and Boyang Li (beyongl)
+ * @version 11.15.2017
+ *
+ */
 public class MemoryTest
 {
-
-    @Test
+    /**
+     * Test to make sure the Memory object is created properly
+     */
     public void testMemory()
     {
         Memory memory = new Memory(1024);
         assertEquals(memory.getClass(), Memory.class);
     }
 
-    @Test
+    /**
+     * Checks to see if the record information is read at the proper given
+     * address
+     */
     public void testRead()
     {
         Memory memory = new Memory(16);
@@ -22,7 +32,10 @@ public class MemoryTest
         assertEquals(memory.read(j), "Project 4");
     }
 
-    @Test
+    /**
+     * Checks to see if a new record is added to the memory at the proper given
+     * address
+     */
     public void testAdd()
     {
         int i = 0;
@@ -33,7 +46,10 @@ public class MemoryTest
         assertEquals(i, 24);
     }
 
-    @Test
+    /**
+     * Checks to see if the proper record is removed from memory and that the
+     * flag byte is deactivated as appropriate
+     */
     public void testDelete()
     {
         int i = 0;
@@ -45,7 +61,9 @@ public class MemoryTest
         assertEquals(memory.isActived(j), false);
     }
 
-    @Test
+    /**
+     * Checks to see that a particular address is active/inactive
+     */
     public void testIsActived()
     {
         int i = 0;
@@ -56,5 +74,4 @@ public class MemoryTest
         memory.delete(j);
         assertEquals(memory.isActived(j), false);
     }
-
 }
