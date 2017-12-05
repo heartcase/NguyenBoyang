@@ -8,13 +8,17 @@ public class HashTableTest
     @Test
     public void testHashTable()
     {
-        fail("Not yet implemented");
+        HashTable hashTable = new HashTable(1024);
+        assertEquals(hashTable.getClass(), HashTable.class);
     }
 
     @Test
     public void testInsert()
     {
-        fail("Not yet implemented");
+        Memory memory = new Memory(1024);
+        HashTable hashTable = new HashTable(4);
+        assertEquals(hashTable.getHashArray().length, 0);
+        hashTable.insert(3, memory);
     }
 
     @Test

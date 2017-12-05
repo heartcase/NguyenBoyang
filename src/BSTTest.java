@@ -9,7 +9,7 @@ import org.junit.Test;
 public class BSTTest
 {
 
-    private void insert(BST<Integer> bst, int m)
+/*    private void insert(BST<Integer> bst, int m)
     {
         for (int i = 0; i < m; i++)
         {
@@ -144,6 +144,6 @@ public class BSTTest
         BST<Integer> bst = new BST<>();
         bst.insert(10);
         assertEquals(bst.getDepthFromHandle(10), 0);
-    }
+    }*/
 
 }
