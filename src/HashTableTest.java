@@ -1,7 +1,10 @@
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 /**
  * Test class to ensure that all the methods in the HashTable class work as
  * expected and functionality meets the requirements

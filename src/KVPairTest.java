@@ -1,8 +1,15 @@
 import static org.junit.Assert.*;
 
+<<<<<<< HEAD
 import org.junit.Before;
 import org.junit.Test;
 
+=======
+import org.junit.Test;
+
+import student.TestCase;
+
+>>>>>>> origin/master
 /**
  * Test class to ensure that all the methods in the KVPair class work as
  * expected and functionality meets the requirements
@@ -12,7 +19,7 @@ import org.junit.Test;
  *
  */
 
-public class KVPairTest
+public class KVPairTest extends TestCase
 {
     private KVPair<Integer, Integer> kvPair;
 
