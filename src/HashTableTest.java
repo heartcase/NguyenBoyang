@@ -1,7 +1,4 @@
 import static org.junit.Assert.*;
-
-import org.junit.Test;
-
 /**
  * Test class to ensure that all the methods in the HashTable class work as
  * expected and functionality meets the requirements
@@ -15,7 +12,6 @@ public class HashTableTest
     /**
      * Tests to see if a HashTable object is able to be created
      */
-    @Test
     public void testHashTable()
     {
         HashTable hashTable = new HashTable(1024);
@@ -26,7 +22,6 @@ public class HashTableTest
     /**
      * Tests to see if a Handle is able to be added to the HashArray
      */
-    @Test
     public void testInsert()
     {
         HashTable hashTable = new HashTable(4);
@@ -60,7 +55,6 @@ public class HashTableTest
     /**
      * Tests to see if the correct hash index is returned from a given string
      */
-    @Test
     public void testSearch()
     {
         Memory memory = new Memory(1024);
@@ -78,7 +72,6 @@ public class HashTableTest
     /**
      * Tests to see if a Handle is properly removed from the HashArray
      */
-    @Test
     public void testRemove()
     {
         Memory memory = new Memory(1024);

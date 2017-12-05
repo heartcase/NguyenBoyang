@@ -1,6 +1,7 @@
 import java.util.Arrays;
 
 /**
+ * Memory Class
  * 
  * @author Nguyen Ha (nguyen) and Boyang Li (beyongl)
  * @version 11.15.2017
@@ -43,9 +44,9 @@ public class Memory
      * Add a new record to the memory at the given address
      * 
      * @param address
-     *            the first byte of the record in the address
+     *            - the first byte of the record in the address
      * @param content
-     *            the information
+     *            - the information
      * @return the next writing position
      */
     public int add(int address, String content)
@@ -61,7 +62,6 @@ public class Memory
         }
         record[0] = 1;
         System.arraycopy(record, 0, memArray, address, record.length);
-        // System.out.println("Memory :" + new String(memArray));
         return address + record.length;
     }
 
@@ -70,7 +70,7 @@ public class Memory
      * deactivated
      * 
      * @param address
-     *            the first byte of the record in the address
+     *            - the first byte of the record in the address
      */
     public void delete(int address)
     {

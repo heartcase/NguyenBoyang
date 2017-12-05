@@ -471,3 +471,5 @@ remove artist themselves
 remove song Crayon Sharpener
 print song
 print artist
+list song Die A Happy Man
+print tree

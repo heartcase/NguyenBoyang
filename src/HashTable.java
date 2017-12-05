@@ -1,5 +1,4 @@
 /**
- * 
  * Hash Table stores Handles
  * 
  * @author Nguyen Ha (nguyen) and Boyang Li (beyongl)
@@ -8,14 +7,15 @@
  */
 public class HashTable
 {
-
-    /** handle array */
+    // HandleArray
     private Handle[] hashArray;
-    /** the number of the handles */
+    // The number of handles
     private int size;
 
     /**
-     * @return the size
+     * Getter method for the size of the hashArray
+     * 
+     * @return - the size
      */
     protected int getSize()
     {
@@ -23,10 +23,10 @@ public class HashTable
     }
 
     /**
-     * Create a new Hashtable instance take initial hash size
+     * Create a new HashTable instance take initial hash size
      * 
      * @param hashSize
-     *            the initial hash size
+     *            - the initial hash size
      */
     public HashTable(int hashSize)
     {
@@ -38,9 +38,9 @@ public class HashTable
      * Insert a handle value into the array
      * 
      * @param k
-     *            the handle value
+     *            - the handle value
      * @param m
-     *            the memory
+     *            - the memory
      * @return the hash index
      */
     public int insert(int k, Memory m)
@@ -81,9 +81,9 @@ public class HashTable
      * Return the hash index of the given string
      * 
      * @param key
-     *            the given string
+     *            - the given string
      * @param m
-     *            the memory
+     *            - the memory
      * @return the hash index or -1 if not found
      */
     public int search(String key, Memory m)
@@ -107,9 +107,9 @@ public class HashTable
      * Remove the handle from the array
      * 
      * @param key
-     *            the key string
+     *            - the key string
      * @param m
-     *            the memory
+     *            - the memory
      * @return the hash index
      */
     public int remove(String key, Memory m)
@@ -149,16 +149,16 @@ public class HashTable
         return hashArray;
     }
 
-    // helper functions
+    // Helper functions
     /**
      * reinsert the old hash array value into the new array
      * 
      * @param h
-     *            the old hash array value
+     *            - the old hash array value
      * @param m
-     *            the memory
+     *            - the memory
      * @param array
-     *            the new array
+     *            - the new array
      */
     private void rehash(Handle h, Memory m, Handle[] array)
     {
@@ -180,9 +180,9 @@ public class HashTable
      * Hash function
      * 
      * @param s
-     *            string
+     *            - string
      * @param m
-     *            array size
+     *            - array size
      * @return hash value
      */
     private static int hash(String s, int m)
@@ -213,16 +213,15 @@ public class HashTable
      * Quadratic probing function
      * 
      * @param key
-     *            string
+     *            - string
      * @param k
-     *            offset
+     *            - offset
      * @param length
-     *            size of array
+     *            - size of array
      * @return next hash index
      */
     private static int quadraticProbing(String key, int k, int length)
     {
         return (hash(key, length) + k * k) % length;
     }
-
 }

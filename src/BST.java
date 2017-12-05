@@ -54,7 +54,7 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
 
         /**
          * This is the helper method for next. Goes all the way to the left of
-         * three
+         * the tree
          */
         private void pushLeft(BinaryNode node)
         {

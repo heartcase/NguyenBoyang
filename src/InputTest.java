@@ -1,8 +1,5 @@
 import static org.junit.Assert.*;
-
 import java.io.IOException;
-
-import org.junit.Test;
 
 /**
  * Test class to ensure that all the methods in the Input class work as expected
@@ -16,9 +13,8 @@ public class InputTest
 {
 
     /**
-     * test input class
+     * Test the Input Class constructor
      */
-    @Test
     public void testInput()
     {
         Memory m = new Memory(1024);
@@ -31,11 +27,10 @@ public class InputTest
     }
 
     /**
-     * test read line
+     * Tests that the readLine function is able to parse information from a file
      * 
      * @throws IOException
      */
-    @Test
     public void testReadLine() throws IOException
     {
         Memory m = new Memory(1024);
@@ -49,9 +44,9 @@ public class InputTest
     }
 
     /**
-     * test remove artist
+     * Tests that the specified artist is removed from the appropriate BST and
+     * corresponding marks are made in the memory
      */
-    @Test
     public void testRemoveArtist()
     {
         Memory m = new Memory(1024);
@@ -76,9 +71,9 @@ public class InputTest
     }
 
     /**
-     * rest remove song
+     * Tests that the specified song is removed from the appropriate BST and
+     * corresponding marks are made in the memory
      */
-    @Test
     public void testRemoveSong()
     {
         Memory m = new Memory(1024);
@@ -102,9 +97,9 @@ public class InputTest
     }
 
     /**
-     * test print artist
+     * Tests that there is a complete listing of the artists contained in the
+     * database
      */
-    @Test
     public void testPrintArtist()
     {
         Memory m = new Memory(1024);
@@ -119,9 +114,9 @@ public class InputTest
     }
 
     /**
-     * test print song
+     * Tests that there is a complete listing of the songs contained in the
+     * database
      */
-    @Test
     public void testPrintSong()
     {
         Memory m = new Memory(1024);
@@ -136,9 +131,8 @@ public class InputTest
     }
 
     /**
-     * test print tree
+     * Tests that an in-order traversal of the BST tree is printed
      */
-    @Test
     public void testPrintTree()
     {
         Memory m = new Memory(1024);
@@ -154,9 +148,9 @@ public class InputTest
     }
 
     /**
-     * test list artist
+     * Tests that all songs recorded by the artist with a specified name is
+     * listed
      */
-    @Test
     public void testListArtist()
     {
         Memory m = new Memory(1024);
@@ -172,9 +166,8 @@ public class InputTest
     }
 
     /**
-     * test list song
+     * Tests that all artists who have recorded the specified song is listed
      */
-    @Test
     public void testListSong()
     {
         Memory m = new Memory(1024);
@@ -190,9 +183,9 @@ public class InputTest
     }
 
     /**
-     * test delete
+     * Tests that a specific record for a particular song by a particular artist
+     * is removed from the BST
      */
-    @Test
     public void testDelete()
     {
         Memory m = new Memory(1024);
@@ -208,9 +201,9 @@ public class InputTest
     }
 
     /**
-     * test insert
+     * Tests that a artist/song is inserted into the appropriate artist/song
+     * hashTable
      */
-    @Test
     public void testInsert()
     {
         Memory m = new Memory(1024);
@@ -223,5 +216,4 @@ public class InputTest
         assertEquals(h1.getSize(), 1);
         assertEquals(h2.getSize(), 1);
     }
-
 }

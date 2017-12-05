@@ -233,7 +233,6 @@ public class Input
                 printRemoveFromMemory(name, 0);
             }
         }
-
     }
 
     /**
@@ -257,7 +256,6 @@ public class Input
         }
         String string = String.format("total artists: %d", list.size());
         System.out.println(string);
-
     }
 
     /**
@@ -327,7 +325,6 @@ public class Input
                 System.out.println(string);
             }
         }
-
     }
 
     /**
@@ -453,7 +450,7 @@ public class Input
         int artistAddress;
         int songAddress;
         KVPair<Integer, Integer> pair;
-        // look up in artist database
+        // Look up in artist database
         artistAddress = artistHashTable
                 .getHandle(artistHashTable.search(artist, memory)).getIndex();
         if (artistAddress == -1)
@@ -472,7 +469,7 @@ public class Input
                     artist);
             System.out.println(string);
         }
-        // look up in song database
+        // Look up in song database
         songAddress = songHashTable
                 .getHandle(songHashTable.search(song, memory)).getIndex();
         if (songAddress == -1)
@@ -491,7 +488,7 @@ public class Input
                     song);
             System.out.println(string);
         }
-        // look up in pairs database
+        // Look up in pairs database
         pair = artistBST
                 .find(new KVPair<Integer, Integer>(artistAddress, songAddress));
         if (pair == null)

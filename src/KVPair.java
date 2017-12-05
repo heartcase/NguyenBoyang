@@ -8,6 +8,7 @@
  * @param <V>
  *            - value
  */
+
 public class KVPair<K extends Comparable<K>, V extends Comparable<V>>
         implements Comparable<KVPair<K, V>>
 {
@@ -67,5 +68,4 @@ public class KVPair<K extends Comparable<K>, V extends Comparable<V>>
             return compareValue;
         }
     }
-
 }
