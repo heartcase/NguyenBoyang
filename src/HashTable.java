@@ -118,6 +118,7 @@ public class HashTable
         if (index != -1)
         {
             hashArray[index] = null;
+            size--;
         }
         return index;
     }

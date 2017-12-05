@@ -82,6 +82,6 @@ public class HashTableTest extends TestCase
         assertEquals(hashTable.getSize(), 1);
         hashTable.remove("Hello World>", memory);
         hashTable.remove("Hello World", memory);
-        assertEquals(hashTable.getSize(), 1);
+        assertEquals(hashTable.getSize(), 0);
     }
 }
