@@ -614,7 +614,7 @@ public class Input
     }
 
     /**
-     * System-out function where a artist/song does not exist in the database
+     * System-out function where an artist/song does not exist in the database
      * 
      * @param name
      *            - name of artist/song
