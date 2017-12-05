@@ -4,9 +4,20 @@ import java.io.IOException;
 
 import org.junit.Test;
 
+/**
+ * Test class to ensure that all the methods in the Input class work as expected
+ * and functionality meets the requirements
+ * 
+ * @author Nguyen Ha (nguyen) and Boyang Li (beyongl)
+ * @version 11.15.2017
+ *
+ */
 public class InputTest
 {
 
+    /**
+     * test input class
+     */
     @Test
     public void testInput()
     {
@@ -19,6 +30,11 @@ public class InputTest
         assertEquals(input.getClass(), Input.class);
     }
 
+    /**
+     * test read line
+     * 
+     * @throws IOException
+     */
     @Test
     public void testReadLine() throws IOException
     {
@@ -32,6 +48,9 @@ public class InputTest
         assertEquals(h1.getSize(), 258);
     }
 
+    /**
+     * test remove artist
+     */
     @Test
     public void testRemoveArtist()
     {
@@ -53,9 +72,12 @@ public class InputTest
         input.removeArtist("acb");
         assertEquals(h1.getSize(), 0);
         assertEquals(h2.getSize(), 0);
-        
+
     }
 
+    /**
+     * rest remove song
+     */
     @Test
     public void testRemoveSong()
     {
@@ -79,6 +101,9 @@ public class InputTest
         assertEquals(h2.getSize(), 0);
     }
 
+    /**
+     * test print artist
+     */
     @Test
     public void testPrintArtist()
     {
@@ -93,6 +118,9 @@ public class InputTest
         assertEquals(h1.getSize(), 1);
     }
 
+    /**
+     * test print song
+     */
     @Test
     public void testPrintSong()
     {
@@ -107,6 +135,9 @@ public class InputTest
         assertEquals(h2.getSize(), 1);
     }
 
+    /**
+     * test print tree
+     */
     @Test
     public void testPrintTree()
     {
@@ -122,6 +153,9 @@ public class InputTest
         assertEquals(h2.getSize(), 1);
     }
 
+    /**
+     * test list artist
+     */
     @Test
     public void testListArtist()
     {
@@ -137,6 +171,9 @@ public class InputTest
         assertEquals(h1.getSize(), 1);
     }
 
+    /**
+     * test list song
+     */
     @Test
     public void testListSong()
     {
@@ -152,6 +189,9 @@ public class InputTest
         assertEquals(h2.getSize(), 1);
     }
 
+    /**
+     * test delete
+     */
     @Test
     public void testDelete()
     {
@@ -167,6 +207,9 @@ public class InputTest
         assertEquals(h2.getSize(), 0);
     }
 
+    /**
+     * test insert
+     */
     @Test
     public void testInsert()
     {
@@ -179,7 +222,6 @@ public class InputTest
         input.insert("abc", "def");
         assertEquals(h1.getSize(), 1);
         assertEquals(h2.getSize(), 1);
-        
     }
 
 }

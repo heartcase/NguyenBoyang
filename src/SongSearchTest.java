@@ -1,6 +1,8 @@
 import static org.junit.Assert.*;
 import java.io.IOException;
 
+import org.junit.Test;
+
 /**
  * Test class to ensure that all the methods in the SongSearch class work as
  * expected and functionality meets the requirements
@@ -15,6 +17,7 @@ public class SongSearchTest
      * 
      * @throws IOException
      */
+    @Test
     public void test() throws IOException
     {
         SongSearch.main(new String[]
