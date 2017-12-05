@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Scanner;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,91 +15,48 @@ import java.util.regex.Pattern;
  * @author Nguyen Ha (nguyen) and Boyang Li (beyongl)
  * @version 11.15.2017
  */
-
 public class Input
 {
-    private BufferedReader bufferedReader;
-    private Scanner scanner;
-
-    private BST<Handle> artistBST;
-    private BST<Handle> songBST;
-    private HashTable artistHashTable;
-    private HashTable songHashTable;
-    private String artistInformation;
-    private String songInformation;
-    private String commandName;
     private Memory memory;
     private int memoryAddress;
+    private BST<KVPair<Integer, Integer>> artistBST;
+    private BST<KVPair<Integer, Integer>> songBST;
+    private HashTable artistHashTable;
+    private HashTable songHashTable;
 
-    /**
-     * Constructor of the class that reads the files and chooses what commands
-     * to execute accordingly
-     * 
-     * @param fileName
-     *            - name of the file to be read
-     * @param blockSize
-     *            - blockSize
-     * @param hashSize
-     *            - hashSize
-     * @throws IOException
-     */
-    public Input(String fileName, int blockSize, int hashSize)
-            throws IOException
+    public Input(Memory m, BST<KVPair<Integer, Integer>> b1,
+            BST<KVPair<Integer, Integer>> b2, HashTable h1, HashTable h2)
     {
-        try
-        {
-            bufferedReader = new BufferedReader(
-                    new FileReader(new File(fileName)));
-        }
-        catch (IOException e)
-        {
-            throw new IOException("No input file can be found");
-        }
-        artistInformation = "";
-        songInformation = "";
-        scanner = new Scanner(fileName);
-        artistBST = new BST<>();
-        songBST = new BST<>();
-        artistHashTable = new HashTable(hashSize);
-        songHashTable = new HashTable(hashSize);
-        memory = new Memory(blockSize);
+        memory = m;
         memoryAddress = 0;
+        artistBST = b1;
+        songBST = b2;
+        artistHashTable = h1;
+        songHashTable = h2;
     }
 
-    /**
-     * Reads each line of the input file and calls the corresponding command
-     * method, such as input, remove, delete, print, list, etc.
-     */
-    public void readLine() throws IOException
+    public void readLine(String filename) throws IOException
     {
-        while (scanner.hasNextLine())
+        BufferedReader bufferedReader = new BufferedReader(
+                new FileReader(new File(filename)));
+        String currentLine;
+        String commandName;
+        String artist;
+        String song;
+        while ((currentLine = bufferedReader.readLine()) != null)
         {
-            // Reads a line of text
-            String currentLine = bufferedReader.readLine();
-            // In the case that the line has nothing to read
-            if (currentLine == null)
-            {
-                break;
-            }
-            // Removes leading and trailing white spaces and stores the string
-            // called commandName
             currentLine = currentLine.trim();
-
-            // Removes any white spaces in the middle, guaranteeing first
-            // element is commandName
             String[] lineInformation = currentLine.split("\\s+");
             commandName = lineInformation[0];
-
-            // Different cases for the possible commands...
             if (commandName.equals("insert"))
             {
                 String pattern = "insert\\s+(.+)<SEP>(.+)";
                 Pattern r = Pattern.compile(pattern);
                 Matcher m = r.matcher(currentLine);
                 m.find();
-                artistInformation = m.group(1).trim();
-                songInformation = m.group(2).trim();
-                insert();
+                artist = m.group(1).trim();
+                song = m.group(2).trim();
+                insert(artist, song);
             }
             else if (commandName.equals("remove"))
             {
@@ -111,8 +66,8 @@ public class Input
                     Pattern r = Pattern.compile(pattern);
                     Matcher m = r.matcher(currentLine);
                     m.find();
-                    artistInformation = m.group(1).trim();
-                    removeArtist();
+                    artist = m.group(1).trim();
+                    removeArtist(artist);
                 }
                 else if (lineInformation[1].equals("song"))
                 {
@@ -120,8 +75,8 @@ public class Input
                     Pattern r = Pattern.compile(pattern);
                     Matcher m = r.matcher(currentLine);
                     m.find();
-                    songInformation = m.group(1).trim();
-                    removeSong();
+                    song = m.group(1).trim();
+                    removeSong(song);
                 }
             }
             else if (commandName.equals("print"))
@@ -147,8 +102,8 @@ public class Input
                     Pattern r = Pattern.compile(pattern);
                     Matcher m = r.matcher(currentLine);
                     m.find();
-                    artistInformation = m.group(1).trim();
-                    listArtist();
+                    artist = m.group(1).trim();
+                    listArtist(artist);
                 }
                 else if (lineInformation[1].equals("song"))
                 {
@@ -156,8 +111,8 @@ public class Input
                     Pattern r = Pattern.compile(pattern);
                     Matcher m = r.matcher(currentLine);
                     m.find();
-                    songInformation = m.group(1).trim();
-                    listSong();
+                    song = m.group(1).trim();
+                    listSong(song);
                 }
             }
             else if (commandName.equals("delete"))
@@ -166,34 +121,354 @@ public class Input
                 Pattern r = Pattern.compile(pattern);
                 Matcher m = r.matcher(currentLine);
                 m.find();
-                artistInformation = m.group(1).trim();
-                songInformation = m.group(2).trim();
-                delete();
+                artist = m.group(1).trim();
+                song = m.group(2).trim();
+                delete(artist, song);
             }
         }
-        scanner.close();
+        bufferedReader.close();
     }
 
-    /**
-     * Range search function
-     * 
-     * @param k
-     *            - k
-     * @param bst
-     *            - the binary search tree
-     * @param list
-     *            - list that contains Handles
-     */
-    private void rangeSearch(int k, BST<Handle> bst, List<Handle> list)
+    protected void removeArtist(String artist)
     {
-        Iterator<Handle> iterator = bst.iterator();
+        List<KVPair<Integer, Integer>> list = new ArrayList<>();
+        int k = artistHashTable
+                .getHandle(artistHashTable.search(artist, memory)).getIndex();
+        if (k == -1)
+        {
+            printNotExists(artist, 0);
+            return;
+        }
+        rangeSearch(k, artistBST, list);
+        for (KVPair<Integer, Integer> pair : list)
+        {
+            int v = pair.getValue();
+            artistBST.remove(pair);
+            KVPair<Integer, Integer> temp = new KVPair<>(v, k);
+            temp = songBST.find(temp);
+            songBST.remove(temp);
+            printDeletePair(artist, memory.read(v));
+            if (checkLastItem(k, artistBST) && memory.isActived(k))
+            {
+                String name = memory.read(k);
+                memory.delete(k);
+                artistHashTable.remove(name, memory);
+                printRemoveFromMemory(name, 0);
+            }
+            if (checkLastItem(v, songBST))
+            {
+                String name = memory.read(v);
+                memory.delete(v);
+                songHashTable.remove(name, memory);
+                printRemoveFromMemory(name, 1);
+            }
+        }
+    }
+
+    protected void removeSong(String song)
+    {
+        List<KVPair<Integer, Integer>> list = new ArrayList<>();
+        int k = songHashTable.getHandle(songHashTable.search(song, memory))
+                .getIndex();
+        if (k == -1)
+        {
+            printNotExists(song, 1);
+            return;
+        }
+        rangeSearch(k, songBST, list);
+        for (KVPair<Integer, Integer> pair : list)
+        {
+            int v = pair.getValue();
+            songBST.remove(pair);
+            KVPair<Integer, Integer> temp = new KVPair<>(v, k);
+            temp = artistBST.find(temp);
+            artistBST.remove(temp);
+            printDeletePair(song, memory.read(v));
+            if (checkLastItem(k, songBST) && memory.isActived(k))
+            {
+                String name = memory.read(k);
+                memory.delete(k);
+                songHashTable.remove(name, memory);
+                printRemoveFromMemory(name, 1);
+            }
+            if (checkLastItem(v, artistBST))
+            {
+                String name = memory.read(v);
+                memory.delete(v);
+                artistHashTable.remove(name, memory);
+                printRemoveFromMemory(name, 0);
+            }
+        }
+
+    }
+
+    protected void printArtist()
+    {
+        List<String> list = new ArrayList<>();
+        Handle[] array = artistHashTable.getHashArray();
+        for (int i = 0; i < array.length; i++)
+        {
+            if (array[i] == null)
+            {
+                continue;
+            }
+            int k = array[i].getIndex();
+            String key = memory.read(k);
+            String string = String.format("|%s| %d", key, i);
+            System.out.println(string);
+            list.add(key);
+        }
+        String string = String.format("total artists: %d", list.size());
+        System.out.println(string);
+
+    }
+
+    protected void printSong()
+    {
+        List<String> list = new ArrayList<>();
+        Handle[] array = songHashTable.getHashArray();
+        for (int i = 0; i < array.length; i++)
+        {
+            if (array[i] == null)
+            {
+                continue;
+            }
+            int k = array[i].getIndex();
+            String key = memory.read(k);
+            String string = String.format("|%s| %d", key, i);
+            System.out.println(string);
+            list.add(key);
+        }
+        String string = String.format("total songs: %d", list.size());
+        System.out.println(string);
+    }
+
+    protected void printTree()
+    {
+        System.out.println("Printing artist tree:");
+        Iterator<KVPair<Integer, Integer>> iterator = artistBST.iterator();
+        while (iterator.hasNext())
+        {
+            KVPair<Integer, Integer> handle = iterator.next();
+            int indentation = artistBST.getDepthFromHandle(handle) * 2;
+            if (indentation != 0)
+            {
+                String string = String.format("%" + indentation + "s(%d,%d)",
+                        " ", handle.getKey(), handle.getValue());
+                System.out.println(string);
+            }
+            else
+            {
+                String string = String.format("(%d,%d)", handle.getKey(),
+                        handle.getValue());
+                System.out.println(string);
+            }
+
+        }
+        System.out.println("Printing song tree:");
+        iterator = songBST.iterator();
+        while (iterator.hasNext())
+        {
+            KVPair<Integer, Integer> handle = iterator.next();
+            int indentation = songBST.getDepthFromHandle(handle) * 2;
+            if (indentation != 0)
+            {
+                String string = String.format("%" + indentation + "s(%d,%d)",
+                        " ", handle.getKey(), handle.getValue());
+                System.out.println(string);
+            }
+            else
+            {
+                String string = String.format("(%d,%d)", handle.getKey(),
+                        handle.getValue());
+                System.out.println(string);
+            }
+        }
+
+    }
+
+    protected void listArtist(String artist)
+    {
+        int k = artistHashTable
+                .getHandle(artistHashTable.search(artist, memory))
+                .getIndex();
+        List<KVPair<Integer, Integer>> list = new ArrayList<>();
+        rangeSearch(k, artistBST, list);
+        if (list.size() == 0)
+        {
+            printNotExists(artist, 0);
+        }
+        for (KVPair<Integer, Integer> h : list)
+        {
+            String string = String.format("|%s|", memory.read(h.getValue()));
+            System.out.println(string);
+        }
+
+    }
+
+    protected void listSong(String song)
+    {
+        int k = songHashTable
+                .getHandle(songHashTable.search(song, memory))
+                .getIndex();
+        List<KVPair<Integer, Integer>> list = new ArrayList<>();
+        rangeSearch(k, songBST, list);
+        if (list.size() == 0)
+        {
+            printNotExists(song, 1);
+        }
+        for (KVPair<Integer, Integer> h : list)
+        {
+            String string = String.format("|%s|", memory.read(h.getValue()));
+            System.out.println(string);
+        }
+
+    }
+
+    protected void delete(String artist, String song)
+    {
+        int k = artistHashTable
+                .getHandle(artistHashTable.search(artist, memory)).getIndex();
+        int v = songHashTable.getHandle(songHashTable.search(song, memory))
+                .getIndex();
+        if (k == -1)
+        {
+            printNotExists(artist, 0);
+            return;
+        }
+        if (v == -1)
+        {
+            printNotExists(song, 1);
+            return;
+        }
+
+        KVPair<Integer, Integer> pair = artistBST
+                .find(new KVPair<Integer, Integer>(k, v));
+        if (pair == null)
+        {
+            String string = String.format(
+                    "The KVPair (|%s|,|%s|) was not found in the database.",
+                    artist, song);
+            System.out.println(string);
+            string = String.format(
+                    "The KVPair (|%s|,|%s|) was not found in the database.",
+                    song, artist);
+            System.out.println(string);
+            return;
+        }
+        KVPair<Integer, Integer> temp1 = new KVPair<Integer, Integer>(k, v);
+        KVPair<Integer, Integer> temp2 = new KVPair<Integer, Integer>(v, k);
+        temp1 = artistBST.find(temp1);
+        temp2 = songBST.find(temp2);
+        printDeletePair(artist, song);
+        artistBST.remove(temp1);
+        songBST.remove(temp2);
+        if (checkLastItem(k, artistBST))
+        {
+            String name = memory.read(k);
+            memory.delete(k);
+            artistHashTable.remove(name, memory);
+            printRemoveFromMemory(name, 0);
+        }
+        if (checkLastItem(v, songBST))
+        {
+            String name = memory.read(v);
+            memory.delete(v);
+            songHashTable.remove(name, memory);
+            printRemoveFromMemory(name, 1);
+        }
+
+    }
+
+    protected void insert(String artist, String song)
+    {
+        int artistAddress;
+        int songAddress;
+        KVPair<Integer, Integer> pair;
+        // look up in artist database
+        artistAddress = artistHashTable
+                .getHandle(artistHashTable.search(artist, memory)).getIndex();
+        if (artistAddress == -1)
+        {
+            artistAddress = memoryAddress;
+            memoryAddress = memory.add(memoryAddress, artist);
+            artistHashTable.insert(artistAddress, memory);
+            String string = String
+                    .format("|%s| is added to the Artist database.", artist);
+            System.out.println(string);
+        }
+        else
+        {
+            String string = String.format(
+                    "|%s| duplicates a record already in the Artist database.",
+                    artist);
+            System.out.println(string);
+        }
+        // look up in song database
+        songAddress = songHashTable
+                .getHandle(songHashTable.search(song, memory)).getIndex();
+        if (songAddress == -1)
+        {
+            songAddress = memoryAddress;
+            memoryAddress = memory.add(memoryAddress, song);
+            songHashTable.insert(songAddress, memory);
+            String string = String.format("|%s| is added to the Song database.",
+                    song);
+            System.out.println(string);
+        }
+        else
+        {
+            String string = String.format(
+                    "|%s| duplicates a record already in the Song database.",
+                    song);
+            System.out.println(string);
+        }
+        // look up in pairs database
+        pair = artistBST
+                .find(new KVPair<Integer, Integer>(artistAddress, songAddress));
+        if (pair == null)
+        {
+            KVPair<Integer, Integer> pair1 = new KVPair<>(artistAddress,
+                    songAddress);
+            KVPair<Integer, Integer> pair2 = new KVPair<>(songAddress,
+                    artistAddress);
+            artistBST.insert(pair1);
+            songBST.insert(pair2);
+            String string = String.format(
+                    "The KVPair (|%s|,|%s|),(%d,%d) is added to the tree.",
+                    artist, song, artistAddress, songAddress);
+            System.out.println(string);
+            string = String.format(
+                    "The KVPair (|%s|,|%s|),(%d,%d) is added to the tree.",
+                    song, artist, songAddress, artistAddress);
+            System.out.println(string);
+        }
+        else
+        {
+            String string = String.format(
+                    "The KVPair (|%s|,|%s|),(%d,%d) duplicates "
+                            + "a record already in the tree.",
+                    artist, song, artistAddress, songAddress);
+            System.out.println(string);
+            string = String.format(
+                    "The KVPair (|%s|,|%s|),(%d,%d) duplicates "
+                            + "a record already in the tree.",
+                    song, artist, songAddress, artistAddress);
+            System.out.println(string);
+        }
+    }
+
+    private void rangeSearch(int k, BST<KVPair<Integer, Integer>> bst,
+            List<KVPair<Integer, Integer>> list)
+    {
+        Iterator<KVPair<Integer, Integer>> iterator = bst.iterator();
         int stage = 0;
         while (iterator.hasNext())
         {
-            Handle handle = iterator.next();
-            if (handle.getKey() == k)
+            KVPair<Integer, Integer> pair = iterator.next();
+            if (pair.getKey() == k)
             {
-                list.add(handle);
+                list.add(pair);
                 if (stage == 0)
                 {
                     stage++;
@@ -220,245 +495,11 @@ public class Input
      *            - binary search tree to be inspected
      * @return
      */
-    private boolean checkLastItem(int k, BST<Handle> bst)
+    private boolean checkLastItem(int k, BST<KVPair<Integer, Integer>> bst)
     {
-        List<Handle> list = new ArrayList<>();
+        List<KVPair<Integer, Integer>> list = new ArrayList<>();
         rangeSearch(k, bst, list);
         return list.size() <= 0;
-    }
-
-    /**
-     * Checks to see if the list contains a specific string
-     * 
-     * @param list
-     *            - list to go through with Strings
-     * @param str
-     *            - string to be inspected
-     * @return - true if list contains the string
-     */
-    private boolean containString(List<String> list, String str)
-    {
-        for (String s : list)
-        {
-            if (s.equals(str))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    /**
-     * Private method to print artist and which songs is sung by that specific
-     * artist
-     */
-    private void printArtist()
-    {
-        List<String> list = new ArrayList<>();
-        Handle[] array = artistHashTable.getHashArray();
-        for (int i = 0; i < array.length; i++)
-        {
-            if (array[i] == null)
-            {
-                continue;
-            }
-            int k = array[i].getKey();
-            String key = memory.read(k);
-            if (!containString(list, key))
-            {
-                String string = String.format("|%s| %d", key, i);
-                System.out.println(string);
-                list.add(key);
-            }
-        }
-        String string = String.format("total artists: %d", list.size());
-        System.out.println(string);
-        System.out.println();
-    }
-
-    /**
-     * Private method to print all artists that sing a specific song
-     */
-    private void printSong()
-    {
-        List<String> list = new ArrayList<>();
-        Handle[] array = songHashTable.getHashArray();
-        for (int i = 0; i < array.length; i++)
-        {
-            if (array[i] == null)
-            {
-                continue;
-            }
-            int k = array[i].getKey();
-            String key = memory.read(k);
-            if (!containString(list, key))
-            {
-                String string = String.format("|%s| %d", key, i);
-                System.out.println(string);
-                list.add(key);
-            }
-        }
-        String string = String.format("total songs: %d", list.size());
-        System.out.println(string);
-        System.out.println();
-    }
-
-    /**
-     * Deletes the specific record for a particular song by a particular artist.
-     */
-    private void delete()
-    {
-        int k = artistHashTable
-                .getHandle(artistHashTable.search(artistInformation, memory))
-                .getKey();
-        int v = songHashTable
-                .getHandle(songHashTable.search(songInformation, memory))
-                .getKey();
-        if (k == -1)
-        {
-            printNotExists(artistInformation, 0);
-            return;
-        }
-        if (v == -1)
-        {
-            printNotExists(songInformation, 1);
-            return;
-        }
-        k = artistHashTable.getHandle(artistHashTable.search(artistInformation,
-                songInformation, memory)).getKey();
-        v = songHashTable.getHandle(songHashTable.search(songInformation,
-                artistInformation, memory)).getKey();
-        if (k == -1 || v == -1)
-        {
-            String string = String.format(
-                    "The KVPair (|%s|,|%s|) was not found in the database.",
-                    artistInformation, songInformation);
-            System.out.println(string);
-            string = String.format(
-                    "The KVPair (|%s|,|%s|) was not found in the database.",
-                    songInformation, artistInformation);
-            System.out.println(string);
-            return;
-        }
-        Handle temp1 = new Handle(k, v);
-        Handle temp2 = new Handle(v, k);
-        temp1 = artistBST.find(temp1);
-        temp2 = songBST.find(temp2);
-        printDeletePair(artistInformation, songInformation);
-        artistBST.remove(temp1);
-        songBST.remove(temp2);
-        artistHashTable.remove(k, v, memory);
-        songHashTable.remove(v, k, memory);
-        if (checkLastItem(k, artistBST))
-        {
-            memory.delete(k);
-            printRemoveFromMemory(artistInformation, 2);
-        }
-        if (checkLastItem(v, songBST))
-        {
-            memory.delete(v);
-            printRemoveFromMemory(songInformation, 3);
-        }
-    }
-
-    /**
-     * Removes the specified artist from the appropriate hashTable, BST, and
-     * makes the appropriate marks in the memory pool as needed.
-     */
-    private void removeArtist()
-    {
-        List<Handle> list = new ArrayList<>();
-        int k = artistHashTable
-                .getHandle(artistHashTable.search(artistInformation, memory))
-                .getKey();
-        if (k == -1)
-        {
-            printNotExists(artistInformation, 0);
-            return;
-        }
-        rangeSearch(k, artistBST, list);
-        for (Handle handle : list)
-        {
-            int v = handle.getValue();
-            artistBST.remove(handle);
-            Handle temp = new Handle(v, k);
-            temp = songBST.find(temp);
-            songBST.remove(temp);
-            artistHashTable.remove(k, v, memory);
-            songHashTable.remove(v, k, memory);
-            printDeletePair(artistInformation, memory.read(v));
-            if (checkLastItem(k, artistBST) && memory.isActived(k))
-            {
-                String name = memory.read(k);
-                memory.delete(k);
-                printRemoveFromMemory(name, 0);
-            }
-            if (checkLastItem(v, songBST))
-            {
-                String name = memory.read(v);
-                memory.delete(v);
-                printRemoveFromMemory(name, 1);
-            }
-        }
-    }
-
-    /**
-     * Removes the specified song from the appropriate hashTable, BST, and makes
-     * the appropriate marks in the memory pool as needed.
-     */
-    private void removeSong()
-    {
-        List<Handle> list = new ArrayList<>();
-        int k = songHashTable
-                .getHandle(songHashTable.search(songInformation, memory))
-                .getKey();
-        if (k == -1)
-        {
-            printNotExists(songInformation, 1);
-            return;
-        }
-        rangeSearch(k, songBST, list);
-        for (Handle handle : list)
-        {
-            int v = handle.getValue();
-            songBST.remove(handle);
-            Handle temp = new Handle(v, k);
-            temp = artistBST.find(temp);
-            artistBST.remove(temp);
-            songHashTable.remove(k, v, memory);
-            artistHashTable.remove(v, k, memory);
-            printDeletePair(songInformation, memory.read(v));
-            if (checkLastItem(k, songBST) && memory.isActived(k))
-            {
-                String name = memory.read(k);
-                memory.delete(k);
-                printRemoveFromMemory(name, 1);
-            }
-            if (checkLastItem(v, artistBST))
-            {
-                String name = memory.read(v);
-                memory.delete(v);
-                printRemoveFromMemory(name, 0);
-            }
-        }
-
-    }
-
-    /**
-     * System-out function where a artist/song does not exist in the database
-     * 
-     * @param name
-     *            - name of artist/song
-     * @param index
-     *            - index to be checked
-     */
-    private void printNotExists(String name, int index)
-    {
-        String database = new String[]
-        { "artist", "song" }[index];
-        String string = String.format("|%s| does not exist in the %s database.",
-                name, database);
-        System.out.println(string);
     }
 
     /**
@@ -498,205 +539,19 @@ public class Input
     }
 
     /**
-     * Lists all the songs recorded by a specific artist
-     */
-    private void listArtist()
-    {
-        int k = artistHashTable
-                .getHandle(artistHashTable.search(artistInformation, memory))
-                .getKey();
-        List<Handle> list = new ArrayList<>();
-        rangeSearch(k, artistBST, list);
-        if (list.size() == 0)
-        {
-            printNotExists(artistInformation, 0);
-        }
-        for (Handle h : list)
-        {
-            String string = String.format("|%s|", memory.read(h.getValue()));
-            System.out.println(string);
-        }
-    }
-
-    /**
-     * Lists all the artists who have recorded a specific song
-     */
-    private void listSong()
-    {
-        int k = songHashTable
-                .getHandle(songHashTable.search(songInformation, memory))
-                .getKey();
-        List<Handle> list = new ArrayList<>();
-        rangeSearch(k, songBST, list);
-        if (list.size() == 0)
-        {
-            printNotExists(songInformation, 1);
-        }
-        for (Handle h : list)
-        {
-            String string = String.format("|%s|", memory.read(h.getValue()));
-            System.out.println(string);
-        }
-    }
-
-    /**
-     * Inserts artist/song name to the memory, and stores the resulting handle
-     * in the corresponding artist/song hashTable
-     */
-    private void insert()
-    {
-        int artistAddress;
-        int songAddress;
-        int artistSongHashIndex;
-        // Do something with the artist/song variable above
-        artistAddress = artistHashTable
-                .getHandle(artistHashTable.search(artistInformation, memory))
-                .getKey();
-        if (artistAddress == -1)
-        {
-            artistAddress = memoryAddress;
-            memoryAddress = memory.add(memoryAddress, artistInformation);
-            String string = String.format(
-                    "|%s| is added to the Artist database.", artistInformation);
-            System.out.println(string);
-        }
-        else
-        {
-            String string = String.format(
-                    "|%s| duplicates a record already in the Artist database.",
-                    artistInformation);
-            System.out.println(string);
-        }
-        songAddress = songHashTable
-                .getHandle(songHashTable.search(songInformation, memory))
-                .getKey();
-        if (songAddress == -1)
-        {
-            songAddress = memoryAddress;
-            memoryAddress = memory.add(memoryAddress, songInformation);
-            String string = String.format("|%s| is added to the Song database.",
-                    songInformation);
-            System.out.println(string);
-        }
-        else
-        {
-            String string = String.format(
-                    "|%s| duplicates a record already in the Song database.",
-                    songInformation);
-            System.out.println(string);
-        }
-        artistSongHashIndex = artistHashTable.search(artistAddress, songAddress,
-                memory);
-        if (artistSongHashIndex == -1)
-        {
-            Handle h1 = new Handle(artistAddress, songAddress);
-            Handle h2 = new Handle(songAddress, artistAddress);
-            artistHashTable.insert(h1, memory);
-            songHashTable.insert(h2, memory);
-            artistBST.insert(h1);
-            songBST.insert(h2);
-
-            String string = String.format(
-                    "The KVPair (|%s|,|%s|),(%d,%d) is added to the tree.",
-                    artistInformation, songInformation, artistAddress,
-                    songAddress);
-            System.out.println(string);
-            string = String.format(
-                    "The KVPair (|%s|,|%s|),(%d,%d) is added to the tree.",
-                    songInformation, artistInformation, songAddress,
-                    artistAddress);
-            System.out.println(string);
-        }
-        else
-        {
-            String string = String.format(
-                    "The KVPair (|%s|,|%s|),(%d,%d) duplicates "
-                            + "a record already in the tree.",
-                    artistInformation, songInformation, artistAddress,
-                    songAddress);
-            System.out.println(string);
-            string = String.format(
-                    "The KVPair (|%s|,|%s|),(%d,%d) duplicates "
-                            + "a record already in the tree.",
-                    songInformation, artistInformation, songAddress,
-                    artistAddress);
-            System.out.println(string);
-        }
-    }
-
-    /**
-     * Prints an in-order traversal of the BST
-     */
-    private void printTree()
-    {
-        System.out.println("Printing artist tree:");
-        Iterator<Handle> iterator = artistBST.iterator();
-        while (iterator.hasNext())
-        {
-            Handle handle = iterator.next();
-            int indentation = artistBST.getDepthFromHandle(handle) * 2;
-            if (indentation != 0)
-            {
-                String string = String.format("%" + indentation + "s(%d,%d)",
-                        " ", handle.getKey(), handle.getValue());
-                System.out.println(string);
-            }
-            else
-            {
-                String string = String.format("(%d,%d)", handle.getKey(),
-                        handle.getValue());
-                System.out.println(string);
-            }
-
-        }
-        System.out.println("Printing song tree:");
-        iterator = songBST.iterator();
-        while (iterator.hasNext())
-        {
-            Handle handle = iterator.next();
-            int indentation = songBST.getDepthFromHandle(handle) * 2;
-            if (indentation != 0)
-            {
-                String string = String.format("%" + indentation + "s(%d,%d)",
-                        " ", handle.getKey(), handle.getValue());
-                System.out.println(string);
-            }
-            else
-            {
-                String string = String.format("(%d,%d)", handle.getKey(),
-                        handle.getValue());
-                System.out.println(string);
-            }
-        }
-    }
-
-    /**
-     * Gets the artist information
+     * System-out function where a artist/song does not exist in the database
      * 
-     * @return - artist information (ex: Thomas Rhett)
+     * @param name
+     *            - name of artist/song
+     * @param index
+     *            - index to be checked
      */
-    public String getArtist()
+    private void printNotExists(String name, int index)
     {
-        return artistInformation;
-    }
-
-    /**
-     * Gets the song information
-     * 
-     * @return - song information (ex: Die A Happy Man)
-     */
-    public String getSong()
-    {
-        return songInformation;
-    }
-
-    /**
-     * Gets the command name
-     * 
-     * @return - command name (ex: insert, remove, delete, print)
-     */
-    public String getCommandName()
-    {
-        return commandName;
+        String database = new String[]
+        { "artist", "song" }[index];
+        String string = String.format("|%s| does not exist in the %s database.",
+                name, database);
+        System.out.println(string);
     }
 }

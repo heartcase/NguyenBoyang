@@ -1,19 +1,24 @@
 /**
  * 
+ * Hash Table stores Handles
+ * 
  * @author Nguyen Ha (nguyen) and Boyang Li (beyongl)
  * @version 11.15.2017
+ *
  */
-
 public class HashTable
 {
+
+    /** handle array */
     private Handle[] hashArray;
+    /** the number of the handles */
     private int size;
 
     /**
-     * Constructor for the class that creates the hashArray
+     * Create a new Hashtable instance take initial hash size
      * 
      * @param hashSize
-     *            - size of the hash
+     *            the initial hash size
      */
     public HashTable(int hashSize)
     {
@@ -22,15 +27,154 @@ public class HashTable
     }
 
     /**
-     * Insert comment
+     * Insert a handle value into the array
+     * 
+     * @param k
+     *            the handle value
+     * @param m
+     *            the memory
+     * @return the hash index
+     */
+    public int insert(int k, Memory m)
+    {
+        int hashValue;
+        String key = m.read(k);
+        for (int i = 0; i < hashArray.length; i++)
+        {
+            hashValue = quadraticProbing(key, i, hashArray.length);
+            // Check if the slot is empty
+            if (hashArray[hashValue] == null)
+            {
+                // create a new handle instance
+                hashArray[hashValue] = new Handle(k);
+                size++;
+                // rehash if the array is half full
+                // should be inclusive or exclusive
+                if (size > hashArray.length / 2)
+                {
+                    Handle[] temp = new Handle[hashArray.length * 2];
+                    for (int j = 0; j < hashArray.length; j++)
+                    {
+                        if (hashArray[j] != null)
+                        {
+                            rehash(hashArray[j], m, temp);
+                        }
+                    }
+                    hashArray = temp;
+                }
+                return hashValue;
+            }
+        }
+        // This line should never be executed
+        return -1;
+    }
+
+    /**
+     * return the hash index of the given string
+     * 
+     * @param key
+     *            the given string
+     * @param m
+     *            the memory
+     * @return the hash index or -1 if not found
+     */
+    public int search(String key, Memory m)
+    {
+        for (int i = 0; i < hashArray.length; i++)
+        {
+            int index = quadraticProbing(key, i, hashArray.length);
+            if (hashArray[index] == null)
+            {
+                continue;
+            }
+            if (m.read(hashArray[index].getIndex()).equals(key))
+            {
+                return index;
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * remove the handle from the array
+     * 
+     * @param key
+     *            the key string
+     * @param m
+     *            the memory
+     * @return the hash index
+     */
+    public int remove(String key, Memory m)
+    {
+        int index = search(key, m);
+        hashArray[index] = null;
+        return index;
+    }
+
+    /**
+     * get the handle object from the array
+     * 
+     * @param the
+     *            hash array index
+     * @return - return the handle object or a NULL handle with index -1
+     */
+    public Handle getHandle(int index)
+    {
+        if (index == -1)
+        {
+            return new Handle(-1);
+        }
+        return hashArray[index];
+    }
+
+    /**
+     * get the hash array
+     * 
+     * @return - return the hash array
+     */
+    public Handle[] getHashArray()
+    {
+        return hashArray;
+    }
+
+    // helper functions
+    /**
+     * reinsert the old hash array value into the new array
+     * 
+     * @param h
+     *            the old hash array value
+     * @param m
+     *            the memory
+     * @param array
+     *            the new array
+     */
+    private void rehash(Handle h, Memory m, Handle[] array)
+    {
+        int k = h.getIndex();
+        int hashValue;
+        String key = m.read(k);
+        for (int i = 0; i < array.length; i++)
+        {
+            hashValue = quadraticProbing(key, i, array.length);
+            if (array[hashValue] == null)
+            {
+                array[hashValue] = h;
+                break;
+            }
+        }
+    }
+
+    // tools
+    /**
+     * hash function
      * 
      * @param s
-     *            - string
+     *            string
      * @param m
-     *            - m
-     * @return - return
+     *            array size
+     * @return hash value
      */
-    public int hash(String s, int m)
+    private static int hash(String s, int m)
     {
         int intLength = s.length() / 4;
         long sum = 0;
@@ -55,215 +199,19 @@ public class HashTable
     }
 
     /**
-     * Insert comment
-     * 
-     * @param h
-     *            - handle
-     * @param m
-     *            - m
-     */
-    public void insert(Handle h, Memory m)
-    {
-        int k = h.getKey();
-        String key = m.read(k);
-        int hashValue;
-        if(key.equals("Bukka White's third song")) {
-            System.out.println(quadraticProbing(key, 0, hashArray.length));
-            System.out.println(hashArray[15]);
-        }
-        for (int i = 0; i < hashArray.length; i++)
-        {
-            hashValue = quadraticProbing(key, i, hashArray.length);
-            if (hashArray[hashValue] == null)
-            {
-                if (size >= hashArray.length / 2)
-                {
-                    Handle[] temp = new Handle[hashArray.length * 2];
-                    for (int j = 0; j < hashArray.length; j++)
-                    {
-                        if (hashArray[j] != null)
-                        {
-                            insert(hashArray[j], m, temp);
-                        }
-                    }
-                    hashArray = temp;
-                    insert(h, m);
-                }
-                else
-                {
-                    hashArray[hashValue] = h;
-                    size++;
-                    break;
-                }
-            }
-        }
-    }
-
-    /**
-     * Insert comment
-     * 
-     * @param h
-     *            - h
-     * @param m
-     *            - m
-     * @param array
-     *            - array
-     */
-    public void insert(Handle h, Memory m, Handle[] array)
-    {
-        int k = h.getKey();
-        int hashValue;
-        String key = m.read(k);
-        for (int i = 0; i < array.length; i++)
-        {
-            hashValue = quadraticProbing(key, i, array.length);
-            if (array[hashValue] == null)
-            {
-                array[hashValue] = h;
-                return;
-            }
-        }
-    }
-
-    /**
-     * Insert comment
-     * 
-     * @param k
-     *            - k
-     * @param v
-     *            - v
-     * @param m
-     *            - m
-     * @return - return
-     */
-    public int search(int k, int v, Memory m)
-    {
-        String key = m.read(k);
-        for (int i = 0; i < hashArray.length; i++)
-        {
-            int index = quadraticProbing(key, i, hashArray.length);
-            if (hashArray[index] == null)
-            {
-                continue;
-            }
-            if (hashArray[index].equal(k, v))
-            {
-                return index;
-            }
-        }
-        return -1;
-    }
-
-    /**
-     * Insert comment
+     * quadratic probing function
      * 
      * @param key
-     *            - key
-     * @param m
-     *            - m
-     * @return - return
-     */
-    public int search(String key, Memory m)
-    {
-        for (int i = 0; i < hashArray.length; i++)
-        {
-            int index = quadraticProbing(key, i, hashArray.length);
-            if (hashArray[index] == null)
-            {
-                continue;
-            }
-            if (m.read(hashArray[index].getKey()).equals(key))
-            {
-                return index;
-            }
-        }
-        return -1;
-    }
-
-    /**
-     * Insert comment
-     * 
-     * @param key
-     *            - key
-     * @param value
-     *            - value
-     * @param m
-     *            - m
-     * @return - return
-     */
-    public int search(String key, String value, Memory m)
-    {
-        for (int i = 0; i < hashArray.length; i++)
-        {
-            int index = quadraticProbing(key, i, hashArray.length);
-            if (hashArray[index] == null)
-            {
-                continue;
-            }
-            if (m.read(hashArray[index].getKey()).equals(key)
-                    && m.read(hashArray[index].getValue()).equals(value))
-            {
-                return index;
-            }
-        }
-        return -1;
-    }
-
-    /**
-     * Insert comment
-     * 
+     *            string
      * @param k
-     *            - k
-     * @param v
-     *            - v
-     * @param m
-     *            - m
-     */
-    public void remove(int k, int v, Memory m)
-    {
-        int index = search(k, v, m);
-        hashArray[index] = null;
-    }
-
-    /**
-     * Insert comment
-     * 
-     * @param key
-     *            - key
-     * @param k
-     *            - k
+     *            offset
      * @param length
-     *            - length
-     * @return - return
+     *            size of array
+     * @return next hash index
      */
-    public int quadraticProbing(String key, int k, int length)
+    private static int quadraticProbing(String key, int k, int length)
     {
         return (hash(key, length) + k * k) % length;
     }
 
-    /**
-     * Insert comment
-     * 
-     * @param index
-     *            - index
-     * @return - return
-     */
-    public Handle getHandle(int index)
-    {
-        if (index == -1)
-        {
-            return new Handle(-1, -1);
-        }
-        return hashArray[index];
-    }
-
-    /**
-     * Insert comment
-     * 
-     * @return - return
-     */
-    public Handle[] getHashArray()
-    {
-        return hashArray;
-    }
 }

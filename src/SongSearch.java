@@ -1,16 +1,7 @@
 import java.io.IOException;
 
-/**
- * Class that runs the entire project by reading in an input file
- * 
- * @author Nguyen Ha (nguyen) and Boyang Li (beyongl)
- * @version 11.15.2017
- */
-
 public class SongSearch
 {
-    private static int hashSize;
-    private static int blockSize;
     /**
      * Main method that runs the entire program
      * 
@@ -20,11 +11,15 @@ public class SongSearch
      */
     public static void main(String[] args) throws IOException
     {  
-        hashSize = Integer.valueOf(args[0]);
-        blockSize = Integer.valueOf(args[1]);
+        int hashSize = Integer.valueOf(args[0]);
+        int blockSize = Integer.valueOf(args[1]);
+        Memory memory = new Memory(blockSize);
+        HashTable songHashTable = new HashTable(hashSize);
+        HashTable artistHashTable = new HashTable(hashSize);
+        BST<KVPair<Integer, Integer>> songBST = new BST<>();
+        BST<KVPair<Integer, Integer>> artistBST = new BST<>();
         String fileName = args[2];
-        Input programRunner = new Input(fileName, blockSize, hashSize);
-        programRunner.readLine();
-
+        Input programRunner = new Input(memory, artistBST, songBST, artistHashTable, songHashTable);
+        programRunner.readLine(fileName);
     }
 }
