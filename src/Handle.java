@@ -1,30 +1,90 @@
+/**
+ * Class that contains the Handle object, which has a key and value pair
+ * 
+ * @author Nguyen Ha (nguyen) and Boyang Li (beyongl)
+ * @version 11.15.2017
+ */
 
 public class Handle implements Comparable<Handle>
 {
-    int key;
-    int value;
+    /**
+     * The key
+     */
+    private int key;
+
+    /**
+     * The value
+     */
+    private int value;
+
+    /**
+     * Constructor for the Handle object
+     * 
+     * @param k
+     *            - key
+     * @param v
+     *            - value
+     */
     public Handle(int k, int v)
     {
         key = k;
         value = v;
     }
-    
-    public int getKey() {
+
+    /**
+     * Gets the key of the handle
+     * 
+     * @return - key
+     */
+    public int getKey()
+    {
         return key;
     }
-    
-    public int getValue() {
+
+    /**
+     * Gets the value of the handle
+     * 
+     * @return - handle
+     */
+    public int getValue()
+    {
         return value;
     }
-    
-    public boolean equal(int k, int v) {
+
+    /**
+     * Checks to see if the Handle's key, value pair is equal to the one passed
+     * in
+     * 
+     * @param k
+     *            - passed in key
+     * @param v
+     *            - passed in value
+     * @return - true if they have identical key and value
+     */
+    public boolean equal(int k, int v)
+    {
         return k == key && v == value;
     }
-    
-    public boolean equal(int k) {
+
+    /**
+     * Checks to see if the Handle's key is equal to the one passed in
+     * 
+     * @param k
+     *            - passed in key
+     * @return - true if they have identical key
+     */
+    public boolean equal(int k)
+    {
         return k == key;
     }
 
+    /**
+     * Compares two handle objects together
+     * 
+     * @param h
+     *            - Handle to be compared
+     * @return key, if they are equal objects
+     */
     @Override
     public int compareTo(Handle h)
     {
@@ -39,4 +99,4 @@ public class Handle implements Comparable<Handle>
             return compareValue;
         }
     }
-}   
+}

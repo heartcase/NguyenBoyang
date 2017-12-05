@@ -10,7 +10,10 @@ public class HashTable
     private int size;
 
     /**
+     * Constructor for the class that creates the hashArray
      * 
+     * @param hashSize
+     *            - size of the hash
      */
     public HashTable(int hashSize)
     {
@@ -19,10 +22,13 @@ public class HashTable
     }
 
     /**
+     * Insert comment
      * 
      * @param s
+     *            - string
      * @param m
-     * @return
+     *            - m
+     * @return - return
      */
     public int hash(String s, int m)
     {
@@ -48,6 +54,14 @@ public class HashTable
         return (int) (Math.abs(sum) % m);
     }
 
+    /**
+     * Insert comment
+     * 
+     * @param h
+     *            - handle
+     * @param m
+     *            - m
+     */
     public void insert(Handle h, Memory m)
     {
         int k = h.getKey();
@@ -70,7 +84,9 @@ public class HashTable
                     }
                     hashArray = temp;
                     insert(h, m);
-                }else {
+                }
+                else
+                {
                     hashArray[hashValue] = h;
                     size++;
                     break;
@@ -79,6 +95,16 @@ public class HashTable
         }
     }
 
+    /**
+     * Insert comment
+     * 
+     * @param h
+     *            - h
+     * @param m
+     *            - m
+     * @param array
+     *            - array
+     */
     public void insert(Handle h, Memory m, Handle[] array)
     {
         int k = h.getKey();
@@ -96,11 +122,15 @@ public class HashTable
     }
 
     /**
+     * Insert comment
      * 
      * @param k
+     *            - k
      * @param v
+     *            - v
      * @param m
-     * @return
+     *            - m
+     * @return - return
      */
     public int search(int k, int v, Memory m)
     {
@@ -120,6 +150,15 @@ public class HashTable
         return -1;
     }
 
+    /**
+     * Insert comment
+     * 
+     * @param key
+     *            - key
+     * @param m
+     *            - m
+     * @return - return
+     */
     public int search(String key, Memory m)
     {
         for (int i = 0; i < hashArray.length; i++)
@@ -137,6 +176,17 @@ public class HashTable
         return -1;
     }
 
+    /**
+     * Insert comment
+     * 
+     * @param key
+     *            - key
+     * @param value
+     *            - value
+     * @param m
+     *            - m
+     * @return - return
+     */
     public int search(String key, String value, Memory m)
     {
         for (int i = 0; i < hashArray.length; i++)
@@ -156,10 +206,14 @@ public class HashTable
     }
 
     /**
+     * Insert comment
      * 
      * @param k
+     *            - k
      * @param v
+     *            - v
      * @param m
+     *            - m
      */
     public void remove(int k, int v, Memory m)
     {
@@ -168,16 +222,28 @@ public class HashTable
     }
 
     /**
+     * Insert comment
      * 
      * @param key
+     *            - key
      * @param k
-     * @return
+     *            - k
+     * @param length
+     *            - length
+     * @return - return
      */
     public int quadraticProbing(String key, int k, int length)
     {
         return (hash(key, length) + k * k) % length;
     }
 
+    /**
+     * Insert comment
+     * 
+     * @param index
+     *            - index
+     * @return - return
+     */
     public Handle getHandle(int index)
     {
         if (index == -1)
@@ -186,8 +252,14 @@ public class HashTable
         }
         return hashArray[index];
     }
-    
-    public Handle[] getHashArray() {
+
+    /**
+     * Insert comment
+     * 
+     * @return - return
+     */
+    public Handle[] getHashArray()
+    {
         return hashArray;
     }
 }

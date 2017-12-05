@@ -12,14 +12,16 @@ import java.util.Stack;
 public class BST<T extends Comparable<? super T>> implements Iterable<T>
 {
     private int myDepth = 0;
+
     /**
      * BinaryNode root element
      */
     protected BinaryNode root;
+
     /**
      * Size
      */
-    public int size;
+    private int size;
 
     /**
      * Returns BST Iterator
@@ -31,13 +33,20 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
         return new BSTIterator<T>();
     }
 
+    /**
+     * Iterator class
+     * 
+     * @author Nguyen Ha (nguyen) and Boyang Li (beyongl)
+     * @version 11.15.2017
+     * @param <T>
+     */
     @SuppressWarnings("hiding")
     public class BSTIterator<T> implements Iterator<T>
     {
         /**
          * Stack object for the BST
          */
-        public Stack<BinaryNode> stack;
+        private Stack<BinaryNode> stack;
 
         /**
          * Constructor for the BST Iterator to create a new stack and push the
@@ -98,17 +107,17 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
         /**
          * The data in the node
          */
-        T element;
+        private T element;
 
         /**
          * Pointer to the left child
          */
-        BinaryNode left;
+        private BinaryNode left;
 
         /**
          * Pointer to the right child
          */
-        BinaryNode right;
+        private BinaryNode right;
 
         /**
          * Initialize a childless binary node
@@ -182,6 +191,26 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
         public T getElement()
         {
             return element;
+        }
+
+        /**
+         * Getter method to retrieve the left element in the node
+         * 
+         * @return - left element in the node
+         */
+        public BST<T>.BinaryNode getLeft()
+        {
+            return left;
+        }
+
+        /**
+         * Getter method to retrieve the right element in the node
+         * 
+         * @return - right element in the node
+         */
+        public BST<T>.BinaryNode getRight()
+        {
+            return right;
         }
     }
 
@@ -530,10 +559,17 @@ public class BST<T extends Comparable<? super T>> implements Iterable<T>
         }
     }
 
-    public int getDepthFromHandle(T handle1)
+    /**
+     * Get the depth in the BST at which a specific handle is at
+     * 
+     * @param handle
+     *            - handle to inspect
+     * @return - the depth of that handle
+     */
+    public int getDepthFromHandle(T handle)
     {
         myDepth = 0;
-        find(handle1);
+        find(handle);
         return myDepth;
     }
 }

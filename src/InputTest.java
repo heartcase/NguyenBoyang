@@ -27,7 +27,9 @@ public class InputTest extends TestCase
         myInput.readLine();
         assertEquals("insert", myInput.getCommandName());
         assertEquals("Green Day", myInput.getArtist());
-        assertEquals("Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)", myInput.getSong());
+        assertEquals(
+                "Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)",
+                myInput.getSong());
     }
 
     /**

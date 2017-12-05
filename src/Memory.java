@@ -1,33 +1,46 @@
 import java.util.Arrays;
 
+/**
+ * 
+ * @author Nguyen Ha (nguyen) and Boyang Li (beyongl)
+ * @version 11.15.2017
+ */
+
 public class Memory
 {
     private byte[] memArray;
     private int size;
-    
+
+    /**
+     * Constructor for the class
+     * 
+     * @param s
+     *            - size of memory
+     */
     public Memory(int s)
     {
         size = s;
         memArray = new byte[size];
     }
-    
+
     /**
      * Read the record information in the memory at the given address
+     * 
      * @param address
      *            the first byte of the record in the address
      * @return the content
      */
     public String read(int address)
     {
-        int size = Integer.parseUnsignedInt(new String((Arrays
-                .copyOfRange(memArray, address + 1, address + 3))), 16);
+        size = Integer.parseUnsignedInt(new String(
+                (Arrays.copyOfRange(memArray, address + 1, address + 3))), 16);
 
         return new String(
                 Arrays.copyOfRange(memArray, address + 3, address + 3 + size));
     }
 
     /**
-     * add a new record to the memory at the given address
+     * Add a new record to the memory at the given address
      * 
      * @param address
      *            the first byte of the record in the address
@@ -39,7 +52,7 @@ public class Memory
     {
 
         byte[] record = ('0' + String.format("%02X", content.length())
-                + content).getBytes();        
+                + content).getBytes();
         while (address + record.length >= memArray.length)
         {
             byte[] temp = new byte[memArray.length + size];
@@ -48,12 +61,12 @@ public class Memory
         }
         record[0] = 1;
         System.arraycopy(record, 0, memArray, address, record.length);
-        //System.out.println("Memory :" + new String(memArray));
+        // System.out.println("Memory :" + new String(memArray));
         return address + record.length;
     }
 
     /**
-     * remove the record from the memory it will only turn the flag byte into
+     * Remove the record from the memory it will only turn the flag byte into
      * deactivated
      * 
      * @param address
@@ -63,8 +76,16 @@ public class Memory
     {
         memArray[address] = 0;
     }
-    
-    public boolean isActived(int address) {
+
+    /**
+     * Checks to see if a particular address is active
+     * 
+     * @param address
+     *            - address to be inspected
+     * @return - if that slot is active or not
+     */
+    public boolean isActived(int address)
+    {
         return memArray[address] != 0;
     }
 }

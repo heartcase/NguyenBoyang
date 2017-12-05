@@ -39,6 +39,10 @@ public class Input
      * 
      * @param fileName
      *            - name of the file to be read
+     * @param blockSize
+     *            - blockSize
+     * @param hashSize
+     *            - hashSize
      * @throws IOException
      */
     public Input(String fileName, int blockSize, int hashSize)
@@ -62,7 +66,6 @@ public class Input
         songHashTable = new HashTable(hashSize);
         memory = new Memory(blockSize);
         memoryAddress = 0;
-        // this.readLine();
     }
 
     /**
@@ -75,13 +78,11 @@ public class Input
         {
             // Reads a line of text
             String currentLine = bufferedReader.readLine();
-            // System.out.println(currentLine);
             // In the case that the line has nothing to read
             if (currentLine == null)
             {
                 break;
             }
-
             // Removes leading and trailing white spaces and stores the string
             // called commandName
             currentLine = currentLine.trim();
@@ -127,12 +128,10 @@ public class Input
             {
                 if (lineInformation[1].equals("artist"))
                 {
-                    // Do something
                     printArtist();
                 }
                 else if (lineInformation[1].equals("song"))
                 {
-                    // Do something
                     printSong();
                 }
                 else if (lineInformation[1].equals("tree"))
@@ -175,8 +174,16 @@ public class Input
         scanner.close();
     }
 
-    // string -> int
-    // songHashTable.getHandle(songHashTable.search(k, memory)).getKey();
+    /**
+     * Range search function
+     * 
+     * @param k
+     *            - k
+     * @param bst
+     *            - the binary search tree
+     * @param list
+     *            - list that contains Handles
+     */
     private void rangeSearch(int k, BST<Handle> bst, List<Handle> list)
     {
         Iterator<Handle> iterator = bst.iterator();
@@ -202,17 +209,33 @@ public class Input
         }
     }
 
+    /**
+     * Checks to see if it is the last item in the BST. If it is the last
+     * instance of artist/song, then it will be removed from the hashTable and
+     * memory pool accordingly
+     * 
+     * @param k
+     *            - starting position
+     * @param bst
+     *            - binary search tree to be inspected
+     * @return
+     */
     private boolean checkLastItem(int k, BST<Handle> bst)
     {
         List<Handle> list = new ArrayList<>();
         rangeSearch(k, bst, list);
-        if (list.size() <= 0)
-        {
-            return true;
-        }
-        return false;
+        return list.size() <= 0;
     }
 
+    /**
+     * Checks to see if the list contains a specific string
+     * 
+     * @param list
+     *            - list to go through with Strings
+     * @param str
+     *            - string to be inspected
+     * @return - true if list contains the string
+     */
     private boolean containString(List<String> list, String str)
     {
         for (String s : list)
@@ -225,6 +248,10 @@ public class Input
         return false;
     }
 
+    /**
+     * Private method to print artist and which songs is sung by that specific
+     * artist
+     */
     private void printArtist()
     {
         List<String> list = new ArrayList<>();
@@ -248,6 +275,9 @@ public class Input
         System.out.println(string);
     }
 
+    /**
+     * Private method to print all artists that sing a specific song
+     */
     private void printSong()
     {
         List<String> list = new ArrayList<>();
@@ -271,6 +301,9 @@ public class Input
         System.out.println(string);
     }
 
+    /**
+     * Deletes the specific record for a particular song by a particular artist.
+     */
     private void delete()
     {
         int k = artistHashTable
@@ -326,6 +359,10 @@ public class Input
         }
     }
 
+    /**
+     * Removes the specified artist from the appropriate hashTable, BST, and
+     * makes the appropriate marks in the memory pool as needed.
+     */
     private void removeArtist()
     {
         List<Handle> list = new ArrayList<>();
@@ -363,6 +400,10 @@ public class Input
         }
     }
 
+    /**
+     * Removes the specified song from the appropriate hashTable, BST, and makes
+     * the appropriate marks in the memory pool as needed.
+     */
     private void removeSong()
     {
         List<Handle> list = new ArrayList<>();
@@ -401,6 +442,14 @@ public class Input
 
     }
 
+    /**
+     * System-out function where a artist/song does not exist in the database
+     * 
+     * @param name
+     *            - name of artist/song
+     * @param index
+     *            - index to be checked
+     */
     private void printNotExists(String name, int index)
     {
         String database = new String[]
@@ -410,6 +459,15 @@ public class Input
         System.out.println(string);
     }
 
+    /**
+     * System-out function that reports that a pair has been deleted from the
+     * tree
+     * 
+     * @param key
+     *            - key
+     * @param value
+     *            - value
+     */
     private void printDeletePair(String key, String value)
     {
         String string = String.format(
@@ -420,6 +478,14 @@ public class Input
         System.out.println(string);
     }
 
+    /**
+     * System-out function that reports a pair has been removed from the memory
+     * 
+     * @param name
+     *            - name of artist/song
+     * @param index
+     *            - index to be removed from
+     */
     private void printRemoveFromMemory(String name, int index)
     {
         String database = new String[]
@@ -429,6 +495,9 @@ public class Input
         System.out.println(string);
     }
 
+    /**
+     * Lists all the songs recorded by a specific artist
+     */
     private void listArtist()
     {
         int k = artistHashTable
@@ -447,6 +516,9 @@ public class Input
         }
     }
 
+    /**
+     * Lists all the artists who have recorded a specific song
+     */
     private void listSong()
     {
         int k = songHashTable
@@ -465,6 +537,10 @@ public class Input
         }
     }
 
+    /**
+     * Inserts artist/song name to the memory, and stores the resulting handle
+     * in the corresponding artist/song hashTable
+     */
     private void insert()
     {
         int artistAddress;
@@ -532,18 +608,23 @@ public class Input
         else
         {
             String string = String.format(
-                    "The KVPair (|%s|,|%s|),(%d,%d) duplicates a record already in the tree.",
+                    "The KVPair (|%s|,|%s|),(%d,%d) duplicates "
+                            + "a record already in the tree.",
                     artistInformation, songInformation, artistAddress,
                     songAddress);
             System.out.println(string);
             string = String.format(
-                    "The KVPair (|%s|,|%s|),(%d,%d) duplicates a record already in the tree.",
+                    "The KVPair (|%s|,|%s|),(%d,%d) duplicates "
+                            + "a record already in the tree.",
                     songInformation, artistInformation, songAddress,
                     artistAddress);
             System.out.println(string);
         }
     }
 
+    /**
+     * Prints an in-order traversal of the BST
+     */
     private void printTree()
     {
         System.out.println("Printing artist tree:");
@@ -552,16 +633,19 @@ public class Input
         {
             Handle handle = iterator.next();
             int indentation = artistBST.getDepthFromHandle(handle) * 2;
-            if(indentation != 0) {
-                String string = String.format("%" + indentation + "s(%d,%d)", " ",
-                        handle.getKey(), handle.getValue());
-                System.out.println(string);
-            }else {
-                String string = String.format("(%d,%d)",
-                        handle.getKey(), handle.getValue());
+            if (indentation != 0)
+            {
+                String string = String.format("%" + indentation + "s(%d,%d)",
+                        " ", handle.getKey(), handle.getValue());
                 System.out.println(string);
             }
-            
+            else
+            {
+                String string = String.format("(%d,%d)", handle.getKey(),
+                        handle.getValue());
+                System.out.println(string);
+            }
+
         }
         System.out.println("Printing song tree:");
         iterator = songBST.iterator();
@@ -569,28 +653,46 @@ public class Input
         {
             Handle handle = iterator.next();
             int indentation = songBST.getDepthFromHandle(handle) * 2;
-            if(indentation != 0) {
-                String string = String.format("%" + indentation + "s(%d,%d)", " ",
-                        handle.getKey(), handle.getValue());
+            if (indentation != 0)
+            {
+                String string = String.format("%" + indentation + "s(%d,%d)",
+                        " ", handle.getKey(), handle.getValue());
                 System.out.println(string);
-            }else {
-                String string = String.format("(%d,%d)",
-                        handle.getKey(), handle.getValue());
+            }
+            else
+            {
+                String string = String.format("(%d,%d)", handle.getKey(),
+                        handle.getValue());
                 System.out.println(string);
             }
         }
     }
 
+    /**
+     * Gets the artist information
+     * 
+     * @return - artist information (ex: Thomas Rhett)
+     */
     public String getArtist()
     {
         return artistInformation;
     }
 
+    /**
+     * Gets the song information
+     * 
+     * @return - song information (ex: Die A Happy Man)
+     */
     public String getSong()
     {
         return songInformation;
     }
 
+    /**
+     * Gets the command name
+     * 
+     * @return - command name (ex: insert, remove, delete, print)
+     */
     public String getCommandName()
     {
         return commandName;

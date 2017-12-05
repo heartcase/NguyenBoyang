@@ -129,9 +129,9 @@ public class BSTTest extends TestCase
         tree.insert(right);
 
         // Verifies that the tree nodes are in the correct position
-        assertEquals(middle, tree.root.element);
-        assertEquals(left, tree.root.left.element);
-        assertEquals(right, tree.root.right.element);
+        assertEquals(middle, tree.root.getElement());
+        assertEquals(left, tree.root.getLeft().getElement());
+        assertEquals(right, tree.root.getRight().getElement());
         assertEquals(false, tree.insert(nullHandle));
     }
 
@@ -245,13 +245,13 @@ public class BSTTest extends TestCase
         assertEquals(3, tree.levels());
 
         // Checks all the nodes of the BST before removing anything
-        assertEquals(tree.root.element, d);
-        assertEquals(tree.root.left.left.element, a);
-        assertEquals(tree.root.left.element, b);
-        assertEquals(tree.root.left.right.element, c);
-        assertEquals(tree.root.right.left.element, e);
-        assertEquals(tree.root.right.element, f);
-        assertEquals(tree.root.right.right.element, g);
+        assertEquals(tree.root.getElement(), d);
+        assertEquals(tree.root.getLeft().getLeft().getElement(), a);
+        assertEquals(tree.root.getLeft().getElement(), b);
+        assertEquals(tree.root.getLeft().getRight().getElement(), c);
+        assertEquals(tree.root.getRight().getLeft().getElement(), e);
+        assertEquals(tree.root.getRight().getElement(), f);
+        assertEquals(tree.root.getRight().getRight().getElement(), g);
 
         // Remove b from the tree
         tree.remove(b);
@@ -260,12 +260,12 @@ public class BSTTest extends TestCase
         assertEquals(3, tree.levels());
 
         // Check all the nodes of the BST after removing b
-        assertEquals(tree.root.element, d);
-        assertEquals(tree.root.left.element, c);
-        assertEquals(tree.root.left.left.element, a);
-        assertEquals(tree.root.right.left.element, e);
-        assertEquals(tree.root.right.element, f);
-        assertEquals(tree.root.right.right.element, g);
+        assertEquals(tree.root.getElement(), d);
+        assertEquals(tree.root.getLeft().getElement(), c);
+        assertEquals(tree.root.getLeft().getLeft().getElement(), a);
+        assertEquals(tree.root.getRight().getLeft().getElement(), e);
+        assertEquals(tree.root.getRight().getElement(), f);
+        assertEquals(tree.root.getRight().getRight().getElement(), g);
 
         // Remove f from the tree
         tree.remove(f);
@@ -274,11 +274,11 @@ public class BSTTest extends TestCase
         assertEquals(3, tree.levels());
 
         // Check all the nodes of the BST after removing f
-        assertEquals(tree.root.element, d);
-        assertEquals(tree.root.left.left.element, a);
-        assertEquals(tree.root.left.element, c);
-        assertEquals(tree.root.right.element, g);
-        assertEquals(tree.root.right.left.element, e);
+        assertEquals(tree.root.getElement(), d);
+        assertEquals(tree.root.getLeft().getLeft().getElement(), a);
+        assertEquals(tree.root.getLeft().getElement(), c);
+        assertEquals(tree.root.getRight().getElement(), g);
+        assertEquals(tree.root.getRight().getLeft().getElement(), e);
         assertEquals(false, tree.remove(nullHandle));
         assertEquals(false, tree.remove(neverInserted));
 
@@ -304,10 +304,13 @@ public class BSTTest extends TestCase
         assertEquals(handle1, iterator.next());
         assertEquals(false, iterator.hasNext());
     }
-    
+
+    /**
+     * Tests that the correct depth is retrieved from a passed in handle
+     */
     public void testGetDepthFromHandle()
     {
-     // Creates three Handles
+        // Creates three Handles
         Handle middle = new Handle(1, 1);
         Handle left = new Handle(0, 0);
         Handle right = new Handle(2, 2);
@@ -316,7 +319,7 @@ public class BSTTest extends TestCase
         tree.insert(middle);
         tree.insert(left);
         tree.insert(right);
-        
+
         assertEquals(1, tree.getDepthFromHandle(left));
         assertEquals(1, tree.getDepthFromHandle(right));
     }
