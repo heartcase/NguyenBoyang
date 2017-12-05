@@ -21,7 +21,7 @@ public class SongSearchTest extends TestCase
     {
         SongSearch ss = new SongSearch();
         SongSearch.main(new String[]
-        { "100", "1024", "P4_Input1_Sample.t" });
+        { "100", "1024", "P4_Input1_Sample" });
         assertEquals(ss.getClass(), ss.getClass());
     }
 }

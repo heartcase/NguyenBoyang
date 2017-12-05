@@ -273,6 +273,7 @@ public class Input
         }
         String string = String.format("total artists: %d", list.size());
         System.out.println(string);
+        System.out.println();
     }
 
     /**
@@ -299,6 +300,7 @@ public class Input
         }
         String string = String.format("total songs: %d", list.size());
         System.out.println(string);
+        System.out.println();
     }
 
     /**

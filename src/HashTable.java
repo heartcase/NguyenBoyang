@@ -67,6 +67,10 @@ public class HashTable
         int k = h.getKey();
         String key = m.read(k);
         int hashValue;
+        if(key.equals("Bukka White's third song")) {
+            System.out.println(quadraticProbing(key, 0, hashArray.length));
+            System.out.println(hashArray[15]);
+        }
         for (int i = 0; i < hashArray.length; i++)
         {
             hashValue = quadraticProbing(key, i, hashArray.length);
