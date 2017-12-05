@@ -2,6 +2,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import student.TestCase;
+
 /**
  * Test class to ensure that all the methods in the KVPair class work as
  * expected and functionality meets the requirements
@@ -11,14 +13,13 @@ import org.junit.Test;
  *
  */
 
-public class KVPairTest
+public class KVPairTest extends TestCase
 {
     private KVPair<Integer, Integer> kvPair;
 
     /**
      * Set up method to create the initial KVPair object
      */
-    @Test
     public void setUp()
     {
         kvPair = new KVPair<>(1, 2);
